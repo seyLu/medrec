@@ -1,3 +1,11 @@
+# collectstatic output
+static/
+!*/static/
+
+# file write output
+results/*
+!results/.gitignore
+
 # logging
 logs/
 
