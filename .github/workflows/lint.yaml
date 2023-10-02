@@ -43,11 +43,24 @@ jobs:
           black
           mypy
 
+      - name: Install Stubs
+        run: >
+          pip install
+          django-extensions
+          django-htmx
+          django-stubs[compatible-mypy]
+
       - name: Ruff Linter
         run: ruff check . --diff
 
       - name: Black Formatter
         run: black . --diff --check
+
+      - name: Create .mypy_cache dir if not exists
+        run: |
+          if [[ ! -d .mypy_cache ]]; then
+            mkdir .mypy_cache
+          fi
 
       - name: Mypy Type Checker
         run: >
