@@ -47,6 +47,7 @@ jobs:
         run: >
           pip install
           django-extensions
+          django-htmx
           django-stubs[compatible-mypy]
 
       - name: Ruff Linter
