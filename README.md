@@ -1,5 +1,5 @@
 <div align="center">
-    <img height=100 src="https://github.com/seyLu/medrec/blob/main/static/icons/medrec.png" alt="medrec Icon">
+    <img height=100 src="medrec.png" alt="medrec Icon">
     <h1>medrec</h1>
     <p>Prototype for a Medical Record system</p>
     <p>
