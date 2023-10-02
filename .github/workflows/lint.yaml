@@ -46,6 +46,7 @@ jobs:
       - name: Install Stubs
         run: >
           pip install
+          django-extensions
           django-stubs[compatible-mypy]
 
       - name: Ruff Linter
