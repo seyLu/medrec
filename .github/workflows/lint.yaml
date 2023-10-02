@@ -43,6 +43,11 @@ jobs:
           black
           mypy
 
+      - name: Install Stubs
+        run: >
+          pip install
+          django-stubs[compatible-mypy]
+
       - name: Ruff Linter
         run: ruff check . --diff
 
