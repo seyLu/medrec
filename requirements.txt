@@ -1,7 +1,7 @@
 # core
 Django==4.2.5
+django-extensions==3.2.3
 django-htmx==1.16.0
-python-dotenv==1.0.0
 
 # scripts
 aiohttp==3.8.5
