@@ -1,5 +1,5 @@
 <div align="center">
-    <img height=100 src="https://github.com/seyLu/python-template/blob/main/static/icons/medrec.png" alt="Python Template Icon">
+    <img height=100 src="https://github.com/seyLu/medrec/blob/main/static/icons/medrec.png" alt="medrec Icon">
     <h1>medrec</h1>
     <p>Prototype for a Medical Record system</p>
     <p>
@@ -10,11 +10,11 @@
         <a href="https://github.com/seyLu/medrec/blob/main/LICENSE"><img src="https://img.shields.io/github/license/seyLu/medrec.svg" alt="MIT License"></a>
     </p>
     <p>
-        <a href="https://github.com/seyLu/python-template/issues/new">Report Bug</a>
+        <a href="https://github.com/seyLu/medrec/issues/new">Report Bug</a>
         ·
-        <a href="https://github.com/seyLu/python-template/issues/new">Request Feature</a>
+        <a href="https://github.com/seyLu/medrec/issues/new">Request Feature</a>
         ·
-        <a href="https://github.com/seyLu/python-template/discussions">Ask Question</a>
+        <a href="https://github.com/seyLu/medrec/discussions">Ask Question</a>
     </p>
 </div>
 
