@@ -49,6 +49,12 @@ jobs:
       - name: Black Formatter
         run: black . --diff --check
 
+      - name: Create .mypy_cache if not exists
+        run: |
+          if [[ ! -f .mypy_cache ]]; then
+            mkdir .mypy_cache
+          fi
+
       - name: Mypy Type Checker
         run: >
           mypy .
