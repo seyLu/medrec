@@ -20,9 +20,8 @@
 
 <br>
 
-### Stack <samp>to use</samp>:
+### Stack:
 
 - Django
 - HTMX
-- TailwindCSS
-- Alpine.js
+- DaisyUI
