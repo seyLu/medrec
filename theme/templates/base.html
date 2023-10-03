@@ -1,0 +1,34 @@
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="medrec,seyLu" />
+    <meta name="description" content="Prototype for a medical record system." />
+
+    <title>
+      {% block title %}
+      {% endblock title %}
+    </title>
+
+    {% tailwind_css %}
+    <script src="{% static 'theme/htmx.min.js' %}" defer></script>
+
+    {% block styles %}
+    {% endblock styles %}
+    {% block scripts %}
+    {% endblock scripts %}
+  </head>
+  <body>
+    {% block nav %}
+    {% endblock nav %}
+    <main>
+      {% block main %}
+      {% endblock main %}
+    </main>
+    {% block footer %}
+    {% endblock footer %}
+  </body>
+</html>
