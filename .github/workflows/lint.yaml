@@ -48,6 +48,7 @@ jobs:
           pip install
           django-extensions
           django-htmx
+          tailwind
           django-stubs[compatible-mypy]
 
       - name: Ruff Linter
