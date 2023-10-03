@@ -18,8 +18,9 @@
       <form class="space-y-6" hx-post="{% url 'login' %}" hx-target="#loginError">
         {% csrf_token %}
 
+        <div id="loginError" class="text-red-700 relative"></div>
+
         <div>
-          <div id="loginError"></div>
           <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
           <div class="mt-2">
             <input id="email"

@@ -5,5 +5,15 @@
 {% endblock title %}
 
 {% block main %}
-  hello world
+  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 text-center">
+    <p>
+      hello <span class="text-red-700">{{ request.user }}</span>
+    </p>
+    <br>
+    <form hx-post="{% url 'logout' %}">
+      {% csrf_token %}
+      <button type="submit"
+              class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Logout</button>
+    </form>
+  </div>
 {% endblock main %}
