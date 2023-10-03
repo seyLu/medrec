@@ -37,7 +37,7 @@ def generate_fixture() -> None:
 
 
 def _get_yaml() -> None:
-    logging.info(f"Generating {YAML_FILENAME}")
+    logging.info(f"Generating {YAML_FILENAME}.")
     with open(f"{FIXTURES_PATH}/User.yaml", "w+") as f:
         print(
             yaml.dump(
@@ -50,7 +50,7 @@ def _get_yaml() -> None:
 
 
 def _get_fixtures() -> list[dict[str, Any]]:
-    logging.info(f"Serializing fixture {MODEL_NAME}")
+    logging.info(f"Serializing fixture {MODEL_NAME}.")
 
     fake = Faker(["en_PH"])
     Faker.seed(0)
