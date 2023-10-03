@@ -16,3 +16,4 @@ djlint==1.34.0
 
 # stubs
 django-stubs[compatible-mypy]==4.2.4
+django-stubs-ext==4.2.2

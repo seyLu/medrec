@@ -17,6 +17,7 @@ __status__ = "Prototype"
 import logging
 from logging.config import fileConfig
 from pathlib import Path
+from typing import Any
 
 import phonenumbers
 import yaml
@@ -48,13 +49,13 @@ def _get_yaml() -> None:
         )
 
 
-def _get_fixtures() -> list[dict]:
+def _get_fixtures() -> list[dict[str, Any]]:
     logging.info(f"Serializing fixture {MODEL_NAME}")
 
     fake = Faker(["en_PH"])
     Faker.seed(0)
 
-    fixtures: list[dict] = []
+    fixtures: list[dict[str, Any]] = []
     for pk in range(1, 101):
         is_email_verified: bool = fake.boolean(chance_of_getting_true=75)
         fixtures.append(

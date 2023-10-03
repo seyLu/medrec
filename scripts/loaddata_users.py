@@ -15,7 +15,7 @@ __status__ = "Prototype"
 from lib.loaddata import loaddata
 
 
-def main():
+def main() -> None:
     loaddata(["User"])
 
 

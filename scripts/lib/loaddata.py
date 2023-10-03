@@ -21,7 +21,7 @@ from pathlib import Path
 Path("logs").mkdir(exist_ok=True)
 fileConfig("logging.ini")
 
-LOADDATA_COMMAND: list = [
+LOADDATA_COMMAND: list[str] = [
     "python",
     "manage.py",
     "loaddata",

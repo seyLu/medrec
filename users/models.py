@@ -8,7 +8,7 @@ from .managers import UserManager
 
 
 class User(AbstractUser):
-    username = None
+    username = None  # type: ignore[assignment]
     email = models.EmailField(_("email address"), unique=True)
     mobile_number = models.CharField(max_length=13, blank=True)
     is_email_verified = models.BooleanField(default=False)
@@ -18,7 +18,7 @@ class User(AbstractUser):
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
-    objects = UserManager()
+    objects = UserManager()  # type: ignore[misc, assignment]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.email
