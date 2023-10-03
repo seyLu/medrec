@@ -1,8 +1,37 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
   medrec
 {% endblock title %}
+
+{% block nav %}
+  <nav class="navbar bg-base-100">
+    <div class="flex-1">
+      <a class="btn btn-ghost normal-case text-xl">medrec</a>
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-1">
+        <li>
+          <a>Link</a>
+        </li>
+        <li>
+          <details>
+            <summary>Parent</summary>
+            <ul class="p-2 bg-base-100">
+              <li>
+                <a>Link 1</a>
+              </li>
+              <li>
+                <a>Link 2</a>
+              </li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </div>
+  </nav>
+{% endblock nav %}
 
 {% block main %}
   <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 text-center">
@@ -15,5 +44,12 @@
       <button type="submit"
               class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Logout</button>
     </form>
+
+    <div class="w-full mt-10">
+      <div class="join mx-auto">
+        <input class="input input-bordered join-item" placeholder="LRN" />
+        <button class="btn join-item rounded-r-full">Search</button>
+      </div>
+    </div>
   </div>
 {% endblock main %}
