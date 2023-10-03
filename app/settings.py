@@ -40,7 +40,11 @@ INSTALLED_APPS = [
     # third party packages
     "django_extensions",
     "django_htmx",
+    "tailwind",
+    # tailwind generated
+    "theme",
     # internal apps
+    "medrec",
 ]
 
 MIDDLEWARE = [
@@ -127,3 +131,9 @@ STATIC_ROOT = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+TAILWIND_APP_NAME = "theme"
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
