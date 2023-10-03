@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "theme",
     # internal apps
     "medrec",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -89,6 +90,8 @@ DATABASES = {
     }
 }
 
+# custom user class
+AUTH_USER_MODEL = "users.User"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
