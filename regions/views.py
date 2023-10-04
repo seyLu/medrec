@@ -1,3 +1,4 @@
+from typing import Any
 from urllib.parse import parse_qs, urlparse
 
 from django.http import HttpRequest, HttpResponse
@@ -11,7 +12,7 @@ class DistrictsQueryView(View):
         parsed_url = urlparse(request.get_full_path())
         regions: dict[str, list[str]] = parse_qs(parsed_url.query)
 
-        response = []
+        response: Any = []
 
         if code := regions.get("code"):
             code = code[0]  # type: ignore
@@ -29,7 +30,7 @@ class CitiesQueryView(View):
         parsed_url = urlparse(request.get_full_path())
         regions: dict[str, list[str]] = parse_qs(parsed_url.query)
 
-        response = []
+        response: Any = []
 
         if code := regions.get("code"):
             code = code[0]  # type: ignore
@@ -47,7 +48,7 @@ class ProvincesQueryView(View):
         parsed_url = urlparse(request.get_full_path())
         regions: dict[str, list[str]] = parse_qs(parsed_url.query)
 
-        response = []
+        response: Any = []
 
         if code := regions.get("code"):
             code = code[0]  # type: ignore
