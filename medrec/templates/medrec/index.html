@@ -29,18 +29,25 @@
 {% block main %}
   <div class="flex flex-col w-screen h-screen">
     <div class="mx-auto mt-32">
-      <div>
-        <input type="checkbox" class="toggle focus:outline-none" checked />
-      </div>
+      <div x-data="{ isEmployee: false }" class="form-control">
+        <label class="label cursor-pointer mb-2">
+          <span :class="{'text-gray-500': isEmployee}"
+                class="label-text ml-auto font-semibold">Student</span>
+          <input type="checkbox" x-model="isEmployee" class="toggle mx-4" />
+          <span :class="{'text-gray-500': !isEmployee}"
+                class="label-text mr-auto font-semibold">Employee</span>
+        </label>
 
-      <div class="join">
-        <input class="input input-bordered join-item"
-               placeholder="Learner Reference Number" />
-        <button class="btn join-item rounded-r-full">Search</button>
-      </div>
-      <div class="join">
-        <input class="input input-bordered join-item" placeholder="Employee Number" />
-        <button class="btn join-item rounded-r-full">Search</button>
+        <div x-show="!isEmployee" class="join">
+          <input class="input input-bordered join-item"
+                 placeholder="Learner Reference Number" />
+          <button class="btn join-item rounded-r-full">Search</button>
+        </div>
+        <div x-show="isEmployee" class="join">
+          <input class="input input-bordered join-item"
+                 placeholder="Employee ID Number" />
+          <button class="btn join-item rounded-r-full">Search</button>
+        </div>
       </div>
     </div>
   </div>
