@@ -29,7 +29,7 @@ fileConfig("logging.ini")
 FIXTURES_PATH: str = "fixtures"
 Path(FIXTURES_PATH).mkdir(exist_ok=True)
 MODEL_NAME: str = "user"
-YAML_FILENAME: str = f"{MODEL_NAME.upper()}.yaml"
+YAML_FILENAME: str = f"{MODEL_NAME.capitalize()}.yaml"
 
 
 def generate_fixture() -> None:
@@ -38,7 +38,7 @@ def generate_fixture() -> None:
 
 def _get_yaml() -> None:
     logging.info(f"Generating {YAML_FILENAME}.")
-    with open(f"{FIXTURES_PATH}/User.yaml", "w+") as f:
+    with open(f"{FIXTURES_PATH}/{YAML_FILENAME}", "w+") as f:
         print(
             yaml.dump(
                 _get_fixtures(),
@@ -81,5 +81,4 @@ def _get_fixtures() -> list[dict[str, Any]]:
 
 
 if __name__ == "__main__":
-    fileConfig("logging.ini")
     generate_fixture()

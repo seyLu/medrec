@@ -1,0 +1,1700 @@
+- model: clients.client
+  pk: 1
+  fields:
+    reference_number: 268166
+    type: TCH
+    level: Teacher 3
+    created_datetime: 1996-03-20 07:46:39
+    updated_datetime: 2022-01-02 20:28:58
+    first_name: Pamela
+    last_name: Williams
+    age: 46
+    school: Kalachuchi Place 8
+    region: 080000000
+    province: 083700000
+    city: 083715000
+    district: 083715003
+    street_address: B17 L18 Malinao Estates, Catmon Street
+- model: clients.client
+  pk: 2
+  fields:
+    reference_number: 778714
+    type: NTP
+    level: Principal
+    created_datetime: 2006-03-29 22:34:49
+    updated_datetime: 2011-03-30 07:31:31
+    first_name: Kyle
+    last_name: Blair
+    age: 23
+    school: Molave Tower
+    region: 080000000
+    province: 084800000
+    city: 084824000
+    district: 084824022
+    street_address: 5797 Iriga Road
+- model: clients.client
+  pk: 3
+  fields:
+    reference_number: 706446829746
+    type: STU
+    level: Grade 7
+    created_datetime: 1983-12-01 07:43:32
+    updated_datetime: 2021-07-07 08:56:06
+    first_name: Thomas
+    last_name: Grimes
+    age: 14
+    school: Ruby Tower
+    region: 080000000
+    province: 084800000
+    city: 084806000
+    district: 084806003
+    street_address: 1529 Planet Street
+- model: clients.client
+  pk: 4
+  fields:
+    reference_number: 666358319669
+    type: STU
+    level: Grade 7
+    created_datetime: 2023-06-04 11:13:44
+    updated_datetime: 2023-10-03 21:10:43
+    first_name: Aaron
+    last_name: Snyder
+    age: 17
+    school: Balimbing Place Tower 2
+    region: 080000000
+    province: 086000000
+    city: 086025000
+    district: 086025031
+    street_address: 2335 D Kalamansi Avenue
+- model: clients.client
+  pk: 5
+  fields:
+    reference_number: 725015
+    type: TCH
+    level: Assistant Teacher
+    created_datetime: 1991-10-13 00:00:17
+    updated_datetime: 2021-07-22 04:57:13
+    first_name: William
+    last_name: Cantu
+    age: 67
+    school: Turner Place 2
+    region: 080000000
+    province: 087800000
+    city: 087803000
+    district: 087803002
+    street_address: 5452 Calumpang Street, Macopa Cove Phase 7
+- model: clients.client
+  pk: 6
+  fields:
+    reference_number: 217983
+    type: NTP
+    level: Utility Personnel
+    created_datetime: 1991-07-30 05:48:46
+    updated_datetime: 2011-03-01 04:24:58
+    first_name: John
+    last_name: White
+    age: 46
+    school: Johnson Place
+    region: 080000000
+    province: 087800000
+    city: 087807000
+    district: 087807011
+    street_address: B03 L87 20th Street, Villanueva Village Phase 7
+- model: clients.client
+  pk: 7
+  fields:
+    reference_number: 749368579021
+    type: STU
+    level: Grade 1
+    created_datetime: 2017-12-29 21:56:08
+    updated_datetime: 2022-06-16 17:00:13
+    first_name: Joshua
+    last_name: Cain
+    age: 10
+    school: Jacobson Towers
+    region: 080000000
+    province: 087800000
+    city: 087807000
+    district: 087807005
+    street_address: Block 15 Lot 64 Neptune Avenue, Tucker Homes 4
+- model: clients.client
+  pk: 8
+  fields:
+    reference_number: 122514051501
+    type: STU
+    level: Grade 6
+    created_datetime: 1986-07-16 16:23:50
+    updated_datetime: 1987-08-23 13:27:33
+    first_name: Jessica
+    last_name: Wilson
+    age: 6
+    school: Watson Condominiums
+    region: 080000000
+    province: 084800000
+    city: 084824000
+    district: 084824008
+    street_address: Block 02 Lot 13 Wyatt Grove 1, Palm Street
+- model: clients.client
+  pk: 9
+  fields:
+    reference_number: 610165000189
+    type: STU
+    level: Grade 5
+    created_datetime: 2006-05-09 13:29:58
+    updated_datetime: 2008-11-14 03:56:05
+    first_name: Anthony
+    last_name: Reid
+    age: 11
+    school: Myers Residences
+    region: 080000000
+    province: 086400000
+    city: 086412000
+    district: 086412001
+    street_address: 597 Akle Drive
+- model: clients.client
+  pk: 10
+  fields:
+    reference_number: 387620264647
+    type: STU
+    level: Grade 4
+    created_datetime: 1982-08-03 12:03:33
+    updated_datetime: 1991-01-07 22:24:18
+    first_name: Timothy
+    last_name: Acosta
+    age: 6
+    school: Giles Apartment
+    region: 080000000
+    province: 086000000
+    city: 086003000
+    district: 086003154
+    street_address: 6974 Bagtikan Street, Walker Homes
+- model: clients.client
+  pk: 11
+  fields:
+    reference_number: 262962327668
+    type: STU
+    level: Grade 6
+    created_datetime: 1993-11-02 14:29:32
+    updated_datetime: 2008-09-03 21:01:58
+    first_name: Henry
+    last_name: Gordon
+    age: 7
+    school: Carlson Residences 4
+    region: 080000000
+    province: 082600000
+    city: 082612000
+    district: 082612015
+    street_address: Block 24 Lot 61 Wolfe Grove, Kramer Boulevard
+- model: clients.client
+  pk: 12
+  fields:
+    reference_number: 682651
+    type: TCH
+    level: Assistant Teacher
+    created_datetime: 1981-01-08 09:22:04
+    updated_datetime: 2004-04-25 14:45:08
+    first_name: Alyssa
+    last_name: Wilson
+    age: 55
+    school: Neptune Condominiums
+    region: 080000000
+    province: 086000000
+    city: 086019000
+    district: 086019001
+    street_address: 7728 Pluto Street
+- model: clients.client
+  pk: 13
+  fields:
+    reference_number: 208073824623
+    type: STU
+    level: Grade 10
+    created_datetime: 2004-08-11 07:47:29
+    updated_datetime: 2015-03-17 20:10:41
+    first_name: Deborah
+    last_name: Price
+    age: 11
+    school: Palali Tower
+    region: 080000000
+    province: 084800000
+    city: 084804000
+    district: 084804006
+    street_address: Unit 906 Moonstone Tower, 4602 31st Street
+- model: clients.client
+  pk: 14
+  fields:
+    reference_number: 821109166377
+    type: STU
+    level: Grade 4
+    created_datetime: 2002-10-15 21:03:09
+    updated_datetime: 2014-10-10 04:25:07
+    first_name: Chelsea
+    last_name: Nunez
+    age: 16
+    school: Baldwin Residences 7
+    region: 080000000
+    province: 086400000
+    city: 086411000
+    district: 086411006
+    street_address: Unit 213 Palanan Condominiums Tower 4, 7343 Sicaba Street
+- model: clients.client
+  pk: 15
+  fields:
+    reference_number: 736257
+    type: NTP
+    level: Utility Personnel
+    created_datetime: 2008-08-30 11:31:17
+    updated_datetime: 2023-07-17 16:01:41
+    first_name: Robert
+    last_name: Morales
+    age: 39
+    school: Milky Way Apartments
+    region: 080000000
+    province: 084800000
+    city: 084822000
+    district: 084822012
+    street_address: 4248 Unit B Earth Highway
+- model: clients.client
+  pk: 16
+  fields:
+    reference_number: 785668287180
+    type: STU
+    level: Grade 8
+    created_datetime: 2003-02-28 01:14:58
+    updated_datetime: 2022-04-05 22:47:24
+    first_name: Cassandra
+    last_name: Smith
+    age: 15
+    school: Simpson Place 8
+    region: 080000000
+    province: 082600000
+    city: 082601000
+    district: 082601009
+    street_address: 6802 71st Street
+- model: clients.client
+  pk: 17
+  fields:
+    reference_number: 338092
+    type: NTP
+    level: Utility Personnel
+    created_datetime: 2013-01-30 12:09:06
+    updated_datetime: 2014-07-03 03:39:36
+    first_name: Mary
+    last_name: Anderson
+    age: 64
+    school: Morales Residences Tower 6
+    region: 080000000
+    province: 086400000
+    city: 086419000
+    district: 086419004
+    street_address: 3499 Love Avenue
+- model: clients.client
+  pk: 18
+  fields:
+    reference_number: 716828
+    type: TCH
+    level: Assistant Teacher
+    created_datetime: 2015-12-27 03:40:21
+    updated_datetime: 2020-06-24 16:00:14
+    first_name: Cheryl
+    last_name: Lee
+    age: 65
+    school: Russo Place
+    region: 080000000
+    province: 086400000
+    city: 086407000
+    district: 086407053
+    street_address: Room 326 Johnson Suites, 1897 Citrine Road Extension
+- model: clients.client
+  pk: 19
+  fields:
+    reference_number: 716148
+    type: TCH
+    level: Assistant Teacher
+    created_datetime: 2014-04-15 07:19:12
+    updated_datetime: 2020-03-10 19:37:02
+    first_name: Darin
+    last_name: Moore
+    age: 29
+    school: Williams Condominiums 5
+    region: 080000000
+    province: 086000000
+    city: 086015000
+    district: 086015010
+    street_address: 5157 Sunstone Street, Mathis Village
+- model: clients.client
+  pk: 20
+  fields:
+    reference_number: 357120
+    type: NTP
+    level: Guard
+    created_datetime: 2018-06-23 17:53:23
+    updated_datetime: 2022-05-18 18:23:00
+    first_name: Danielle
+    last_name: Watson
+    age: 19
+    school: Clark Towers
+    region: 080000000
+    province: 086000000
+    city: 086017000
+    district: 086017037
+    street_address: B05 L20 Coconut Homes 6, Cancer Drive
+- model: clients.client
+  pk: 21
+  fields:
+    reference_number: 210968334736
+    type: STU
+    level: Grade 3
+    created_datetime: 2012-03-24 13:24:09
+    updated_datetime: 2012-11-01 04:13:22
+    first_name: Blake
+    last_name: Martin
+    age: 15
+    school: Dungon Residences 9
+    region: 080000000
+    province: 082600000
+    city: 082608000
+    district: 082608013
+    street_address: 7833-B Juno Street
+- model: clients.client
+  pk: 22
+  fields:
+    reference_number: 219977118135
+    type: STU
+    level: Grade 2
+    created_datetime: 1990-12-14 09:26:01
+    updated_datetime: 1997-01-23 05:17:46
+    first_name: Melody
+    last_name: Chandler
+    age: 15
+    school: Kalachuchi Place Tower 5
+    region: 080000000
+    province: 083700000
+    city: 083726000
+    district: 083726023
+    street_address: B04 L72 Matumtum Drive, Hibok-Hibok Village
+- model: clients.client
+  pk: 23
+  fields:
+    reference_number: 109014
+    type: NTP
+    level: Utility Personnel
+    created_datetime: 1977-11-23 09:30:17
+    updated_datetime: 2011-10-07 15:42:42
+    first_name: Ronald
+    last_name: Turner
+    age: 32
+    school: Gillespie Towers
+    region: 080000000
+    province: 084800000
+    city: 084820000
+    district: 084820011
+    street_address: B03 L11 96th Drive, Amethyst Estates
+- model: clients.client
+  pk: 24
+  fields:
+    reference_number: 858530277357
+    type: STU
+    level: Grade 4
+    created_datetime: 1996-10-19 03:35:37
+    updated_datetime: 2015-09-25 18:36:38
+    first_name: April
+    last_name: West
+    age: 11
+    school: Antares Condominiums 7
+    region: 080000000
+    province: 086000000
+    city: 086007000
+    district: 086007014
+    street_address: 6035 34th Road
+- model: clients.client
+  pk: 25
+  fields:
+    reference_number: 226762
+    type: TCH
+    level: Student Teacher
+    created_datetime: 1981-05-03 09:30:15
+    updated_datetime: 2010-09-06 10:51:52
+    first_name: James
+    last_name: Wilson
+    age: 62
+    school: Leach Suites
+    region: 080000000
+    province: 083700000
+    city: 083735000
+    district: 083735003
+    street_address: Room 326 Aranga Apartments, 3538 Banyan Avenue
+- model: clients.client
+  pk: 26
+  fields:
+    reference_number: 909542663909
+    type: STU
+    level: Grade 1
+    created_datetime: 2001-03-12 19:02:56
+    updated_datetime: 2014-01-21 19:28:27
+    first_name: Michael
+    last_name: Wilcox
+    age: 17
+    school: Hinton Suites 3
+    region: 080000000
+    province: 086000000
+    city: 086008000
+    district: 086008020
+    street_address: 6651 Polaris Street, Planet Homes 8
+- model: clients.client
+  pk: 27
+  fields:
+    reference_number: 431264
+    type: TCH
+    level: Teacher 3
+    created_datetime: 2003-12-07 22:16:37
+    updated_datetime: 2010-10-22 04:31:52
+    first_name: Amy
+    last_name: Velazquez
+    age: 30
+    school: Peterson Place Tower 6
+    region: 080000000
+    province: 082600000
+    city: 082619000
+    district: 082619002
+    street_address: 8604 33rd Road
+- model: clients.client
+  pk: 28
+  fields:
+    reference_number: 225882
+    type: TCH
+    level: Assistant Teacher
+    created_datetime: 1980-08-11 01:10:09
+    updated_datetime: 2006-05-27 06:31:19
+    first_name: Brandi
+    last_name: Robbins
+    age: 50
+    school: Sapphire Building
+    region: 080000000
+    province: 082600000
+    city: 082620000
+    district: 082620010
+    street_address: 646 Perez Avenue, Blake Subdivision Phase 6
+- model: clients.client
+  pk: 29
+  fields:
+    reference_number: 600512919276
+    type: STU
+    level: Grade 5
+    created_datetime: 1980-12-07 23:21:16
+    updated_datetime: 1991-01-23 21:38:16
+    first_name: Misty
+    last_name: Murray
+    age: 10
+    school: Pandan Residences 9
+    region: 080000000
+    province: 084800000
+    city: 084820000
+    district: 084820006
+    street_address: 551 Azucena Road Extension, Burgess Grove
+- model: clients.client
+  pk: 30
+  fields:
+    reference_number: 302034
+    type: NTP
+    level: Principal
+    created_datetime: 1989-09-17 15:23:25
+    updated_datetime: 2018-02-23 03:02:46
+    first_name: Margaret
+    last_name: Olson
+    age: 37
+    school: Capricorn Towers
+    region: 080000000
+    province: 086000000
+    city: 086013000
+    district: 086013001
+    street_address: 2982A Sapphire Road
+- model: clients.client
+  pk: 31
+  fields:
+    reference_number: 626786
+    type: NTP
+    level: Principal
+    created_datetime: 1992-08-21 22:49:09
+    updated_datetime: 1994-11-15 10:59:53
+    first_name: Trevor
+    last_name: Green
+    age: 37
+    school: Kalamansi Residences 7
+    region: 080000000
+    province: 084800000
+    city: 084808000
+    district: 084808036
+    street_address: 2684 Comet Drive
+- model: clients.client
+  pk: 32
+  fields:
+    reference_number: 645758
+    type: NTP
+    level: Secretary
+    created_datetime: 2019-08-22 14:16:02
+    updated_datetime: 2023-03-03 20:41:55
+    first_name: Matthew
+    last_name: Mcmahon
+    age: 23
+    school: Kamias Building Tower 8
+    region: 080000000
+    province: 086400000
+    city: 086408000
+    district: 086408007
+    street_address: 1338 Constellation Street, Kamagong Cove 8
+- model: clients.client
+  pk: 33
+  fields:
+    reference_number: 311949
+    type: TCH
+    level: Student Teacher
+    created_datetime: 1996-04-25 01:23:54
+    updated_datetime: 2011-12-05 20:23:12
+    first_name: Brandon
+    last_name: Ruiz
+    age: 52
+    school: Smith Towers 3
+    region: 080000000
+    province: 083700000
+    city: 083736000
+    district: 083736022
+    street_address: 3F Akle Residences 8, 1819 Bishop Road
+- model: clients.client
+  pk: 34
+  fields:
+    reference_number: 402460
+    type: NTP
+    level: Secretary
+    created_datetime: 2013-01-11 05:10:43
+    updated_datetime: 2018-10-11 15:18:55
+    first_name: Debra
+    last_name: Montes
+    age: 46
+    school: Iriga Residences 5
+    region: 080000000
+    province: 082600000
+    city: 082604000
+    district: 082604061
+    street_address: Unit 1113 Casey Suites, 6088 59th Drive Extension
+- model: clients.client
+  pk: 35
+  fields:
+    reference_number: 264956282633
+    type: STU
+    level: Grade 9
+    created_datetime: 2013-01-03 18:41:05
+    updated_datetime: 2014-04-16 22:08:16
+    first_name: Sue
+    last_name: Winters
+    age: 12
+    school: Tucker Apartment
+    region: 080000000
+    province: 084800000
+    city: 084819000
+    district: 084819030
+    street_address: 9327 Camachile Drive, Pandan Homes
+- model: clients.client
+  pk: 36
+  fields:
+    reference_number: 455009
+    type: TCH
+    level: Student Teacher
+    created_datetime: 1977-09-20 16:31:06
+    updated_datetime: 1987-08-20 20:14:25
+    first_name: Ronald
+    last_name: Knight
+    age: 65
+    school: Walls Residences Tower 2
+    region: 080000000
+    province: 083700000
+    city: 083750000
+    district: 083750008
+    street_address: 6803 94th Street
+- model: clients.client
+  pk: 37
+  fields:
+    reference_number: 520149
+    type: NTP
+    level: Vice Principal
+    created_datetime: 2000-05-26 06:01:30
+    updated_datetime: 2015-01-25 14:31:30
+    first_name: Gina
+    last_name: Johnson
+    age: 57
+    school: Banuyo Building
+    region: 080000000
+    province: 084800000
+    city: 084804000
+    district: 084804009
+    street_address: B04 L46 Reed Estates Phase 1, 47th Avenue
+- model: clients.client
+  pk: 38
+  fields:
+    reference_number: 499672049246
+    type: STU
+    level: Grade 2
+    created_datetime: 1979-10-02 12:29:48
+    updated_datetime: 1993-11-26 20:13:51
+    first_name: Aaron
+    last_name: Hopkins
+    age: 14
+    school: Adkins Place 6
+    region: 080000000
+    province: 083700000
+    city: 083750000
+    district: 083750008
+    street_address: Unit 4215 Lopez Building 8, 5644 Jupiter Boulevard
+- model: clients.client
+  pk: 39
+  fields:
+    reference_number: 755202
+    type: TCH
+    level: Assistant Teacher
+    created_datetime: 1984-02-29 20:29:35
+    updated_datetime: 2008-10-24 08:59:27
+    first_name: Matthew
+    last_name: Woodward
+    age: 69
+    school: Talisay Place Tower 3
+    region: 080000000
+    province: 084800000
+    city: 084808000
+    district: 084808006
+    street_address: 1324 Ferguson Drive, Matumtum Estates 4
+- model: clients.client
+  pk: 40
+  fields:
+    reference_number: 895056
+    type: NTP
+    level: Vice Principal
+    created_datetime: 1991-07-01 12:34:17
+    updated_datetime: 2008-10-16 20:37:46
+    first_name: John
+    last_name: Fischer
+    age: 18
+    school: Granada Residences Tower 1
+    region: 080000000
+    province: 083700000
+    city: 083746000
+    district: 083746004
+    street_address: 1277G Asteroid Boulevard
+- model: clients.client
+  pk: 41
+  fields:
+    reference_number: 887161
+    type: NTP
+    level: Vice Principal
+    created_datetime: 1990-05-17 07:05:59
+    updated_datetime: 2009-02-11 02:47:31
+    first_name: Robert
+    last_name: House
+    age: 32
+    school: Campanilla Residences
+    region: 080000000
+    province: 086400000
+    city: 086415000
+    district: 086415016
+    street_address: 4065 Pinatubo Drive Extension
+- model: clients.client
+  pk: 42
+  fields:
+    reference_number: 314595732673
+    type: STU
+    level: Grade 1
+    created_datetime: 2006-01-05 12:27:05
+    updated_datetime: 2007-12-25 13:00:31
+    first_name: Nicholas
+    last_name: Smith
+    age: 16
+    school: Macapuno Condominiums 6
+    region: 080000000
+    province: 086400000
+    city: 086414000
+    district: 086414009
+    street_address: Block 03 Lot 24 Hill Village Phase 3, Sagittarius Street
+- model: clients.client
+  pk: 43
+  fields:
+    reference_number: 931987970518
+    type: STU
+    level: Grade 6
+    created_datetime: 1982-08-13 15:53:19
+    updated_datetime: 2011-04-25 04:18:26
+    first_name: Ryan
+    last_name: Wright
+    age: 14
+    school: Cypress Suites Tower 3
+    region: 080000000
+    province: 086400000
+    city: 086402000
+    district: 086402036
+    street_address: Block 21 Lot 82 Webb Grove, Agate Street
+- model: clients.client
+  pk: 44
+  fields:
+    reference_number: 237657
+    type: NTP
+    level: Principal
+    created_datetime: 2000-07-24 03:39:04
+    updated_datetime: 2021-08-12 12:42:27
+    first_name: Steven
+    last_name: Robinson
+    age: 66
+    school: Mack Place 9
+    region: 080000000
+    province: 083700000
+    city: 083719000
+    district: 083719053
+    street_address: 2560 Sicaba Street, Gregory Grove 9
+- model: clients.client
+  pk: 45
+  fields:
+    reference_number: 136527
+    type: TCH
+    level: Assistant Teacher
+    created_datetime: 2021-11-08 11:43:55
+    updated_datetime: 2022-09-19 07:10:00
+    first_name: Joshua
+    last_name: Riggs
+    age: 56
+    school: Nelson Apartments
+    region: 080000000
+    province: 086400000
+    city: 086401000
+    district: 086401007
+    street_address: 4204 Mayon Street
+- model: clients.client
+  pk: 46
+  fields:
+    reference_number: 882687
+    type: TCH
+    level: Student Teacher
+    created_datetime: 2018-04-25 06:27:03
+    updated_datetime: 2021-09-07 07:52:21
+    first_name: Sean
+    last_name: Francis
+    age: 26
+    school: Calantas Condominiums 2
+    region: 080000000
+    province: 087800000
+    city: 087804000
+    district: 087804011
+    street_address: 1155 Jasper Road
+- model: clients.client
+  pk: 47
+  fields:
+    reference_number: 135319887244
+    type: STU
+    level: Grade 4
+    created_datetime: 1978-01-16 11:59:35
+    updated_datetime: 2014-02-14 07:55:27
+    first_name: Michele
+    last_name: Macdonald
+    age: 17
+    school: Jones Place 5
+    region: 080000000
+    province: 087800000
+    city: 087805000
+    district: 087805004
+    street_address: 2203 Macopa Road, Jenkins Village Phase 7
+- model: clients.client
+  pk: 48
+  fields:
+    reference_number: 477010
+    type: TCH
+    level: Student Teacher
+    created_datetime: 2020-06-15 06:28:07
+    updated_datetime: 2021-08-22 01:58:25
+    first_name: Kelly
+    last_name: Watson
+    age: 60
+    school: Moore Building 7
+    region: 080000000
+    province: 084800000
+    city: 084813000
+    district: 084813008
+    street_address: Block 05 Lot 72 Mars Drive Extension, Kamias Grove
+- model: clients.client
+  pk: 49
+  fields:
+    reference_number: 648508
+    type: NTP
+    level: Principal
+    created_datetime: 2002-06-10 19:43:25
+    updated_datetime: 2019-01-28 03:20:59
+    first_name: Heather
+    last_name: Flores
+    age: 27
+    school: Wallace Building Tower 8
+    region: 080000000
+    province: 082600000
+    city: 082619000
+    district: 082619020
+    street_address: 3535 Kelly Extension
+- model: clients.client
+  pk: 50
+  fields:
+    reference_number: 728529
+    type: NTP
+    level: Guard
+    created_datetime: 1970-09-09 06:54:11
+    updated_datetime: 2006-07-16 16:03:17
+    first_name: Tiffany
+    last_name: Mcdaniel
+    age: 26
+    school: Parks Residences 1
+    region: 080000000
+    province: 084800000
+    city: 084801000
+    district: 084801023
+    street_address: B04 L80 Key Homes, Hydra Boulevard
+- model: clients.client
+  pk: 51
+  fields:
+    reference_number: 567233176070
+    type: STU
+    level: Grade 6
+    created_datetime: 2008-12-25 06:32:11
+    updated_datetime: 2013-11-18 08:53:30
+    first_name: James
+    last_name: Hamilton
+    age: 16
+    school: Intsia Condominiums
+    region: 080000000
+    province: 084800000
+    city: 084817000
+    district: 084817005
+    street_address: Block 21 Lot 88 Matumtum Subdivision Phase 3, Cypress Avenue Extension
+- model: clients.client
+  pk: 52
+  fields:
+    reference_number: 607057
+    type: NTP
+    level: Secretary
+    created_datetime: 1982-09-18 13:07:05
+    updated_datetime: 2012-12-08 07:36:11
+    first_name: Michael
+    last_name: Lucero
+    age: 57
+    school: Oleander Residences 4
+    region: 080000000
+    province: 082600000
+    city: 082612000
+    district: 082612018
+    street_address: 9610 Unit D Aries Street
+- model: clients.client
+  pk: 53
+  fields:
+    reference_number: 170197
+    type: TCH
+    level: Teacher 3
+    created_datetime: 1972-04-07 03:50:35
+    updated_datetime: 1988-03-10 23:43:58
+    first_name: Cynthia
+    last_name: Pitts
+    age: 58
+    school: Peridot Condominiums
+    region: 080000000
+    province: 086000000
+    city: 086007000
+    district: 086007078
+    street_address: 1420-J Uranus Street
+- model: clients.client
+  pk: 54
+  fields:
+    reference_number: 536938
+    type: NTP
+    level: Vice Principal
+    created_datetime: 2022-07-01 00:16:12
+    updated_datetime: 2023-04-01 05:59:31
+    first_name: Robert
+    last_name: Brown
+    age: 58
+    school: Andromeda Suites
+    region: 080000000
+    province: 082600000
+    city: 082602000
+    district: 082602012
+    street_address: Block 23 Lot 61 44th Drive, Williams Homes Phase 1
+- model: clients.client
+  pk: 55
+  fields:
+    reference_number: 249606
+    type: NTP
+    level: Principal
+    created_datetime: 1989-09-21 06:12:54
+    updated_datetime: 1990-03-17 11:27:42
+    first_name: Donald
+    last_name: Buchanan
+    age: 46
+    school: Arellano Residences 9
+    region: 080000000
+    province: 082600000
+    city: 082623000
+    district: 082623007
+    street_address: 5563 Unit D Bakawan Road
+- model: clients.client
+  pk: 56
+  fields:
+    reference_number: 487191
+    type: TCH
+    level: Student Teacher
+    created_datetime: 1975-10-30 02:38:22
+    updated_datetime: 1997-07-15 15:32:32
+    first_name: Marcus
+    last_name: Bryant
+    age: 47
+    school: Banyan Apartment
+    region: 080000000
+    province: 082600000
+    city: 082609000
+    district: 082609014
+    street_address: 727 48th Avenue, Agoho Grove
+- model: clients.client
+  pk: 57
+  fields:
+    reference_number: 518781
+    type: TCH
+    level: Assistant Teacher
+    created_datetime: 1987-02-06 12:36:20
+    updated_datetime: 2007-08-09 21:47:26
+    first_name: Larry
+    last_name: Heath
+    age: 29
+    school: Narra Residences
+    region: 080000000
+    province: 087800000
+    city: 087805000
+    district: 087805004
+    street_address: Room 236 Smith Suites 8, 778 Matumtum Road
+- model: clients.client
+  pk: 58
+  fields:
+    reference_number: 602839
+    type: TCH
+    level: Student Teacher
+    created_datetime: 1978-01-14 23:29:44
+    updated_datetime: 1983-11-12 23:16:33
+    first_name: Christopher
+    last_name: Garcia
+    age: 59
+    school: Gutierrez Condominiums 8
+    region: 080000000
+    province: 087800000
+    city: 087801000
+    district: 087801003
+    street_address: 1264 Palali Street, Lapis Lazuli Estates Phase 4
+- model: clients.client
+  pk: 59
+  fields:
+    reference_number: 194609
+    type: NTP
+    level: Secretary
+    created_datetime: 2003-05-07 08:24:40
+    updated_datetime: 2010-11-01 01:01:46
+    first_name: David
+    last_name: Pitts
+    age: 27
+    school: Cauliflower Residences Tower 2
+    region: 080000000
+    province: 084800000
+    city: 084815000
+    district: 084815029
+    street_address: 4678 Malugay Street, Macopa Village 8
+- model: clients.client
+  pk: 60
+  fields:
+    reference_number: 606318
+    type: TCH
+    level: Teacher 3
+    created_datetime: 2006-06-27 10:53:42
+    updated_datetime: 2015-05-14 21:35:26
+    first_name: Joseph
+    last_name: Smith
+    age: 33
+    school: Thompson Residences Tower 4
+    region: 080000000
+    province: 086000000
+    city: 086005000
+    district: 086005057
+    street_address: 8775-A Jasmine Street
+- model: clients.client
+  pk: 61
+  fields:
+    reference_number: 357027239850
+    type: STU
+    level: Grade 9
+    created_datetime: 1978-04-16 04:53:14
+    updated_datetime: 2004-06-19 20:09:13
+    first_name: Deanna
+    last_name: Wilson
+    age: 7
+    school: Azucena Tower
+    region: 080000000
+    province: 084800000
+    city: 084811000
+    district: 084811023
+    street_address: 4F Brown Place 6, 3828 Turquoise Road
+- model: clients.client
+  pk: 62
+  fields:
+    reference_number: 902660514878
+    type: STU
+    level: Grade 8
+    created_datetime: 2009-08-11 04:33:15
+    updated_datetime: 2012-07-11 02:56:47
+    first_name: Derrick
+    last_name: Smith
+    age: 17
+    school: Gladiola Towers
+    region: 080000000
+    province: 086400000
+    city: 086419000
+    district: 086419005
+    street_address: Unit 2926 Daugherty Suites Tower 2, 2222 64th Road
+- model: clients.client
+  pk: 63
+  fields:
+    reference_number: 623271
+    type: TCH
+    level: Teacher 1
+    created_datetime: 2017-05-05 16:27:37
+    updated_datetime: 2019-02-27 21:02:16
+    first_name: Joe
+    last_name: Anderson
+    age: 26
+    school: Wolf Residences
+    region: 080000000
+    province: 087800000
+    city: 087803000
+    district: 087803009
+    street_address: 9684 81st Road, Jensen Cove
+- model: clients.client
+  pk: 64
+  fields:
+    reference_number: 305459
+    type: NTP
+    level: Accountant
+    created_datetime: 2005-10-28 15:02:27
+    updated_datetime: 2018-01-10 07:52:05
+    first_name: Tracy
+    last_name: Parker
+    age: 50
+    school: Peters Condominiums
+    region: 080000000
+    province: 082600000
+    city: 082616000
+    district: 082616016
+    street_address: 29th Floor Squash Place Tower 2, 4247 78th Extension
+- model: clients.client
+  pk: 65
+  fields:
+    reference_number: 786407
+    type: TCH
+    level: Student Teacher
+    created_datetime: 1983-01-01 23:40:59
+    updated_datetime: 2004-07-14 15:57:02
+    first_name: Kristen
+    last_name: Cruz
+    age: 30
+    school: Clark Place Tower 4
+    region: 080000000
+    province: 086000000
+    city: 086011000
+    district: 086011013
+    street_address: Block 22 Lot 93 Green Estates Phase 5, Kelly Road
+- model: clients.client
+  pk: 66
+  fields:
+    reference_number: 288551534224
+    type: STU
+    level: Grade 1
+    created_datetime: 2019-11-01 18:12:38
+    updated_datetime: 2022-07-08 02:38:08
+    first_name: Edward
+    last_name: Johnson
+    age: 17
+    school: Johnson Apartments
+    region: 080000000
+    province: 086000000
+    city: 086014000
+    district: 086014004
+    street_address: 3700 Mercury Avenue
+- model: clients.client
+  pk: 67
+  fields:
+    reference_number: 982208
+    type: NTP
+    level: Guard
+    created_datetime: 1974-04-01 02:29:32
+    updated_datetime: 1997-09-20 08:21:33
+    first_name: Teresa
+    last_name: Henderson
+    age: 48
+    school: Cole Building Tower 6
+    region: 080000000
+    province: 083700000
+    city: 083740000
+    district: 083740033
+    street_address: B21 L43 Gumamela Cove, Halcon Road
+- model: clients.client
+  pk: 68
+  fields:
+    reference_number: 901583
+    type: NTP
+    level: Principal
+    created_datetime: 2020-01-23 08:30:31
+    updated_datetime: 2022-12-25 00:32:59
+    first_name: Janet
+    last_name: Malone
+    age: 40
+    school: Ortiz Residences 3
+    region: 080000000
+    province: 083700000
+    city: 083703000
+    district: 083703003
+    street_address: 8202 80th Street
+- model: clients.client
+  pk: 69
+  fields:
+    reference_number: 140140
+    type: NTP
+    level: Guard
+    created_datetime: 2004-12-21 21:55:31
+    updated_datetime: 2010-01-06 06:43:09
+    first_name: Christopher
+    last_name: Young
+    age: 61
+    school: Wright Apartment
+    region: 080000000
+    province: 086000000
+    city: 086018000
+    district: 086018007
+    street_address: 6999 B Bakawan Road
+- model: clients.client
+  pk: 70
+  fields:
+    reference_number: 901590
+    type: NTP
+    level: Accountant
+    created_datetime: 2001-02-18 12:25:14
+    updated_datetime: 2006-03-29 12:49:59
+    first_name: Christina
+    last_name: Williams
+    age: 49
+    school: Guijo Apartment
+    region: 080000000
+    province: 084800000
+    city: 084814000
+    district: 084814006
+    street_address: Unit 1023 Orion Building Tower 8, 3870 Dungon Boulevard
+- model: clients.client
+  pk: 71
+  fields:
+    reference_number: 202499
+    type: TCH
+    level: Assistant Teacher
+    created_datetime: 2021-03-29 08:59:00
+    updated_datetime: 2022-12-18 01:42:59
+    first_name: Matthew
+    last_name: Pratt
+    age: 19
+    school: Aquamarine Place 9
+    region: 080000000
+    province: 083700000
+    city: 083734000
+    district: 083734028
+    street_address: Block 02 Lot 99 Polaris Cove 8, Sierra Madre Avenue Extension
+- model: clients.client
+  pk: 72
+  fields:
+    reference_number: 298179
+    type: NTP
+    level: Principal
+    created_datetime: 1993-08-02 12:18:01
+    updated_datetime: 2010-06-18 15:33:56
+    first_name: Brett
+    last_name: Nelson
+    age: 20
+    school: King Towers
+    region: 080000000
+    province: 087800000
+    city: 087803000
+    district: 087803001
+    street_address: 68F Farmer Suites Tower 6, 6326 Emerald Avenue
+- model: clients.client
+  pk: 73
+  fields:
+    reference_number: 540970
+    type: NTP
+    level: Vice Principal
+    created_datetime: 1992-06-02 08:12:57
+    updated_datetime: 2019-10-21 00:59:45
+    first_name: Tanya
+    last_name: Middleton
+    age: 21
+    school: Pao Building Tower 6
+    region: 080000000
+    province: 086400000
+    city: 086412000
+    district: 086412015
+    street_address: Unit 1404 Farley Residences, 4771 Libra Drive
+- model: clients.client
+  pk: 74
+  fields:
+    reference_number: 142662
+    type: NTP
+    level: Utility Personnel
+    created_datetime: 2023-04-09 05:40:12
+    updated_datetime: 2023-06-26 14:51:14
+    first_name: Caroline
+    last_name: Archer
+    age: 68
+    school: Kramer Towers
+    region: 080000000
+    province: 082600000
+    city: 082620000
+    district: 082620013
+    street_address: 7240 44th Street
+- model: clients.client
+  pk: 75
+  fields:
+    reference_number: 658408757748
+    type: STU
+    level: Grade 5
+    created_datetime: 2019-02-09 01:55:28
+    updated_datetime: 2023-03-12 16:04:44
+    first_name: Renee
+    last_name: Beck
+    age: 11
+    school: Comet Condominiums 2
+    region: 080000000
+    province: 087800000
+    city: 087805000
+    district: 087805012
+    street_address: 6945 Diamond Road, Hopkins Estates Phase 2
+- model: clients.client
+  pk: 76
+  fields:
+    reference_number: 413815838493
+    type: STU
+    level: Grade 2
+    created_datetime: 2004-04-17 01:53:49
+    updated_datetime: 2022-10-13 12:04:59
+    first_name: Cassidy
+    last_name: Fischer
+    age: 13
+    school: Catmon Place 1
+    region: 080000000
+    province: 086000000
+    city: 086012000
+    district: 086012015
+    street_address: Block 09 Lot 69 Mayapis Drive, Agoho Subdivision 3
+- model: clients.client
+  pk: 77
+  fields:
+    reference_number: 869368
+    type: TCH
+    level: Teacher 1
+    created_datetime: 1970-05-28 07:55:45
+    updated_datetime: 2021-06-11 23:47:56
+    first_name: William
+    last_name: Mueller
+    age: 65
+    school: Dungon Suites
+    region: 080000000
+    province: 083700000
+    city: 083726000
+    district: 083726012
+    street_address: 9202 Pinatubo Road
+- model: clients.client
+  pk: 78
+  fields:
+    reference_number: 619351350107
+    type: STU
+    level: Grade 1
+    created_datetime: 2021-09-25 18:21:04
+    updated_datetime: 2022-03-22 02:12:37
+    first_name: Rachel
+    last_name: Cox
+    age: 11
+    school: Frazier Residences
+    region: 080000000
+    province: 086000000
+    city: 086023000
+    district: 086023015
+    street_address: 2nd Floor Duncan Condominiums Tower 5, 3034 Atok Road
+- model: clients.client
+  pk: 79
+  fields:
+    reference_number: 260147998909
+    type: STU
+    level: Grade 4
+    created_datetime: 1986-02-10 01:04:27
+    updated_datetime: 2016-09-16 06:10:32
+    first_name: Michelle
+    last_name: Jacobson
+    age: 8
+    school: Rubio Condominiums
+    region: 080000000
+    province: 082600000
+    city: 082614000
+    district: 082614003
+    street_address: B14 L82 Halcon Drive, Comet Homes 2
+- model: clients.client
+  pk: 80
+  fields:
+    reference_number: 211211
+    type: NTP
+    level: Accountant
+    created_datetime: 1990-11-23 00:02:26
+    updated_datetime: 1991-12-02 11:57:41
+    first_name: Travis
+    last_name: Farmer
+    age: 44
+    school: Farmer Residences 7
+    region: 080000000
+    province: 083700000
+    city: 083742000
+    district: 083742020
+    street_address: 20th Floor Aguilar Residences, 9320 73rd Street
+- model: clients.client
+  pk: 81
+  fields:
+    reference_number: 670754406379
+    type: STU
+    level: Grade 9
+    created_datetime: 1992-04-30 08:43:14
+    updated_datetime: 2020-04-18 21:19:12
+    first_name: Andrew
+    last_name: Wells
+    age: 16
+    school: Williams Towers
+    region: 080000000
+    province: 086000000
+    city: 086025000
+    district: 086025035
+    street_address: Block 01 Lot 09 Love Village Phase 8, Edwards Street
+- model: clients.client
+  pk: 82
+  fields:
+    reference_number: 204483230689
+    type: STU
+    level: Grade 3
+    created_datetime: 1971-09-24 01:25:07
+    updated_datetime: 1993-02-24 11:33:00
+    first_name: Philip
+    last_name: Martinez
+    age: 11
+    school: Kalamansi Building Tower 3
+    region: 080000000
+    province: 086000000
+    city: 086018000
+    district: 086018002
+    street_address: Block 17 Lot 08 17th Street, Uranus Cove 9
+- model: clients.client
+  pk: 83
+  fields:
+    reference_number: 243300
+    type: TCH
+    level: Student Teacher
+    created_datetime: 1972-12-16 11:35:35
+    updated_datetime: 2010-09-21 18:16:18
+    first_name: Hayley
+    last_name: Terry
+    age: 49
+    school: Tabayoc Residences
+    region: 080000000
+    province: 084800000
+    city: 084816000
+    district: 084816006
+    street_address: 1357 Castro Street, Mcbride Homes 5
+- model: clients.client
+  pk: 84
+  fields:
+    reference_number: 830514
+    type: TCH
+    level: Student Teacher
+    created_datetime: 2023-03-28 21:44:40
+    updated_datetime: 2023-05-18 05:54:57
+    first_name: Zachary
+    last_name: Bryant
+    age: 57
+    school: Sherman Suites
+    region: 080000000
+    province: 086000000
+    city: 086010000
+    district: 086010016
+    street_address: 2504 Chen Boulevard, Huang Homes 2
+- model: clients.client
+  pk: 85
+  fields:
+    reference_number: 121960354093
+    type: STU
+    level: Grade 3
+    created_datetime: 1983-02-16 05:35:26
+    updated_datetime: 2014-03-12 18:46:19
+    first_name: Cheryl
+    last_name: Burnett
+    age: 17
+    school: Mckinney Building Tower 8
+    region: 080000000
+    province: 087800000
+    city: 087802000
+    district: 087802003
+    street_address: 937 Azalea Street, Agate Cove Phase 2
+- model: clients.client
+  pk: 86
+  fields:
+    reference_number: 533480
+    type: NTP
+    level: Principal
+    created_datetime: 1999-02-09 08:42:01
+    updated_datetime: 2019-10-12 14:49:20
+    first_name: Michael
+    last_name: Hayes
+    age: 36
+    school: "Pi\xF1a Residences"
+    region: 080000000
+    province: 086000000
+    city: 086013000
+    district: 086013014
+    street_address: Unit 302 Gross Apartment, 5536 Cabbage Avenue
+- model: clients.client
+  pk: 87
+  fields:
+    reference_number: 921387
+    type: NTP
+    level: Vice Principal
+    created_datetime: 2013-12-02 07:53:36
+    updated_datetime: 2014-12-22 19:51:55
+    first_name: Holly
+    last_name: Robles
+    age: 51
+    school: Burke Condominiums
+    region: 080000000
+    province: 086400000
+    city: 086404000
+    district: 086404006
+    street_address: B14 L07 Dita Grove Phase 5, Kamagong Extension
+- model: clients.client
+  pk: 88
+  fields:
+    reference_number: 951649742458
+    type: STU
+    level: Grade 4
+    created_datetime: 1972-02-02 18:26:56
+    updated_datetime: 2002-12-19 06:22:19
+    first_name: Leah
+    last_name: Lee
+    age: 17
+    school: Sapphire Residences
+    region: 080000000
+    province: 083700000
+    city: 083736000
+    district: 083736008
+    street_address: 2022 Bell Boulevard
+- model: clients.client
+  pk: 89
+  fields:
+    reference_number: 270650
+    type: TCH
+    level: Assistant Teacher
+    created_datetime: 2011-12-03 02:33:44
+    updated_datetime: 2023-09-02 04:06:53
+    first_name: Denise
+    last_name: Smith
+    age: 41
+    school: Talisay Suites 8
+    region: 080000000
+    province: 087800000
+    city: 087808000
+    district: 087808024
+    street_address: 848 Intsia Street
+- model: clients.client
+  pk: 90
+  fields:
+    reference_number: 554318
+    type: NTP
+    level: Secretary
+    created_datetime: 1987-11-06 01:50:47
+    updated_datetime: 1989-09-26 23:10:34
+    first_name: Deborah
+    last_name: Davis
+    age: 39
+    school: Cook Building 8
+    region: 080000000
+    province: 086400000
+    city: 086419000
+    district: 086419005
+    street_address: 2528 Orchid Street
+- model: clients.client
+  pk: 91
+  fields:
+    reference_number: 398852
+    type: TCH
+    level: Teacher 1
+    created_datetime: 1972-07-03 18:22:55
+    updated_datetime: 1972-07-21 19:45:37
+    first_name: Nicholas
+    last_name: Moore
+    age: 35
+    school: Martin Condominiums
+    region: 080000000
+    province: 084800000
+    city: 084805000
+    district: 084805038
+    street_address: Room 4440 Emerald Suites 7, 724 31st Road
+- model: clients.client
+  pk: 92
+  fields:
+    reference_number: 808460
+    type: TCH
+    level: Assistant Teacher
+    created_datetime: 1992-05-11 15:05:36
+    updated_datetime: 1998-02-22 12:32:37
+    first_name: Tammy
+    last_name: Bell
+    age: 54
+    school: Johns Suites
+    region: 080000000
+    province: 087800000
+    city: 087807000
+    district: 087807018
+    street_address: B13 L73 Martin Cove, Pisces Street
+- model: clients.client
+  pk: 93
+  fields:
+    reference_number: 171983
+    type: TCH
+    level: Student Teacher
+    created_datetime: 1981-09-14 03:30:00
+    updated_datetime: 1991-11-01 13:10:28
+    first_name: Andrew
+    last_name: Holloway
+    age: 49
+    school: Johnson Building 3
+    region: 080000000
+    province: 086400000
+    city: 086413000
+    district: 086413001
+    street_address: 6861 Unit A Palanan Street
+- model: clients.client
+  pk: 94
+  fields:
+    reference_number: 135538
+    type: NTP
+    level: Secretary
+    created_datetime: 1992-08-27 20:31:25
+    updated_datetime: 2016-11-08 09:44:50
+    first_name: John
+    last_name: Taylor
+    age: 36
+    school: Ferguson Building
+    region: 080000000
+    province: 084800000
+    city: 084804000
+    district: 084804006
+    street_address: 5745 Unit J Reynolds Highway
+- model: clients.client
+  pk: 95
+  fields:
+    reference_number: 972335
+    type: NTP
+    level: Accountant
+    created_datetime: 2002-01-23 02:21:45
+    updated_datetime: 2015-01-19 10:30:31
+    first_name: Jeffrey
+    last_name: Foster
+    age: 25
+    school: Jasmine Towers
+    region: 080000000
+    province: 084800000
+    city: 084810000
+    district: 084810036
+    street_address: 4135 Sapphire Expressway
+- model: clients.client
+  pk: 96
+  fields:
+    reference_number: 558480
+    type: TCH
+    level: Assistant Teacher
+    created_datetime: 1971-06-25 00:44:26
+    updated_datetime: 2012-08-01 08:37:41
+    first_name: Cheryl
+    last_name: Wells
+    age: 63
+    school: Hill Towers 6
+    region: 080000000
+    province: 084800000
+    city: 084811000
+    district: 084811003
+    street_address: B18 L07 92nd Extension, Jacaranda Subdivision 2
+- model: clients.client
+  pk: 97
+  fields:
+    reference_number: 368047
+    type: TCH
+    level: Teacher 3
+    created_datetime: 2018-07-14 13:28:23
+    updated_datetime: 2022-06-14 20:44:17
+    first_name: Cassandra
+    last_name: Martin
+    age: 64
+    school: Mushroom Residences Tower 3
+    region: 080000000
+    province: 086000000
+    city: 086007000
+    district: 086007057
+    street_address: 4649 Balete Street, Mariveles Homes Phase 8
+- model: clients.client
+  pk: 98
+  fields:
+    reference_number: 972755
+    type: NTP
+    level: Guard
+    created_datetime: 2012-11-21 10:32:07
+    updated_datetime: 2021-09-18 15:15:44
+    first_name: Karen
+    last_name: Gonzalez
+    age: 31
+    school: Sierra Madre Towers
+    region: 080000000
+    province: 084800000
+    city: 084801000
+    district: 084801002
+    street_address: Block 13 Lot 82 Carter Subdivision 1, Pluto Drive
+- model: clients.client
+  pk: 99
+  fields:
+    reference_number: 656004
+    type: NTP
+    level: Utility Personnel
+    created_datetime: 2019-07-14 10:52:43
+    updated_datetime: 2020-06-01 20:11:52
+    first_name: Michael
+    last_name: Anderson
+    age: 18
+    school: Pinatubo Apartment
+    region: 080000000
+    province: 086000000
+    city: 086013000
+    district: 086013026
+    street_address: Block 15 Lot 10 Asteroid Street, Jackson Grove
+- model: clients.client
+  pk: 100
+  fields:
+    reference_number: 984627
+    type: TCH
+    level: Teacher 2
+    created_datetime: 1981-03-11 23:05:38
+    updated_datetime: 1996-09-22 03:13:15
+    first_name: Anthony
+    last_name: Taylor
+    age: 19
+    school: Duhat Towers 5
+    region: 080000000
+    province: 086400000
+    city: 086413000
+    district: 086413006
+    street_address: 19F Batino Condominiums, 5612 Uranus Street

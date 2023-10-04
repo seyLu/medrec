@@ -19,6 +19,7 @@ SCRIPTS_PATH: str = "scripts"
 MODELS_IN_ORDER: list[str] = [
     "regions",
     "users",
+    "clients",
 ]
 
 
