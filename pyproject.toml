@@ -51,4 +51,4 @@ profile = "django"
 indent = 2
 use_gitignore = true
 max_blank_lines = 1
-ignore = "T002,H029,H006"
+ignore = "T002,H029,H006,H021"
