@@ -54,7 +54,7 @@ def get_client_type() -> str:
     return random.choice(["TCH", "NTP", "STU"])
 
 
-def get_rand_with_n_digits(d):
+def get_rand_with_n_digits(d: int) -> int:
     return random.randrange(10 ** (d - 1), 10**d)
 
 
@@ -108,21 +108,21 @@ CITIES: list[dict[str, Any]] = _load_yaml("fixtures/City.yaml")
 DISTRICTS: list[dict[str, Any]] = _load_yaml("fixtures/District.yaml")
 
 
-def get_province(region_code: str) -> str:
+def get_province(region_code: str) -> Any:
     filtered_provinces = [
         province for province in PROVINCES if province["region_code"] == region_code
     ]
     return random.choice(filtered_provinces)["code"]
 
 
-def get_city(province_code: str) -> str:
+def get_city(province_code: str) -> Any:
     filtered_cities = [
         city for city in CITIES if city["province_code"] == province_code
     ]
     return random.choice(filtered_cities)["code"]
 
 
-def get_district(city_code: str) -> str:
+def get_district(city_code: str) -> Any:
     filtered_districts = [
         district for district in DISTRICTS if district["city_code"] == city_code
     ]
