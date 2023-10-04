@@ -4,16 +4,50 @@
   medrec
 {% endblock title %}
 
+{% block nav %}
+  <nav class="navbar bg-base-100">
+    <div class="flex-1">
+      <a class="btn btn-ghost normal-case text-xl">medrec</a>
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-1">
+        <li>
+          <a>hello <span class="text-red-700">{{ request.user }}</span></a>
+        </li>
+        <li>
+          <form hx-post="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="font-semibold text-primary">Logout</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </nav>
+{% endblock nav %}
+
 {% block main %}
-  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 text-center">
-    <p>
-      hello <span class="text-red-700">{{ request.user }}</span>
-    </p>
-    <br>
-    <form hx-post="{% url 'logout' %}">
-      {% csrf_token %}
-      <button type="submit"
-              class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Logout</button>
-    </form>
+  <div class="flex flex-col w-screen">
+    <div class="mx-auto mt-32">
+      <div x-data="{ isEmployee: false }" class="form-control">
+        <label class="label cursor-pointer mb-2">
+          <span :class="{'text-gray-500': isEmployee}"
+                class="label-text ml-auto font-semibold">Student</span>
+          <input type="checkbox" x-model="isEmployee" class="toggle mx-4" />
+          <span :class="{'text-gray-500': !isEmployee}"
+                class="label-text mr-auto font-semibold">Employee</span>
+        </label>
+
+        <div x-show="!isEmployee" class="join">
+          <input class="input input-bordered join-item"
+                 placeholder="Learner Reference Number" />
+          <button class="btn join-item rounded-r-full">Search</button>
+        </div>
+        <div x-show="isEmployee" class="join">
+          <input class="input input-bordered join-item"
+                 placeholder="Employee ID Number" />
+          <button class="btn join-item rounded-r-full">Search</button>
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock main %}
