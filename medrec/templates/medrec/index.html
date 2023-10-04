@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block title %}
   medrec
@@ -13,20 +12,14 @@
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
         <li>
-          <a>Link</a>
+          <a>hello <span class="text-red-700">{{ request.user }}</span></a>
         </li>
         <li>
-          <details>
-            <summary>Parent</summary>
-            <ul class="p-2 bg-base-100">
-              <li>
-                <a>Link 1</a>
-              </li>
-              <li>
-                <a>Link 2</a>
-              </li>
-            </ul>
-          </details>
+          <form hx-post="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit"
+                    class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Logout</button>
+          </form>
         </li>
       </ul>
     </div>
@@ -34,20 +27,19 @@
 {% endblock nav %}
 
 {% block main %}
-  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 text-center">
-    <p>
-      hello <span class="text-red-700">{{ request.user }}</span>
-    </p>
-    <br>
-    <form hx-post="{% url 'logout' %}">
-      {% csrf_token %}
-      <button type="submit"
-              class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Logout</button>
-    </form>
+  <div class="flex flex-col w-screen h-screen">
+    <div class="mx-auto mt-32">
+      <div>
+        <input type="checkbox" class="toggle focus:outline-none" checked />
+      </div>
 
-    <div class="w-full mt-10">
-      <div class="join mx-auto">
-        <input class="input input-bordered join-item" placeholder="LRN" />
+      <div class="join">
+        <input class="input input-bordered join-item"
+               placeholder="Learner Reference Number" />
+        <button class="btn join-item rounded-r-full">Search</button>
+      </div>
+      <div class="join">
+        <input class="input input-bordered join-item" placeholder="Employee Number" />
         <button class="btn join-item rounded-r-full">Search</button>
       </div>
     </div>
