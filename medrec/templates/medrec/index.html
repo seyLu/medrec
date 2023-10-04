@@ -17,8 +17,7 @@
         <li>
           <form hx-post="{% url 'logout' %}">
             {% csrf_token %}
-            <button type="submit"
-                    class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Logout</button>
+            <button type="submit" class="font-semibold text-primary">Logout</button>
           </form>
         </li>
       </ul>
