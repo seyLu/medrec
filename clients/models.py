@@ -50,3 +50,6 @@ class Client(models.Model):
                 fields=["reference_number"], name="client_reference_number_idx"
             ),
         ]
+
+    def __str__(self):
+        return f"{self.first_name} [{self.type}], {self.reference_number}"

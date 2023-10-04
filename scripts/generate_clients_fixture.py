@@ -16,6 +16,7 @@ __status__ = "Prototype"
 
 import logging
 import random
+from datetime import datetime
 from logging.config import fileConfig
 from pathlib import Path
 from typing import Any
@@ -141,6 +142,8 @@ def _get_fixtures() -> list[dict[str, Any]]:
         province_code: str = get_province(region_code)
         city_code: str = get_city(province_code)
         district_code: str = get_district(city_code)
+        created_datetime: datetime = fake.date_time()
+        updated_datetime: datetime = fake.date_time_between_dates(created_datetime)
 
         fixtures.append(
             {
@@ -150,6 +153,8 @@ def _get_fixtures() -> list[dict[str, Any]]:
                     "reference_number": get_reference_number(client_type),
                     "type": client_type,
                     "level": get_level(client_type),
+                    "created_datetime": created_datetime,
+                    "updated_datetime": updated_datetime,
                     "first_name": fake.first_name(),
                     "last_name": fake.last_name(),
                     "age": get_age(client_type),
