@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Automates loading of users fixture.
+Automates loading of regions fixture.
 """
 
 __author__ = "seyLu"
@@ -15,4 +15,4 @@ __status__ = "Prototype"
 from lib.loaddata import loaddata
 
 if __name__ == "__main__":
-    loaddata(["User"])
+    loaddata(["Region", "Province", "City", "District"])

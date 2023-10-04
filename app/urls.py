@@ -21,4 +21,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("medrec.urls")),
     path("", include("auth.urls")),
+    path("", include("regions.urls")),
 ]

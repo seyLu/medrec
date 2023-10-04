@@ -24,4 +24,5 @@
 
 - Django
 - HTMX
+- Alpine.js
 - DaisyUI
