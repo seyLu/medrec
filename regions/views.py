@@ -20,7 +20,7 @@ class DistrictsQueryView(View):
 
         elif city_code := regions.get("city_code"):
             city_code = city_code[0]  # type: ignore
-            response = District.objects.filter(city_code=city_code)  # type: ignore
+            response = District.objects.filter(city_code=city_code)  # type: ignore[misc]
 
         return HttpResponse(response)
 
@@ -38,7 +38,7 @@ class CitiesQueryView(View):
 
         elif province_code := regions.get("province_code"):
             province_code = province_code[0]  # type: ignore
-            response = City.objects.filter(province_code=province_code)  # type: ignore
+            response = City.objects.filter(province_code=province_code)  # type: ignore[misc]
 
         return HttpResponse(response)
 
