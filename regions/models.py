@@ -10,7 +10,7 @@ class Region(models.Model):
             models.Index(fields=["code"], name="region_code_idx"),
         ]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.name}, {self.code}"
 
 
@@ -26,7 +26,7 @@ class Province(models.Model):
             models.Index(fields=["code"], name="province_code_idx"),
         ]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.name}, {self.code}"
 
 
@@ -45,7 +45,7 @@ class City(models.Model):
             models.Index(fields=["code"], name="city_code_idx"),
         ]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.name}, {self.code}"
 
 
@@ -67,5 +67,5 @@ class District(models.Model):
             models.Index(fields=["code"], name="district_code_idx"),
         ]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.name}, {self.code}"

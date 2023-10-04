@@ -26,9 +26,11 @@ import shutil
 from datetime import datetime
 from logging.config import fileConfig
 from pathlib import Path
+from typing import Any
 
 import aiohttp
 import yaml
+from aiohttp import ClientSession
 
 Path("logs").mkdir(exist_ok=True)
 fileConfig("logging.ini")
@@ -42,14 +44,14 @@ BASE_PATH: str = "fixtures"
 
 DATETIME_NOW: str = datetime.now().strftime("%Y%m%d%H%M%S")
 
-API_MAP: dict = {
+API_MAP: dict[str, str] = {
     "regions": "regions",
     "provinces": "provinces",
     "cities": "cities-municipalities",
     "districts": "barangays",
 }
 
-YAML_MAP: dict = {
+YAML_MAP: dict[str, str] = {
     "regions": "Region",
     "provinces": "Province",
     "cities": "City",
@@ -58,12 +60,12 @@ YAML_MAP: dict = {
 
 
 class PsgcAPI:
-    def __init__(self, endpoint: str):
+    def __init__(self, endpoint: str) -> None:
         self.url: str = self._get_url(endpoint)
         self.model_name: str = YAML_MAP[endpoint].lower()
         self.yaml_filename: str = os.path.join(BASE_PATH, f"{YAML_MAP[endpoint]}.yaml")
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"PsgcAPI(\n  url={self.url},\n  model_name={self.model_name},\n  yaml_filename={self.yaml_filename}\n)\n"
 
     def _get_url(self, endpoint: str) -> str:
@@ -77,15 +79,15 @@ class PsgcAPI:
 
         return f"{url}.json"
 
-    async def _get_json(self, session) -> list[dict]:
+    async def _get_json(self, session: ClientSession) -> Any:
         logging.info(f"Requesting {self.url}")
         async with session.get(self.url) as response:
             if response.content_type != "application/json":
                 raise ValueError(f"Unexpected content type: {response.content_type}")
             return await response.json()
 
-    async def _get_fixtures(self, session) -> list[dict]:
-        items: list[dict] = await self._get_json(session)
+    async def _get_fixtures(self, session: ClientSession) -> list[dict[str, Any]]:
+        items: list[dict[str, Any]] = await self._get_json(session)
         if not isinstance(items, list):
             items = [items]
 
@@ -94,8 +96,8 @@ class PsgcAPI:
             await self._get_fixture(item, pk) for pk, item in enumerate(items, start=1)
         ]
 
-    async def _get_fixture(self, item: dict, pk: int) -> dict:
-        fixture: dict = {
+    async def _get_fixture(self, item: dict[str, Any], pk: int) -> dict[str, Any]:
+        fixture: dict[str, Any] = {
             "model": f"regions.{self.model_name}",
             "pk": pk,
             "fields": {
@@ -118,9 +120,9 @@ class PsgcAPI:
 
         return fixture
 
-    async def _get_yaml(self, session):
+    async def _get_yaml(self, session: ClientSession) -> None:
         logging.info(f"Generating {self.yaml_filename}")
-        return yaml.dump(
+        return yaml.dump(  # type: ignore[return-value]
             await self._get_fixtures(session), default_flow_style=False, sort_keys=False
         )
 
@@ -132,15 +134,15 @@ class PsgcAPI:
         os.makedirs(os.path.dirname(dest), exist_ok=True)
         shutil.copy2(self.yaml_filename, dest)
 
-    async def generate_fixture(self, session) -> None:
+    async def generate_fixture(self, session: ClientSession) -> None:
         if os.path.isfile(self.yaml_filename):
             self._backup_yaml()
 
         with open(self.yaml_filename, "w+") as f:
-            print(await self._get_yaml(session), file=f)
+            print(await self._get_yaml(session), file=f)  # type: ignore
 
 
-async def main():
+async def main() -> None:
     async with aiohttp.ClientSession() as session:
         endpoints: list[str] = [
             "regions",
