@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "theme",
     # internal apps
     "auth.apps.AuthConfig",
+    "clients",
     "medrec",
     "regions",
     "users",
