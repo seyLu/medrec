@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # internal apps
     "auth.apps.AuthConfig",
     "medrec",
+    "regions",
     "users",
 ]
 
