@@ -43,3 +43,10 @@ class Client(models.Model):
     city = models.ForeignKey(City, to_field="code", on_delete=models.CASCADE)
     district = models.ForeignKey(District, to_field="code", on_delete=models.CASCADE)
     street_address = models.CharField(max_length=255)
+
+    class Meta:
+        indexes = [
+            models.Index(
+                fields=["reference_number"], name="client_reference_number_idx"
+            ),
+        ]
