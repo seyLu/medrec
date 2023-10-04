@@ -70,7 +70,7 @@ def get_reference_number(client_type: str) -> int:
 def get_level(client_type: str) -> str:
     level: str = ""
     if client_type == "STU":
-        level = str(random.randrange(1, 12))
+        level = f"Grade {random.randrange(1, 12)}"
     elif client_type == "TCH":
         level = random.choice(
             [f"Teacher {random.randrange(1,4)}", "Student Teacher", "Assistant Teacher"]
