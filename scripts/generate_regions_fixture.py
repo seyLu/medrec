@@ -6,9 +6,9 @@
 
 pseudocode:
 get region viii
-get all provinces with region_code=<region_code>
-get all cities-municipalities with region_code=<region_code>
-get all barangays with region_code=<region_code>
+get all provinces with region=<region>
+get all cities-municipalities with region=<region>
+get all barangays with region=<region>
 """
 
 __author__ = "seyLu"
@@ -107,16 +107,16 @@ class PsgcAPI:
         }
 
         if self.model_name != "region":
-            fixture["fields"]["region_code"] = item["regionCode"]
+            fixture["fields"]["region"] = item["regionCode"]
 
             if self.model_name != "province":
-                fixture["fields"]["province_code"] = item["provinceCode"]
+                fixture["fields"]["province"] = item["provinceCode"]
 
                 if self.model_name != "city":
-                    if city_code := item.get("municipalityCode"):
-                        fixture["fields"]["city_code"] = city_code
+                    if city := item.get("municipalityCode"):
+                        fixture["fields"]["city"] = city
                     else:
-                        fixture["fields"]["city_code"] = item["cityCode"]
+                        fixture["fields"]["city"] = item["cityCode"]
 
         return fixture
 

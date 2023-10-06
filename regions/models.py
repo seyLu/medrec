@@ -36,7 +36,7 @@ class City(models.Model):
     province = models.ForeignKey(
         Province, to_field="code", on_delete=models.CASCADE, default="0831600000"
     )
-    region_code = models.ForeignKey(
+    region = models.ForeignKey(
         Region, to_field="code", on_delete=models.CASCADE, default="0800000000"
     )
 

@@ -72,8 +72,11 @@ def _load_yaml(yaml_path: str) -> list[dict[str, Any]]:
 CLIENTS: list[dict[str, Any]] = _load_yaml("fixtures/Client.yaml")
 
 
-def get_client() -> str:
-    return random.choice(CLIENTS[:1])["reference_number"]
+def get_client() -> Any:
+    return random.choice(CLIENTS[:1])
+
+
+sample_client = get_client()
 
 
 def _get_fixtures() -> list[dict[str, Any]]:
@@ -86,9 +89,12 @@ def _get_fixtures() -> list[dict[str, Any]]:
     for pk in range(1, 2):
         created_datetime: datetime = fake.date_time()
         updated_datetime: datetime = fake.date_time_between_dates(created_datetime)
-        client: str = get_client()
+        client: str = sample_client["reference_number"]
         with model.chat_session():
-            history: str = model.generate(history_message)
+            history: str = model.generate(
+                history_message
+                + f"\nUse client name {sample_client['first_name']} {sample_client['last_name']} and age {sample_client['age']} as an example."
+            )
             diagnosis_and_plan: str = model.generate(diagnosis_and_plan_message)
         history = re.sub(
             r"(?:\s|\\)*Sure, here[']*s an example of a medical history that a human might present(?:\s|\\)*to a doctor:(?:\s|\\|\n)*(?:---)?(?:\n)*",

@@ -143,23 +143,21 @@ CITIES: list[dict[str, Any]] = _load_yaml("fixtures/City.yaml")
 DISTRICTS: list[dict[str, Any]] = _load_yaml("fixtures/District.yaml")
 
 
-def get_province(region_code: str) -> Any:
+def get_province(region: str) -> Any:
     filtered_provinces = [
-        province for province in PROVINCES if province["region_code"] == region_code
+        province for province in PROVINCES if province["region"] == region
     ]
     return random.choice(filtered_provinces)["code"]
 
 
-def get_city(province_code: str) -> Any:
-    filtered_cities = [
-        city for city in CITIES if city["province_code"] == province_code
-    ]
+def get_city(province: str) -> Any:
+    filtered_cities = [city for city in CITIES if city["province"] == province]
     return random.choice(filtered_cities)["code"]
 
 
-def get_district(city_code: str) -> Any:
+def get_district(city: str) -> Any:
     filtered_districts = [
-        district for district in DISTRICTS if district["city_code"] == city_code
+        district for district in DISTRICTS if district["city"] == city
     ]
     return random.choice(filtered_districts)["code"]
 
@@ -175,10 +173,10 @@ def _get_fixtures() -> list[dict[str, Any]]:
         client_type: str = get_client_type()
         age: int = get_age(client_type)
         level: str = get_level(client_type, age)
-        region_code: str = "080000000"
-        province_code: str = get_province(region_code)
-        city_code: str = get_city(province_code)
-        district_code: str = get_district(city_code)
+        region: str = "080000000"
+        province: str = get_province(region)
+        city: str = get_city(province)
+        district: str = get_district(city)
         created_datetime: datetime = fake.date_time()
         updated_datetime: datetime = fake.date_time_between_dates(created_datetime)
         school: str = (
@@ -199,10 +197,10 @@ def _get_fixtures() -> list[dict[str, Any]]:
                     "first_name": fake.first_name(),
                     "last_name": fake.last_name(),
                     "school": school,
-                    "region": region_code,
-                    "province": province_code,
-                    "city": city_code,
-                    "district": district_code,
+                    "region": region,
+                    "province": province,
+                    "city": city,
+                    "district": district,
                     "street_address": fake.street_address(),
                 },
             }

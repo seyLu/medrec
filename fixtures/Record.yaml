@@ -3,39 +3,30 @@
   fields:
     created_datetime: 1996-03-20 07:46:39
     updated_datetime: 2022-01-02 20:28:58
-    client: 855702
-    history: "Name: John Doe
-
-      Gender: Male
-
-      Age: 35
-
-      Occupation: Engineer
-
-      Frequency of visits: Annual
-
-      Previous illnesses and surgeries:
-
-      - Chronic obstructive pulmonary disease (COPD) diagnosis in 2018
-
-      - Double lung transplant in 2016 due to cystic fibrosis
-
-      - Knee replacement surgery in 2013 for osteoarthritis
-
-      Family history:
-
-      - Mother had breast cancer
-
-      - Father had heart attack and high blood pressure"
+    client: 929872
+    history:
+      " Medical History:\nTammy Tucker, a 21-year-old female, presents to her\
+      \ primary care physician with complaints of fatigue, sore throat, and a cough\
+      \ that has been ongoing for the past two weeks. She also reports a recent increase\
+      \ in weight loss despite eating healthily. Tammy claims not to have any fever\
+      \ or difficulty breathing.\n\nDoctor's Note: \nTammy Tucker, a 21-year-old female,\
+      \ comes to her primary care physician with complaints of fatigue, sore throat,\
+      \ and cough that has been ongoing for the past two weeks. She reports a recent\
+      \ increase in weight loss despite eating healthily. Tammy claims not to have\
+      \ any fever or difficulty breathing. It seems like Tammy is experiencing some\
+      \ common symptoms of respiratory infections such as cold or flu. As her doctor,\
+      \ it's important to prescribe an antiviral medication to help fight off the\
+      \ virus and prevent further complications."
     diagnosis_and_plan:
-      " Based on the information provided, it is difficult to determine\
-      \ a specific medical diagnosis as there are several possibilities. However,\
-      \ based on the symptoms and medical history provided, it seems likely that the\
-      \ individual may be experiencing some form of respiratory distress or difficulty\
-      \ breathing. \n\nAs an AI language model, I cannot provide a plan for treatment\
-      \ without more information about the specific condition. It would be best to\
-      \ consult with a licensed healthcare professional who can assess the individual's\
-      \ symptoms and medical history and develop a comprehensive treatment plan."
+      " Based on the information provided in your medical history,
+      I would diagnose you with pneumonia. Pneumonia is an infection of the lungs
+      that can cause inflammation and damage to the air sacs and alveoli. This can
+      lead to difficulty breathing, chest pain, fever, coughing, and fatigue. Your
+      doctor may choose to prescribe antibiotics to help fight off the bacteria causing
+      your pneumonia or may recommend other treatments such as rest, fluids, and physical
+      therapy depending on the severity of your condition. It is important to seek
+      medical attention promptly if you experience any symptoms associated with pneumonia
+      so that appropriate treatment can be provided in a timely manner."
     remarks: ""
     is_seen_by_staff: false
 - model: records.record
@@ -43,39 +34,30 @@
   fields:
     created_datetime: 1996-03-20 07:46:39
     updated_datetime: 2022-01-02 20:28:58
-    client: 855702
-    history: "Name: John Doe
-
-      Gender: Male
-
-      Age: 35
-
-      Occupation: Engineer
-
-      Frequency of visits: Annual
-
-      Previous illnesses and surgeries:
-
-      - Chronic obstructive pulmonary disease (COPD) diagnosis in 2018
-
-      - Double lung transplant in 2016 due to cystic fibrosis
-
-      - Knee replacement surgery in 2013 for osteoarthritis
-
-      Family history:
-
-      - Mother had breast cancer
-
-      - Father had heart attack and high blood pressure"
+    client: 929872
+    history:
+      " Medical History:\nTammy Tucker, a 21-year-old female, presents to her\
+      \ primary care physician with complaints of fatigue, sore throat, and a cough\
+      \ that has been ongoing for the past two weeks. She also reports a recent increase\
+      \ in weight loss despite eating healthily. Tammy claims not to have any fever\
+      \ or difficulty breathing.\n\nDoctor's Note: \nTammy Tucker, a 21-year-old female,\
+      \ comes to her primary care physician with complaints of fatigue, sore throat,\
+      \ and cough that has been ongoing for the past two weeks. She reports a recent\
+      \ increase in weight loss despite eating healthily. Tammy claims not to have\
+      \ any fever or difficulty breathing. It seems like Tammy is experiencing some\
+      \ common symptoms of respiratory infections such as cold or flu. As her doctor,\
+      \ it's important to prescribe an antiviral medication to help fight off the\
+      \ virus and prevent further complications."
     diagnosis_and_plan:
-      " Based on the information provided, it is difficult to determine\
-      \ a specific medical diagnosis as there are several possibilities. However,\
-      \ based on the symptoms and medical history provided, it seems likely that the\
-      \ individual may be experiencing some form of respiratory distress or difficulty\
-      \ breathing. \n\nAs an AI language model, I cannot provide a plan for treatment\
-      \ without more information about the specific condition. It would be best to\
-      \ consult with a licensed healthcare professional who can assess the individual's\
-      \ symptoms and medical history and develop a comprehensive treatment plan."
+      " Based on the information provided in your medical history,
+      I would diagnose you with pneumonia. Pneumonia is an infection of the lungs
+      that can cause inflammation and damage to the air sacs and alveoli. This can
+      lead to difficulty breathing, chest pain, fever, coughing, and fatigue. Your
+      doctor may choose to prescribe antibiotics to help fight off the bacteria causing
+      your pneumonia or may recommend other treatments such as rest, fluids, and physical
+      therapy depending on the severity of your condition. It is important to seek
+      medical attention promptly if you experience any symptoms associated with pneumonia
+      so that appropriate treatment can be provided in a timely manner."
     remarks: ""
     is_seen_by_staff: false
   created_datetime: 1972-10-03 05:52:26
@@ -85,39 +67,30 @@
   fields:
     created_datetime: 1996-03-20 07:46:39
     updated_datetime: 2022-01-02 20:28:58
-    client: 855702
-    history: "Name: John Doe
-
-      Gender: Male
-
-      Age: 35
-
-      Occupation: Engineer
-
-      Frequency of visits: Annual
-
-      Previous illnesses and surgeries:
-
-      - Chronic obstructive pulmonary disease (COPD) diagnosis in 2018
-
-      - Double lung transplant in 2016 due to cystic fibrosis
-
-      - Knee replacement surgery in 2013 for osteoarthritis
-
-      Family history:
-
-      - Mother had breast cancer
-
-      - Father had heart attack and high blood pressure"
+    client: 929872
+    history:
+      " Medical History:\nTammy Tucker, a 21-year-old female, presents to her\
+      \ primary care physician with complaints of fatigue, sore throat, and a cough\
+      \ that has been ongoing for the past two weeks. She also reports a recent increase\
+      \ in weight loss despite eating healthily. Tammy claims not to have any fever\
+      \ or difficulty breathing.\n\nDoctor's Note: \nTammy Tucker, a 21-year-old female,\
+      \ comes to her primary care physician with complaints of fatigue, sore throat,\
+      \ and cough that has been ongoing for the past two weeks. She reports a recent\
+      \ increase in weight loss despite eating healthily. Tammy claims not to have\
+      \ any fever or difficulty breathing. It seems like Tammy is experiencing some\
+      \ common symptoms of respiratory infections such as cold or flu. As her doctor,\
+      \ it's important to prescribe an antiviral medication to help fight off the\
+      \ virus and prevent further complications."
     diagnosis_and_plan:
-      " Based on the information provided, it is difficult to determine\
-      \ a specific medical diagnosis as there are several possibilities. However,\
-      \ based on the symptoms and medical history provided, it seems likely that the\
-      \ individual may be experiencing some form of respiratory distress or difficulty\
-      \ breathing. \n\nAs an AI language model, I cannot provide a plan for treatment\
-      \ without more information about the specific condition. It would be best to\
-      \ consult with a licensed healthcare professional who can assess the individual's\
-      \ symptoms and medical history and develop a comprehensive treatment plan."
+      " Based on the information provided in your medical history,
+      I would diagnose you with pneumonia. Pneumonia is an infection of the lungs
+      that can cause inflammation and damage to the air sacs and alveoli. This can
+      lead to difficulty breathing, chest pain, fever, coughing, and fatigue. Your
+      doctor may choose to prescribe antibiotics to help fight off the bacteria causing
+      your pneumonia or may recommend other treatments such as rest, fluids, and physical
+      therapy depending on the severity of your condition. It is important to seek
+      medical attention promptly if you experience any symptoms associated with pneumonia
+      so that appropriate treatment can be provided in a timely manner."
     remarks: ""
     is_seen_by_staff: false
   created_datetime: 2004-10-16 19:14:57
@@ -127,39 +100,30 @@
   fields:
     created_datetime: 1996-03-20 07:46:39
     updated_datetime: 2022-01-02 20:28:58
-    client: 855702
-    history: "Name: John Doe
-
-      Gender: Male
-
-      Age: 35
-
-      Occupation: Engineer
-
-      Frequency of visits: Annual
-
-      Previous illnesses and surgeries:
-
-      - Chronic obstructive pulmonary disease (COPD) diagnosis in 2018
-
-      - Double lung transplant in 2016 due to cystic fibrosis
-
-      - Knee replacement surgery in 2013 for osteoarthritis
-
-      Family history:
-
-      - Mother had breast cancer
-
-      - Father had heart attack and high blood pressure"
+    client: 929872
+    history:
+      " Medical History:\nTammy Tucker, a 21-year-old female, presents to her\
+      \ primary care physician with complaints of fatigue, sore throat, and a cough\
+      \ that has been ongoing for the past two weeks. She also reports a recent increase\
+      \ in weight loss despite eating healthily. Tammy claims not to have any fever\
+      \ or difficulty breathing.\n\nDoctor's Note: \nTammy Tucker, a 21-year-old female,\
+      \ comes to her primary care physician with complaints of fatigue, sore throat,\
+      \ and cough that has been ongoing for the past two weeks. She reports a recent\
+      \ increase in weight loss despite eating healthily. Tammy claims not to have\
+      \ any fever or difficulty breathing. It seems like Tammy is experiencing some\
+      \ common symptoms of respiratory infections such as cold or flu. As her doctor,\
+      \ it's important to prescribe an antiviral medication to help fight off the\
+      \ virus and prevent further complications."
     diagnosis_and_plan:
-      " Based on the information provided, it is difficult to determine\
-      \ a specific medical diagnosis as there are several possibilities. However,\
-      \ based on the symptoms and medical history provided, it seems likely that the\
-      \ individual may be experiencing some form of respiratory distress or difficulty\
-      \ breathing. \n\nAs an AI language model, I cannot provide a plan for treatment\
-      \ without more information about the specific condition. It would be best to\
-      \ consult with a licensed healthcare professional who can assess the individual's\
-      \ symptoms and medical history and develop a comprehensive treatment plan."
+      " Based on the information provided in your medical history,
+      I would diagnose you with pneumonia. Pneumonia is an infection of the lungs
+      that can cause inflammation and damage to the air sacs and alveoli. This can
+      lead to difficulty breathing, chest pain, fever, coughing, and fatigue. Your
+      doctor may choose to prescribe antibiotics to help fight off the bacteria causing
+      your pneumonia or may recommend other treatments such as rest, fluids, and physical
+      therapy depending on the severity of your condition. It is important to seek
+      medical attention promptly if you experience any symptoms associated with pneumonia
+      so that appropriate treatment can be provided in a timely manner."
     remarks: ""
     is_seen_by_staff: false
   created_datetime: 1997-07-22 16:37:16
@@ -169,39 +133,30 @@
   fields:
     created_datetime: 1996-03-20 07:46:39
     updated_datetime: 2022-01-02 20:28:58
-    client: 855702
-    history: "Name: John Doe
-
-      Gender: Male
-
-      Age: 35
-
-      Occupation: Engineer
-
-      Frequency of visits: Annual
-
-      Previous illnesses and surgeries:
-
-      - Chronic obstructive pulmonary disease (COPD) diagnosis in 2018
-
-      - Double lung transplant in 2016 due to cystic fibrosis
-
-      - Knee replacement surgery in 2013 for osteoarthritis
-
-      Family history:
-
-      - Mother had breast cancer
-
-      - Father had heart attack and high blood pressure"
+    client: 929872
+    history:
+      " Medical History:\nTammy Tucker, a 21-year-old female, presents to her\
+      \ primary care physician with complaints of fatigue, sore throat, and a cough\
+      \ that has been ongoing for the past two weeks. She also reports a recent increase\
+      \ in weight loss despite eating healthily. Tammy claims not to have any fever\
+      \ or difficulty breathing.\n\nDoctor's Note: \nTammy Tucker, a 21-year-old female,\
+      \ comes to her primary care physician with complaints of fatigue, sore throat,\
+      \ and cough that has been ongoing for the past two weeks. She reports a recent\
+      \ increase in weight loss despite eating healthily. Tammy claims not to have\
+      \ any fever or difficulty breathing. It seems like Tammy is experiencing some\
+      \ common symptoms of respiratory infections such as cold or flu. As her doctor,\
+      \ it's important to prescribe an antiviral medication to help fight off the\
+      \ virus and prevent further complications."
     diagnosis_and_plan:
-      " Based on the information provided, it is difficult to determine\
-      \ a specific medical diagnosis as there are several possibilities. However,\
-      \ based on the symptoms and medical history provided, it seems likely that the\
-      \ individual may be experiencing some form of respiratory distress or difficulty\
-      \ breathing. \n\nAs an AI language model, I cannot provide a plan for treatment\
-      \ without more information about the specific condition. It would be best to\
-      \ consult with a licensed healthcare professional who can assess the individual's\
-      \ symptoms and medical history and develop a comprehensive treatment plan."
+      " Based on the information provided in your medical history,
+      I would diagnose you with pneumonia. Pneumonia is an infection of the lungs
+      that can cause inflammation and damage to the air sacs and alveoli. This can
+      lead to difficulty breathing, chest pain, fever, coughing, and fatigue. Your
+      doctor may choose to prescribe antibiotics to help fight off the bacteria causing
+      your pneumonia or may recommend other treatments such as rest, fluids, and physical
+      therapy depending on the severity of your condition. It is important to seek
+      medical attention promptly if you experience any symptoms associated with pneumonia
+      so that appropriate treatment can be provided in a timely manner."
     remarks: ""
     is_seen_by_staff: false
   created_datetime: 2002-06-07 21:09:22
