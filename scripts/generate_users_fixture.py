@@ -56,7 +56,7 @@ def _get_fixtures() -> list[dict[str, Any]]:
     Faker.seed(0)
 
     fixtures: list[dict[str, Any]] = []
-    for pk in range(1, 101):
+    for pk in range(1, 21):
         is_email_verified: bool = fake.boolean(chance_of_getting_true=75)
         fixtures.append(
             {

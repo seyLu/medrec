@@ -16,6 +16,7 @@ __status__ = "Prototype"
 
 import logging
 import random
+import re
 from datetime import datetime
 from logging.config import fileConfig
 from pathlib import Path
@@ -67,35 +68,67 @@ def get_reference_number(client_type: str) -> int:
     return reference_number
 
 
-def get_level(client_type: str) -> str:
-    level: str = ""
-    if client_type == "STU":
-        level = f"Grade {random.randrange(1, 12)}"
-    elif client_type == "TCH":
-        level = random.choice(
-            [f"Teacher {random.randrange(1,4)}", "Student Teacher", "Assistant Teacher"]
-        )
-    else:
-        level = random.choice(
-            [
-                "Principal",
-                "Vice Principal",
-                "Secretary",
-                "Guard",
-                "Accountant",
-                "Utility Personnel",
-            ]
-        )
-    return level
-
-
 def get_age(client_type: str) -> int:
-    age: int = -1
     if client_type == "STU":
-        age = random.randrange(6, 18)
+        return random.randrange(4, 18)
     else:
-        age = random.randrange(18, 70)
-    return age
+        return random.randrange(18, 70)
+
+
+def get_level(client_type: str, age: int) -> str:
+    if client_type == "STU":
+        if age < 6:
+            return "Preschooler"
+        elif age == 18:
+            return "Grade 12"
+        else:
+            return f"Grade {age - 5}"
+    elif client_type == "TCH":
+        if age < 22:
+            return "Student Teacher"
+        elif age > 40:
+            return "Senior Teacher"
+        else:
+            return random.choice(
+                [f"Teacher {random.randrange(1,4)}", "Assistant Teacher"]
+            )
+    else:
+        if age > 40:
+            return random.choice(["Principal", "Vice Principal"])
+        else:
+            return random.choice(
+                [
+                    "Secretary",
+                    "Guard",
+                    "Accountant",
+                    "Utility Personnel",
+                ]
+            )
+
+
+def get_school(client_type: str, age: int) -> str:
+    if client_type == "STU":
+        if age < 6:
+            return "Preschool"
+        if age in range(6, 13):
+            return "Elementary School"
+        elif age in range(13, 17):
+            return "High School"
+        else:
+            return "Senior High School"
+    else:
+        return random.choice(
+            ["Preschool", "Elementary School", "High School", "Senior High School"]
+        )
+
+
+def get_building_name(building_name: str):
+    building_name = re.sub(
+        r"Building(s)?|Condominium(s)?|Tower(s)?|Place(s)?|Apartment(s)?|Residence(s)?|Suite(s)",
+        "",
+        building_name,
+    )
+    return " ".join(building_name.split())
 
 
 def _load_yaml(yaml_path: str) -> list[dict[str, Any]]:
@@ -138,12 +171,17 @@ def _get_fixtures() -> list[dict[str, Any]]:
     fixtures: list[dict[str, Any]] = []
     for pk in range(1, 101):
         client_type: str = get_client_type()
+        age: int = get_age(client_type)
+        level: str = get_level(client_type, age)
         region_code: str = "080000000"
         province_code: str = get_province(region_code)
         city_code: str = get_city(province_code)
         district_code: str = get_district(city_code)
         created_datetime: datetime = fake.date_time()
         updated_datetime: datetime = fake.date_time_between_dates(created_datetime)
+        school: str = (
+            f"{get_building_name(fake.building_name())} {get_school(client_type, age)}"
+        )
 
         fixtures.append(
             {
@@ -152,13 +190,13 @@ def _get_fixtures() -> list[dict[str, Any]]:
                 "fields": {
                     "reference_number": get_reference_number(client_type),
                     "type": client_type,
-                    "level": get_level(client_type),
+                    "age": age,
+                    "level": level,
                     "created_datetime": created_datetime,
                     "updated_datetime": updated_datetime,
                     "first_name": fake.first_name(),
                     "last_name": fake.last_name(),
-                    "age": get_age(client_type),
-                    "school": fake.building_name(),
+                    "school": school,
                     "region": region_code,
                     "province": province_code,
                     "city": city_code,
