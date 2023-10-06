@@ -12,7 +12,7 @@ class Record(models.Model):
     created_datetime = models.DateTimeField(auto_now_add=True)
     updated_datetime = models.DateTimeField(auto_now=True)
 
-    client_reference_number = models.ForeignKey(
+    client = models.ForeignKey(
         Client, to_field="reference_number", on_delete=models.CASCADE
     )
     history = models.TextField()

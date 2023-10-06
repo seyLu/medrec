@@ -1,0 +1,208 @@
+- model: records.record
+  pk: 1
+  fields:
+    created_datetime: 1996-03-20 07:46:39
+    updated_datetime: 2022-01-02 20:28:58
+    client: 855702
+    history: "Name: John Doe
+
+      Gender: Male
+
+      Age: 35
+
+      Occupation: Engineer
+
+      Frequency of visits: Annual
+
+      Previous illnesses and surgeries:
+
+      - Chronic obstructive pulmonary disease (COPD) diagnosis in 2018
+
+      - Double lung transplant in 2016 due to cystic fibrosis
+
+      - Knee replacement surgery in 2013 for osteoarthritis
+
+      Family history:
+
+      - Mother had breast cancer
+
+      - Father had heart attack and high blood pressure"
+    diagnosis_and_plan:
+      " Based on the information provided, it is difficult to determine\
+      \ a specific medical diagnosis as there are several possibilities. However,\
+      \ based on the symptoms and medical history provided, it seems likely that the\
+      \ individual may be experiencing some form of respiratory distress or difficulty\
+      \ breathing. \n\nAs an AI language model, I cannot provide a plan for treatment\
+      \ without more information about the specific condition. It would be best to\
+      \ consult with a licensed healthcare professional who can assess the individual's\
+      \ symptoms and medical history and develop a comprehensive treatment plan."
+    remarks: ""
+    is_seen_by_staff: false
+- model: records.record
+  pk: 2
+  fields:
+    created_datetime: 1996-03-20 07:46:39
+    updated_datetime: 2022-01-02 20:28:58
+    client: 855702
+    history: "Name: John Doe
+
+      Gender: Male
+
+      Age: 35
+
+      Occupation: Engineer
+
+      Frequency of visits: Annual
+
+      Previous illnesses and surgeries:
+
+      - Chronic obstructive pulmonary disease (COPD) diagnosis in 2018
+
+      - Double lung transplant in 2016 due to cystic fibrosis
+
+      - Knee replacement surgery in 2013 for osteoarthritis
+
+      Family history:
+
+      - Mother had breast cancer
+
+      - Father had heart attack and high blood pressure"
+    diagnosis_and_plan:
+      " Based on the information provided, it is difficult to determine\
+      \ a specific medical diagnosis as there are several possibilities. However,\
+      \ based on the symptoms and medical history provided, it seems likely that the\
+      \ individual may be experiencing some form of respiratory distress or difficulty\
+      \ breathing. \n\nAs an AI language model, I cannot provide a plan for treatment\
+      \ without more information about the specific condition. It would be best to\
+      \ consult with a licensed healthcare professional who can assess the individual's\
+      \ symptoms and medical history and develop a comprehensive treatment plan."
+    remarks: ""
+    is_seen_by_staff: false
+  created_datetime: 1972-10-03 05:52:26
+  updated_datetime: 1990-05-17 15:43:51
+- model: records.record
+  pk: 3
+  fields:
+    created_datetime: 1996-03-20 07:46:39
+    updated_datetime: 2022-01-02 20:28:58
+    client: 855702
+    history: "Name: John Doe
+
+      Gender: Male
+
+      Age: 35
+
+      Occupation: Engineer
+
+      Frequency of visits: Annual
+
+      Previous illnesses and surgeries:
+
+      - Chronic obstructive pulmonary disease (COPD) diagnosis in 2018
+
+      - Double lung transplant in 2016 due to cystic fibrosis
+
+      - Knee replacement surgery in 2013 for osteoarthritis
+
+      Family history:
+
+      - Mother had breast cancer
+
+      - Father had heart attack and high blood pressure"
+    diagnosis_and_plan:
+      " Based on the information provided, it is difficult to determine\
+      \ a specific medical diagnosis as there are several possibilities. However,\
+      \ based on the symptoms and medical history provided, it seems likely that the\
+      \ individual may be experiencing some form of respiratory distress or difficulty\
+      \ breathing. \n\nAs an AI language model, I cannot provide a plan for treatment\
+      \ without more information about the specific condition. It would be best to\
+      \ consult with a licensed healthcare professional who can assess the individual's\
+      \ symptoms and medical history and develop a comprehensive treatment plan."
+    remarks: ""
+    is_seen_by_staff: false
+  created_datetime: 2004-10-16 19:14:57
+  updated_datetime: 2021-04-29 16:49:46
+- model: records.record
+  pk: 4
+  fields:
+    created_datetime: 1996-03-20 07:46:39
+    updated_datetime: 2022-01-02 20:28:58
+    client: 855702
+    history: "Name: John Doe
+
+      Gender: Male
+
+      Age: 35
+
+      Occupation: Engineer
+
+      Frequency of visits: Annual
+
+      Previous illnesses and surgeries:
+
+      - Chronic obstructive pulmonary disease (COPD) diagnosis in 2018
+
+      - Double lung transplant in 2016 due to cystic fibrosis
+
+      - Knee replacement surgery in 2013 for osteoarthritis
+
+      Family history:
+
+      - Mother had breast cancer
+
+      - Father had heart attack and high blood pressure"
+    diagnosis_and_plan:
+      " Based on the information provided, it is difficult to determine\
+      \ a specific medical diagnosis as there are several possibilities. However,\
+      \ based on the symptoms and medical history provided, it seems likely that the\
+      \ individual may be experiencing some form of respiratory distress or difficulty\
+      \ breathing. \n\nAs an AI language model, I cannot provide a plan for treatment\
+      \ without more information about the specific condition. It would be best to\
+      \ consult with a licensed healthcare professional who can assess the individual's\
+      \ symptoms and medical history and develop a comprehensive treatment plan."
+    remarks: ""
+    is_seen_by_staff: false
+  created_datetime: 1997-07-22 16:37:16
+  updated_datetime: 2007-11-17 03:09:50
+- model: records.record
+  pk: 5
+  fields:
+    created_datetime: 1996-03-20 07:46:39
+    updated_datetime: 2022-01-02 20:28:58
+    client: 855702
+    history: "Name: John Doe
+
+      Gender: Male
+
+      Age: 35
+
+      Occupation: Engineer
+
+      Frequency of visits: Annual
+
+      Previous illnesses and surgeries:
+
+      - Chronic obstructive pulmonary disease (COPD) diagnosis in 2018
+
+      - Double lung transplant in 2016 due to cystic fibrosis
+
+      - Knee replacement surgery in 2013 for osteoarthritis
+
+      Family history:
+
+      - Mother had breast cancer
+
+      - Father had heart attack and high blood pressure"
+    diagnosis_and_plan:
+      " Based on the information provided, it is difficult to determine\
+      \ a specific medical diagnosis as there are several possibilities. However,\
+      \ based on the symptoms and medical history provided, it seems likely that the\
+      \ individual may be experiencing some form of respiratory distress or difficulty\
+      \ breathing. \n\nAs an AI language model, I cannot provide a plan for treatment\
+      \ without more information about the specific condition. It would be best to\
+      \ consult with a licensed healthcare professional who can assess the individual's\
+      \ symptoms and medical history and develop a comprehensive treatment plan."
+    remarks: ""
+    is_seen_by_staff: false
+  created_datetime: 2002-06-07 21:09:22
+  updated_datetime: 2014-08-13 13:32:29

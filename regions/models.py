@@ -17,7 +17,7 @@ class Region(models.Model):
 class Province(models.Model):
     code = models.CharField(max_length=10, unique=True)
     name = models.CharField(max_length=255)
-    region_code = models.ForeignKey(
+    region = models.ForeignKey(
         Region, to_field="code", on_delete=models.CASCADE, default="0800000000"
     )
 
@@ -33,7 +33,7 @@ class Province(models.Model):
 class City(models.Model):
     code = models.CharField(max_length=10, unique=True)
     name = models.CharField(max_length=255)
-    province_code = models.ForeignKey(
+    province = models.ForeignKey(
         Province, to_field="code", on_delete=models.CASCADE, default="0831600000"
     )
     region_code = models.ForeignKey(
@@ -52,13 +52,13 @@ class City(models.Model):
 class District(models.Model):
     code = models.CharField(max_length=10, unique=True)
     name = models.CharField(max_length=255)
-    city_code = models.ForeignKey(
+    city = models.ForeignKey(
         City, to_field="code", on_delete=models.CASCADE, default="0831600000"
     )
-    province_code = models.ForeignKey(
+    province = models.ForeignKey(
         Province, to_field="code", on_delete=models.CASCADE, default="0831600000"
     )
-    region_code = models.ForeignKey(
+    region = models.ForeignKey(
         Region, to_field="code", on_delete=models.CASCADE, default="0800000000"
     )
 
