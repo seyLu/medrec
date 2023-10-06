@@ -1,0 +1,163 @@
+- model: records.record
+  pk: 1
+  fields:
+    created_datetime: 1996-03-20 07:46:39
+    updated_datetime: 2022-01-02 20:28:58
+    client: 929872
+    history:
+      " Medical History:\nTammy Tucker, a 21-year-old female, presents to her\
+      \ primary care physician with complaints of fatigue, sore throat, and a cough\
+      \ that has been ongoing for the past two weeks. She also reports a recent increase\
+      \ in weight loss despite eating healthily. Tammy claims not to have any fever\
+      \ or difficulty breathing.\n\nDoctor's Note: \nTammy Tucker, a 21-year-old female,\
+      \ comes to her primary care physician with complaints of fatigue, sore throat,\
+      \ and cough that has been ongoing for the past two weeks. She reports a recent\
+      \ increase in weight loss despite eating healthily. Tammy claims not to have\
+      \ any fever or difficulty breathing. It seems like Tammy is experiencing some\
+      \ common symptoms of respiratory infections such as cold or flu. As her doctor,\
+      \ it's important to prescribe an antiviral medication to help fight off the\
+      \ virus and prevent further complications."
+    diagnosis_and_plan:
+      " Based on the information provided in your medical history,
+      I would diagnose you with pneumonia. Pneumonia is an infection of the lungs
+      that can cause inflammation and damage to the air sacs and alveoli. This can
+      lead to difficulty breathing, chest pain, fever, coughing, and fatigue. Your
+      doctor may choose to prescribe antibiotics to help fight off the bacteria causing
+      your pneumonia or may recommend other treatments such as rest, fluids, and physical
+      therapy depending on the severity of your condition. It is important to seek
+      medical attention promptly if you experience any symptoms associated with pneumonia
+      so that appropriate treatment can be provided in a timely manner."
+    remarks: ""
+    is_seen_by_staff: false
+- model: records.record
+  pk: 2
+  fields:
+    created_datetime: 1996-03-20 07:46:39
+    updated_datetime: 2022-01-02 20:28:58
+    client: 929872
+    history:
+      " Medical History:\nTammy Tucker, a 21-year-old female, presents to her\
+      \ primary care physician with complaints of fatigue, sore throat, and a cough\
+      \ that has been ongoing for the past two weeks. She also reports a recent increase\
+      \ in weight loss despite eating healthily. Tammy claims not to have any fever\
+      \ or difficulty breathing.\n\nDoctor's Note: \nTammy Tucker, a 21-year-old female,\
+      \ comes to her primary care physician with complaints of fatigue, sore throat,\
+      \ and cough that has been ongoing for the past two weeks. She reports a recent\
+      \ increase in weight loss despite eating healthily. Tammy claims not to have\
+      \ any fever or difficulty breathing. It seems like Tammy is experiencing some\
+      \ common symptoms of respiratory infections such as cold or flu. As her doctor,\
+      \ it's important to prescribe an antiviral medication to help fight off the\
+      \ virus and prevent further complications."
+    diagnosis_and_plan:
+      " Based on the information provided in your medical history,
+      I would diagnose you with pneumonia. Pneumonia is an infection of the lungs
+      that can cause inflammation and damage to the air sacs and alveoli. This can
+      lead to difficulty breathing, chest pain, fever, coughing, and fatigue. Your
+      doctor may choose to prescribe antibiotics to help fight off the bacteria causing
+      your pneumonia or may recommend other treatments such as rest, fluids, and physical
+      therapy depending on the severity of your condition. It is important to seek
+      medical attention promptly if you experience any symptoms associated with pneumonia
+      so that appropriate treatment can be provided in a timely manner."
+    remarks: ""
+    is_seen_by_staff: false
+  created_datetime: 1972-10-03 05:52:26
+  updated_datetime: 1990-05-17 15:43:51
+- model: records.record
+  pk: 3
+  fields:
+    created_datetime: 1996-03-20 07:46:39
+    updated_datetime: 2022-01-02 20:28:58
+    client: 929872
+    history:
+      " Medical History:\nTammy Tucker, a 21-year-old female, presents to her\
+      \ primary care physician with complaints of fatigue, sore throat, and a cough\
+      \ that has been ongoing for the past two weeks. She also reports a recent increase\
+      \ in weight loss despite eating healthily. Tammy claims not to have any fever\
+      \ or difficulty breathing.\n\nDoctor's Note: \nTammy Tucker, a 21-year-old female,\
+      \ comes to her primary care physician with complaints of fatigue, sore throat,\
+      \ and cough that has been ongoing for the past two weeks. She reports a recent\
+      \ increase in weight loss despite eating healthily. Tammy claims not to have\
+      \ any fever or difficulty breathing. It seems like Tammy is experiencing some\
+      \ common symptoms of respiratory infections such as cold or flu. As her doctor,\
+      \ it's important to prescribe an antiviral medication to help fight off the\
+      \ virus and prevent further complications."
+    diagnosis_and_plan:
+      " Based on the information provided in your medical history,
+      I would diagnose you with pneumonia. Pneumonia is an infection of the lungs
+      that can cause inflammation and damage to the air sacs and alveoli. This can
+      lead to difficulty breathing, chest pain, fever, coughing, and fatigue. Your
+      doctor may choose to prescribe antibiotics to help fight off the bacteria causing
+      your pneumonia or may recommend other treatments such as rest, fluids, and physical
+      therapy depending on the severity of your condition. It is important to seek
+      medical attention promptly if you experience any symptoms associated with pneumonia
+      so that appropriate treatment can be provided in a timely manner."
+    remarks: ""
+    is_seen_by_staff: false
+  created_datetime: 2004-10-16 19:14:57
+  updated_datetime: 2021-04-29 16:49:46
+- model: records.record
+  pk: 4
+  fields:
+    created_datetime: 1996-03-20 07:46:39
+    updated_datetime: 2022-01-02 20:28:58
+    client: 929872
+    history:
+      " Medical History:\nTammy Tucker, a 21-year-old female, presents to her\
+      \ primary care physician with complaints of fatigue, sore throat, and a cough\
+      \ that has been ongoing for the past two weeks. She also reports a recent increase\
+      \ in weight loss despite eating healthily. Tammy claims not to have any fever\
+      \ or difficulty breathing.\n\nDoctor's Note: \nTammy Tucker, a 21-year-old female,\
+      \ comes to her primary care physician with complaints of fatigue, sore throat,\
+      \ and cough that has been ongoing for the past two weeks. She reports a recent\
+      \ increase in weight loss despite eating healthily. Tammy claims not to have\
+      \ any fever or difficulty breathing. It seems like Tammy is experiencing some\
+      \ common symptoms of respiratory infections such as cold or flu. As her doctor,\
+      \ it's important to prescribe an antiviral medication to help fight off the\
+      \ virus and prevent further complications."
+    diagnosis_and_plan:
+      " Based on the information provided in your medical history,
+      I would diagnose you with pneumonia. Pneumonia is an infection of the lungs
+      that can cause inflammation and damage to the air sacs and alveoli. This can
+      lead to difficulty breathing, chest pain, fever, coughing, and fatigue. Your
+      doctor may choose to prescribe antibiotics to help fight off the bacteria causing
+      your pneumonia or may recommend other treatments such as rest, fluids, and physical
+      therapy depending on the severity of your condition. It is important to seek
+      medical attention promptly if you experience any symptoms associated with pneumonia
+      so that appropriate treatment can be provided in a timely manner."
+    remarks: ""
+    is_seen_by_staff: false
+  created_datetime: 1997-07-22 16:37:16
+  updated_datetime: 2007-11-17 03:09:50
+- model: records.record
+  pk: 5
+  fields:
+    created_datetime: 1996-03-20 07:46:39
+    updated_datetime: 2022-01-02 20:28:58
+    client: 929872
+    history:
+      " Medical History:\nTammy Tucker, a 21-year-old female, presents to her\
+      \ primary care physician with complaints of fatigue, sore throat, and a cough\
+      \ that has been ongoing for the past two weeks. She also reports a recent increase\
+      \ in weight loss despite eating healthily. Tammy claims not to have any fever\
+      \ or difficulty breathing.\n\nDoctor's Note: \nTammy Tucker, a 21-year-old female,\
+      \ comes to her primary care physician with complaints of fatigue, sore throat,\
+      \ and cough that has been ongoing for the past two weeks. She reports a recent\
+      \ increase in weight loss despite eating healthily. Tammy claims not to have\
+      \ any fever or difficulty breathing. It seems like Tammy is experiencing some\
+      \ common symptoms of respiratory infections such as cold or flu. As her doctor,\
+      \ it's important to prescribe an antiviral medication to help fight off the\
+      \ virus and prevent further complications."
+    diagnosis_and_plan:
+      " Based on the information provided in your medical history,
+      I would diagnose you with pneumonia. Pneumonia is an infection of the lungs
+      that can cause inflammation and damage to the air sacs and alveoli. This can
+      lead to difficulty breathing, chest pain, fever, coughing, and fatigue. Your
+      doctor may choose to prescribe antibiotics to help fight off the bacteria causing
+      your pneumonia or may recommend other treatments such as rest, fluids, and physical
+      therapy depending on the severity of your condition. It is important to seek
+      medical attention promptly if you experience any symptoms associated with pneumonia
+      so that appropriate treatment can be provided in a timely manner."
+    remarks: ""
+    is_seen_by_staff: false
+  created_datetime: 2002-06-07 21:09:22
+  updated_datetime: 2014-08-13 13:32:29

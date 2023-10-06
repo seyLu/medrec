@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Automates loading of all fixtures.
+Generate fixtures in order.
 """
 
 __author__ = "seyLu"
@@ -12,23 +12,27 @@ __version__ = "0.0.1"
 __maintainer__ = "seyLu"
 __status__ = "Prototype"
 
-import os
+import logging
 import subprocess
+from logging.config import fileConfig
+from pathlib import Path
 
-SCRIPTS_PATH: str = "scripts"
-MODELS_IN_ORDER: list[str] = [
+Path("logs").mkdir(exist_ok=True)
+fileConfig("logging.ini")
+
+apps: list[str] = [
     "regions",
     "users",
     "clients",
     "records",
 ]
 
-
 if __name__ == "__main__":
-    for model in MODELS_IN_ORDER:
+    for app in apps:
+        logging.info(f"Generating fixture for app {app}.")
         subprocess.call(
             [
                 "python",
-                os.path.join("scripts", f"loaddata_{model}.py"),
+                f"scripts/generate_{app}_fixture.py",
             ]
         )
