@@ -21,16 +21,6 @@ class Record(models.Model):
 
     is_seen_by_staff = models.BooleanField(default=False)
 
-    # def save(self, *args, **kwargs):
-    #     record_update_history = RecordUpdateHistory(
-    #         record=self.uuid,
-    #         updated_by=self.context.get("request").user,
-    #         remarks=self.remarks,
-    #     )
-    #     record_update_history.save()
-
-    #     super().save(*args, **kwargs)
-
 
 class RecordUpdateHistory(models.Model):
     uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
