@@ -106,6 +106,15 @@ def get_level(client_type: str, age: int) -> str:
             )
 
 
+def get_building_name(building_name: str) -> str:
+    building_name = re.sub(
+        r"Building(s)?|Condominium(s)?|Tower(s)?|Place(s)?|Apartment(s)?|Residence(s)?|Suite(s)",
+        "",
+        building_name,
+    )
+    return " ".join(building_name.split())
+
+
 def get_school(client_type: str, age: int) -> str:
     if client_type == "STU":
         if age < 6:
@@ -120,15 +129,6 @@ def get_school(client_type: str, age: int) -> str:
         return random.choice(
             ["Preschool", "Elementary School", "High School", "Senior High School"]
         )
-
-
-def get_building_name(building_name: str):
-    building_name = re.sub(
-        r"Building(s)?|Condominium(s)?|Tower(s)?|Place(s)?|Apartment(s)?|Residence(s)?|Suite(s)",
-        "",
-        building_name,
-    )
-    return " ".join(building_name.split())
 
 
 def _load_yaml(yaml_path: str) -> list[dict[str, Any]]:
