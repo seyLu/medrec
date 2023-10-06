@@ -24,8 +24,7 @@ class RecordAdmin(admin.ModelAdmin[Record]):
     def save_model(
         self, request: HttpRequest, obj: Record, form: Form, change: Any
     ) -> None:
-        if obj is None:
-            obj.save()
+        obj.save()
 
         record_update_history = RecordUpdateHistory(
             record=obj,
