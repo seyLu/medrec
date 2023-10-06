@@ -84,14 +84,16 @@ def get_level(client_type: str, age: int) -> str:
         else:
             return f"Grade {age - 5}"
     elif client_type == "TCH":
-        if age < 22:
-            return "Student Teacher"
-        elif age > 40:
+        if age > 40:
             return "Senior Teacher"
-        else:
+        elif age < 22:
+            return "Student Teacher"
+        elif age < 30:
             return random.choice(
-                [f"Teacher {random.randrange(1,4)}", "Assistant Teacher"]
+                [f"Teacher {random.randrange(1,2)}", "Assistant Teacher"]
             )
+        else:
+            return f"Teacher {random.randrange(3,4)}"
     else:
         if age > 40:
             return random.choice(["Principal", "Vice Principal"])
