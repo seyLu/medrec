@@ -33,6 +33,7 @@ unfixable = ["B"]
 strict = true
 implicit_reexport = true
 check_untyped_defs = true
+ignore_missing_imports = true
 
 # Exclude type checking on files/dirs
 exclude = [

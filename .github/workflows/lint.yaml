@@ -68,4 +68,3 @@ jobs:
           mypy .
           --install-types
           --non-interactive
-          --ignore-missing-imports
