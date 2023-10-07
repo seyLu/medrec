@@ -1,7 +1,7 @@
 from typing import Any
 from urllib.parse import parse_qs, urlparse
 
-from django.http import HttpRequest, HttpResponse
+from django.http import HttpRequest, HttpResponse, JsonResponse
 from django.views.generic import View
 
 from .models import City, District, Province
@@ -44,7 +44,7 @@ class CitiesQueryView(View):
 
 
 class ProvincesQueryView(View):
-    def post(self, request: HttpRequest) -> HttpResponse:
+    def post(self, request: HttpRequest) -> JsonResponse:
         parsed_url = urlparse(request.get_full_path())
         regions: dict[str, list[str]] = parse_qs(parsed_url.query)
 
@@ -57,4 +57,4 @@ class ProvincesQueryView(View):
         else:
             response = Province.objects.all()
 
-        return HttpResponse(response)
+        return JsonResponse(list(response.values()), safe=False)

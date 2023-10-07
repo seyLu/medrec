@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
   medrec
 {% endblock title %}
+
+{% block scripts %}
+  <script>
+    const CSRF_TOKEN_ELEM = String.raw`{% csrf_token %}`;
+    const CSRF_TOKEN = CSRF_TOKEN_ELEM.match(/value=\"(.*)\"/)[1];
+  </script>
+  <script defer src="{% static 'medrec/scripts/regions.js' %}"></script>
+{% endblock scripts %}
 
 {% block nav %}
   <nav class="navbar bg-base-100">
@@ -28,7 +37,7 @@
 {% block main %}
   <div class="flex flex-col w-screen">
     <div class="mx-auto mt-32">
-      <div x-data="{ isEmployee: false }" class="form-control">
+      <div x-data="{ isEmployee: false, showForm: false }" class="form-control">
         <label class="label cursor-pointer mb-2">
           <span :class="{'text-gray-500': isEmployee}"
                 class="label-text ml-auto font-semibold">Student</span>
@@ -47,6 +56,12 @@
                  placeholder="Employee ID Number" />
           <button class="btn join-item rounded-r-full">Search</button>
         </div>
+
+        <button class="btn btn-primary w-fit m-auto mt-5"
+                onclick="client_create_modal.showModal()">
+          Add new <span x-text="isEmployee ? 'Employee' : 'Student'"></span> client
+        </button>
+        {% include 'medrec/partials/client-create-modal.html' %}
       </div>
     </div>
   </div>

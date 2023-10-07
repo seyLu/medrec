@@ -3,8 +3,7 @@ static/
 !*/static/
 
 # file write output
-results/*
-!results/.gitignore
+results/
 
 # logging
 logs/

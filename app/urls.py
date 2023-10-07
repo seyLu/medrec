@@ -22,4 +22,5 @@ urlpatterns = [
     path("", include("medrec.urls")),
     path("", include("auth.urls")),
     path("", include("regions.urls")),
+    path("clients/", include("clients.urls")),
 ]

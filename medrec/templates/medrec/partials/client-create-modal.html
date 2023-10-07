@@ -1,0 +1,176 @@
+<dialog id="client_create_modal" class="modal">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>
+
+    <form hx-post="{% url 'client-create' %}"
+          x-data="{ client_type: 'student', get getClientType() { return isEmployee && this.client_type === 'nonteaching-personnel'? 'non-teaching-personnel' : isEmployee? 'teacher' : 'student' } }">
+      {% csrf_token %}
+
+      <div class="grid grid-cols-2 gap-y-4 gap-x-6 mx-auto">
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">
+              <span x-text="isEmployee ? 'Employee ID Number' : 'Learner Reference Number'"></span>
+            </span>
+          </label>
+          <input type="text"
+                 id="reference_number"
+                 name="reference_number"
+                 required
+                 :placeholder="getClientType == 'student' ? 777708829185 : getClientType == 'teacher' ? 929872 : 572438"
+                 class="input input-bordered w-full max-w-xs" />
+        </div>
+
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">Client Type</span>
+          </label>
+          <template x-if="isEmployee">
+            <div>
+              <label class="label cursor-pointer">
+                <span class="label-text">Teacher</span>
+                <input x-model="client_type"
+                       type="radio"
+                       id="teacher"
+                       name="client-type"
+                       value="teacher"
+                       class="radio"
+                       checked />
+              </label>
+              <label class="label cursor-pointer">
+                <span class="label-text">Non-teaching Personnel</span>
+                <input x-model="client_type"
+                       type="radio"
+                       id="nonteaching-personnel"
+                       name="client-type"
+                       value="nonteaching-personnel"
+                       class="radio" />
+              </label>
+            </div>
+          </template>
+          <template x-if="!isEmployee">
+            <div>
+              <label class="label cursor-pointer">
+                <span class="label-text">Student</span>
+                <input x-model="client_type"
+                       type="radio"
+                       id="student"
+                       name="client-type"
+                       value="student"
+                       class="radio"
+                       checked />
+              </label>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4">
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">First Name</span>
+          </label>
+          <input type="text"
+                 id="first_name"
+                 name="first_name"
+                 required
+                 placeholder="John"
+                 class="input input-bordered w-full max-w-xs" />
+        </div>
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">Last Name</span>
+          </label>
+          <input type="text"
+                 id="last_name"
+                 name="last_name"
+                 required
+                 placeholder="Doe"
+                 class="input input-bordered w-full max-w-xs" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4">
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">Last Name</span>
+          </label>
+          <input type="text"
+                 id="age"
+                 name="age"
+                 required
+                 :placeholder="getClientType === 'student' ? 15 : getClientType === 'teacher'? 23 : 40"
+                 class="input input-bordered w-full max-w-xs" />
+        </div>
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text" x-text="isEmployee ? 'Position' : 'Grade Level'"></span>
+          </label>
+          <input type="text"
+                 id="level"
+                 name="level"
+                 required
+                 :placeholder="getClientType === 'student' ? 'Grade 10' : getClientType === 'teacher' ? 'Teacher 1' : 'Principal'"
+                 class="input input-bordered w-full max-w-xs" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-y-4 gap-x-6 mx-auto mt-4">
+        <div class="form-control w-full">
+          <label class="label">
+            <span class="label-text">School</span>
+          </label>
+          <input type="text"
+                 id="school"
+                 name="school"
+                 required
+                 placeholder="Gonzalez 6 High School"
+                 class="input input-bordered w-full" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-y-4 gap-x-6 mx-auto mt-4">
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">Province</span>
+          </label>
+          <input type="text"
+                 id="province"
+                 name="province"
+                 list="province-datalist"
+                 required
+                 class="input input-bordered w-full max-w-xs" />
+          <datalist id="province-datalist"></datalist>
+        </div>
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">City</span>
+          </label>
+          <input type="text"
+                 id="city"
+                 name="city"
+                 list="city-datalist"
+                 required
+                 disabled
+                 class="input input-bordered w-full max-w-xs" />
+          <datalist id="city-datalist"></datalist>
+        </div>
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">District</span>
+          </label>
+          <input type="text"
+                 id="district"
+                 name="district"
+                 list="district-datalist"
+                 required
+                 disabled
+                 class="input input-bordered w-full max-w-xs" />
+          <datalist id="district-datalist"></datalist>
+        </div>
+      </div>
+    </form>
+  </div>
+</dialog>
