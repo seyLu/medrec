@@ -4,9 +4,25 @@
       <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
     </form>
 
+    <script>
+      document.addEventListener("alpine:init", () => {
+        const csrf_token = document.querySelector('[name="csrfmiddlewaretoken"]').value;
+        Alpine.store('csrf_token', csrf_token);
+      });
+    </script>
+
+    {% comment %} djlint:off {% endcomment %}
     <form hx-post="{% url 'client-create' %}"
-          x-data="{ client_type: 'student', get getClientType() { return isEmployee && this.client_type === 'nonteaching-personnel'? 'non-teaching-personnel' : isEmployee? 'teacher' : 'student' } }">
+          x-data="{
+            client_type: 'student',
+
+            get getClientType() {
+              return isEmployee && this.client_type === 'nonteaching-personnel'? 'non-teaching-personnel' : isEmployee? 'teacher' : 'student'
+            },
+          }">
       {% csrf_token %}
+
+      <div class="text-center text-xs text-gray-400 mb-2">Basic Information</div>
 
       <div class="grid grid-cols-2 gap-y-4 gap-x-6 mx-auto">
         <div class="form-control w-full max-w-xs">
@@ -95,7 +111,7 @@
       <div class="grid grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4">
         <div class="form-control w-full max-w-xs">
           <label class="label">
-            <span class="label-text">Last Name</span>
+            <span class="label-text">Age</span>
           </label>
           <input type="text"
                  id="age"
@@ -131,8 +147,40 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-3 gap-y-4 gap-x-6 mx-auto mt-4">
-        <div class="form-control w-full max-w-xs">
+      <div class="divider text-xs text-gray-400 mt-10 mb-2">Address</div>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4"
+        x-data="{
+          provinces: [],
+          cities: [],
+          province: null,
+
+          async getProvinces() {
+            this.provinces = await (await fetch({% url 'provinces-query' %}, {
+              method: 'POST',
+              headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+                'X-CSRFToken': $store.csrf_token,
+              }, mode: 'same-origin'
+            })).json();
+          },
+
+          async getCities() {
+            console.log(this.province);
+            if (this.province !== null) {
+              this.cities = await (await fetch('{% url 'cities-query' %}' + '?province=' + this.province, {
+                method: 'POST',
+                headers: {
+                  'Content-type': 'application/json; charset=UTF-8',
+                  'X-CSRFToken': $store.csrf_token,
+                }, mode: 'same-origin'
+              })).json();
+              console.log(this.cities);
+            }
+          },
+        }">
+        <div class="form-control w-full">
           <label class="label">
             <span class="label-text">Province</span>
           </label>
@@ -141,10 +189,22 @@
                  name="province"
                  list="province-datalist"
                  required
-                 class="input input-bordered w-full max-w-xs" />
-          <datalist id="province-datalist"></datalist>
+                 placeholder="Leyte"
+                 @input.throttle="getCities"
+                 x-model="province"
+                 class="input input-bordered w-full" />
+          <datalist
+            x-init="getProvinces"
+            id="province-datalist">
+            <template x-for="province in provinces">
+              <option
+                :value="province.name"
+                x-text="province.code"
+                :data-code="province.code" ></option>
+            </template>
+          </datalist>
         </div>
-        <div class="form-control w-full max-w-xs">
+        <div class="form-control w-full">
           <label class="label">
             <span class="label-text">City</span>
           </label>
@@ -154,10 +214,11 @@
                  list="city-datalist"
                  required
                  disabled
-                 class="input input-bordered w-full max-w-xs" />
+                 placeholder="Tacloban City"
+                 class="input input-bordered w-full" />
           <datalist id="city-datalist"></datalist>
         </div>
-        <div class="form-control w-full max-w-xs">
+        <div class="form-control w-full">
           <label class="label">
             <span class="label-text">District</span>
           </label>
@@ -167,10 +228,12 @@
                  list="district-datalist"
                  required
                  disabled
-                 class="input input-bordered w-full max-w-xs" />
+                 placeholder="Brgy. 93 - Bacagay"
+                 class="input input-bordered w-full" />
           <datalist id="district-datalist"></datalist>
         </div>
       </div>
     </form>
   </div>
 </dialog>
+{% comment %} djlint:on {% endcomment %}

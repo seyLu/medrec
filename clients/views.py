@@ -9,4 +9,4 @@ class ClientCreateView(View):
 
 class ClientDetailView(View):
     def post(self, request: HttpRequest, reference_number: int = 0) -> HttpResponse:
-        pass
+        return HttpResponse()

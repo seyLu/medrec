@@ -18,15 +18,15 @@ class DistrictsQueryView(View):
             code = code[0]  # type: ignore
             response = District.objects.get(code=code)
 
-        elif city_code := regions.get("city_code"):
-            city_code = city_code[0]  # type: ignore
-            response = District.objects.filter(city_code=city_code)  # type: ignore[misc]
+        elif city := regions.get("city"):
+            city = city[0]  # type: ignore
+            response = District.objects.filter(city=city)  # type: ignore[misc]
 
         return HttpResponse(response)
 
 
 class CitiesQueryView(View):
-    def post(self, request: HttpRequest) -> HttpResponse:
+    def post(self, request: HttpRequest) -> JsonResponse:
         parsed_url = urlparse(request.get_full_path())
         regions: dict[str, list[str]] = parse_qs(parsed_url.query)
 
@@ -36,11 +36,14 @@ class CitiesQueryView(View):
             code = code[0]  # type: ignore
             response = City.objects.get(code=code)
 
-        elif province_code := regions.get("province_code"):
-            province_code = province_code[0]  # type: ignore
-            response = City.objects.filter(province_code=province_code)  # type: ignore[misc]
+        elif province := regions.get("province"):
+            province = province[0]  # type: ignore
+            response = City.objects.filter(province=province)  # type: ignore[misc]
 
-        return HttpResponse(response)
+        if not response:
+            return JsonResponse(list(response), safe=False)
+
+        return JsonResponse(list(response.values()), safe=False)
 
 
 class ProvincesQueryView(View):
@@ -56,5 +59,8 @@ class ProvincesQueryView(View):
 
         else:
             response = Province.objects.all()
+
+        if not response:
+            return JsonResponse(list(response), safe=False)
 
         return JsonResponse(list(response.values()), safe=False)

@@ -5,14 +5,6 @@
   medrec
 {% endblock title %}
 
-{% block scripts %}
-  <script>
-    const CSRF_TOKEN_ELEM = String.raw`{% csrf_token %}`;
-    const CSRF_TOKEN = CSRF_TOKEN_ELEM.match(/value=\"(.*)\"/)[1];
-  </script>
-  <script defer src="{% static 'medrec/scripts/regions.js' %}"></script>
-{% endblock scripts %}
-
 {% block nav %}
   <nav class="navbar bg-base-100">
     <div class="flex-1">
