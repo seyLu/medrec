@@ -153,8 +153,14 @@
            x-data="{
             provinces: [],
             cities: [],
+            districts: [],
+
             provinceName: null,
             provinceCode: null,
+            cityName: null,
+            cityCode: null,
+            districtName: null,
+            districtCode: null,
 
             async getProvinces() {
               this.provinces = await (await fetch({% url 'provinces-query' %}, {
@@ -168,6 +174,16 @@
 
             async getCities() {
               this.cities = await (await fetch(`{% url 'cities-query' %}?province=${this.provinceCode}`, {
+                method: 'POST',
+                headers: {
+                  'Content-type': 'application/json; charset=UTF-8',
+                  'X-CSRFToken': $store.csrf_token,
+                }, mode: 'same-origin'
+              })).json()
+            },
+
+            async getDistricts() {
+              this.districts = await (await fetch(`{% url 'districts-query' %}?city=${this.cityCode}`, {
                 method: 'POST',
                 headers: {
                   'Content-type': 'application/json; charset=UTF-8',
@@ -194,13 +210,14 @@
                class="dropdown dropdown-end w-full">
             <input x-model="search"
                    type="text"
-                   id="province"
-                   name="province"
+                   id="province_name"
+                   name="province_name"
                    required
                    placeholder="Leyte"
                    :value="provinceName"
                    @focus="isDropDownOpen = false;"
                    class="input input-bordered w-full" />
+            <input type="hidden" id="province" name="province" :value="provinceCode">
             <ul tabindex="0"
                 :class="isDropDownOpen ? 'hidden' : ''"
                 class="dropdown-content shadow menu bg-base-100 max-h-30 z-[1] rounded-md w-full">
@@ -220,15 +237,42 @@
           <label class="label">
             <span class="label-text">City</span>
           </label>
-          <input type="text"
-                 id="city"
-                 name="city"
-                 list="city-datalist"
-                 required
-                 disabled
-                 placeholder="Tacloban City"
-                 class="input input-bordered w-full" />
-          <datalist id="city-datalist"></datalist>
+          <div x-data="{
+                isDropDownOpen: false,
+                search: '',
+
+                get filteredCities() {
+                  return cities.filter(
+                    city => city.name.toLowerCase().startsWith(this.search.toLowerCase())
+                  )
+                }
+               }"
+               class="dropdown dropdown-end w-full">
+            <input x-model="search"
+                   type="text"
+                   id="city_name"
+                   name="city_name"
+                   required
+                   placeholder="Leyte"
+                   :disabled="province === null"
+                   :value="cityName"
+                   @focus="isDropDownOpen = false;"
+                   class="input input-bordered w-full" />
+            <input type="hidden" id="city" name="city" :value="cityCode">
+            <ul tabindex="0"
+                :class="isDropDownOpen ? 'hidden' : ''"
+                class="dropdown-content shadow menu bg-base-100 max-h-30 z-[1] rounded-md w-full">
+                <template x-for="item in filteredCities" :key="item.name">
+                  <li @click="
+                        cityName = item.name;
+                        cityCode = item.code;
+                        isDropDownOpen = true;"
+                      @click.debounce="getDistricts">
+                    <a x-text="item.name"></a>
+                  </li>
+                </template>
+            </ul>
+          </div>
         </div>
         <div class="form-control w-full">
           <label class="label">
