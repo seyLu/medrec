@@ -153,10 +153,21 @@
            x-data="{
             provinces: [],
             cities: [],
-            province: null,
+            provinceName: null,
+            provinceCode: null,
 
             async getProvinces() {
               this.provinces = await (await fetch({% url 'provinces-query' %}, {
+                method: 'POST',
+                headers: {
+                  'Content-type': 'application/json; charset=UTF-8',
+                  'X-CSRFToken': $store.csrf_token,
+                }, mode: 'same-origin'
+              })).json()
+            },
+
+            async getCities() {
+              this.cities = await (await fetch(`{% url 'cities-query' %}?province=${this.provinceCode}`, {
                 method: 'POST',
                 headers: {
                   'Content-type': 'application/json; charset=UTF-8',
@@ -170,6 +181,7 @@
             <span class="label-text">Province</span>
           </label>
           <div x-data="{
+                isDropDownOpen: false,
                 search: '',
 
                 get filteredProvinces() {
@@ -186,11 +198,20 @@
                    name="province"
                    required
                    placeholder="Leyte"
+                   :value="provinceName"
+                   @focus="isDropDownOpen = false;"
                    class="input input-bordered w-full" />
             <ul tabindex="0"
+                :class="isDropDownOpen ? 'hidden' : ''"
                 class="dropdown-content shadow menu bg-base-100 max-h-30 z-[1] rounded-md w-full">
-                <template x-for="province in filteredProvinces" :key="province.name">
-                  <li><a x-text="province.name" :data-code="province.code"></a></li>
+                <template x-for="item in filteredProvinces" :key="item.name">
+                  <li @click="
+                        provinceName = item.name;
+                        provinceCode = item.code;
+                        isDropDownOpen = true;"
+                      @click.debounce="getCities">
+                    <a x-text="item.name"></a>
+                  </li>
                 </template>
             </ul>
           </div>
