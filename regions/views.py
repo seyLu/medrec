@@ -22,7 +22,10 @@ class DistrictsQueryView(View):
             city = city[0]  # type: ignore
             response = District.objects.filter(city=city)  # type: ignore[misc]
 
-        return HttpResponse(response)
+        if not response:
+            return JsonResponse(list(response), safe=False)
+
+        return JsonResponse(list(response.values()), safe=False)
 
 
 class CitiesQueryView(View):

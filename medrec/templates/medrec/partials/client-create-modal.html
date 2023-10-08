@@ -225,7 +225,9 @@
                   <li @click="
                         provinceName = item.name;
                         provinceCode = item.code;
-                        isDropDownOpen = true;"
+                        isDropDownOpen = true;
+                        document.querySelector('#city_name').value = '';
+                        document.querySelector('#district_name').value = '';"
                       @click.debounce="getCities">
                     <a x-text="item.name"></a>
                   </li>
@@ -235,7 +237,7 @@
         </div>
         <div class="form-control w-full">
           <label class="label">
-            <span class="label-text">City</span>
+            <span class="label-text">City/Municipality</span>
           </label>
           <div x-data="{
                 isDropDownOpen: false,
@@ -253,21 +255,23 @@
                    id="city_name"
                    name="city_name"
                    required
-                   placeholder="Leyte"
-                   :disabled="province === null"
+                   placeholder="Tacloban City"
+                   :disabled="provinceName === null"
                    :value="cityName"
                    @focus="isDropDownOpen = false;"
                    class="input input-bordered w-full" />
             <input type="hidden" id="city" name="city" :value="cityCode">
             <ul tabindex="0"
+                role="menu"
                 :class="isDropDownOpen ? 'hidden' : ''"
                 class="dropdown-content shadow menu bg-base-100 max-h-30 z-[1] rounded-md w-full">
                 <template x-for="item in filteredCities" :key="item.name">
                   <li @click="
                         cityName = item.name;
                         cityCode = item.code;
-                        isDropDownOpen = true;"
-                      @click.debounce="getDistricts">
+                        isDropDownOpen = true;
+                        document.querySelector('#district_name').value = '';"
+                        @click.debounce="getDistricts">
                     <a x-text="item.name"></a>
                   </li>
                 </template>
@@ -276,17 +280,44 @@
         </div>
         <div class="form-control w-full">
           <label class="label">
-            <span class="label-text">District</span>
+            <span class="label-text">Barangay</span>
           </label>
-          <input type="text"
-                 id="district"
-                 name="district"
-                 list="district-datalist"
-                 required
-                 disabled
-                 placeholder="Brgy. 93 - Bacagay"
-                 class="input input-bordered w-full" />
-          <datalist id="district-datalist"></datalist>
+          <div x-data="{
+                isDropDownOpen: false,
+                search: '',
+
+                get filteredDistricts() {
+                  return districts.filter(
+                    district => district.name.toLowerCase().startsWith(this.search.toLowerCase())
+                  )
+                }
+               }"
+               class="dropdown dropdown-end w-full">
+            <input x-model="search"
+                   type="text"
+                   id="district_name"
+                   name="district_name"
+                   required
+                   placeholder="Brgy 63 - Sagkahan"
+                   :disabled="cityName === null"
+                   :value="districtName"
+                   @focus="isDropDownOpen = false;"
+                   class="input input-bordered w-full" />
+            <input type="hidden" id="district" name="district" :value="districtCode">
+            <ul tabindex="0"
+                role="menu"
+                :class="isDropDownOpen ? 'hidden' : ''"
+                class="dropdown-content shadow menu bg-base-100 max-h-30 z-[1] rounded-md w-full">
+                <template x-for="item in filteredDistricts" :key="item.name">
+                  <li @click="
+                        districtName = item.name;
+                        districtCode = item.code;
+                        isDropDownOpen = true;">
+                    <a x-text="item.name"></a>
+                  </li>
+                </template>
+            </ul>
+          </div>
         </div>
       </div>
     </form>
