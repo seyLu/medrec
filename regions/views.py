@@ -47,7 +47,7 @@ class CitiesQueryView(View):
 
 
 class ProvincesQueryView(View):
-    def post(self, request: HttpRequest) -> JsonResponse:
+    def post(self, request: HttpRequest) -> HttpResponse:
         parsed_url = urlparse(request.get_full_path())
         regions: dict[str, list[str]] = parse_qs(parsed_url.query)
 

@@ -149,60 +149,51 @@
 
       <div class="divider text-xs text-gray-400 mt-10 mb-2">Address</div>
 
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4"
-        x-data="{
-          provinces: [],
-          cities: [],
-          province: null,
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4"
+           x-data="{
+            provinces: [],
+            cities: [],
+            province: null,
 
-          async getProvinces() {
-            this.provinces = await (await fetch({% url 'provinces-query' %}, {
-              method: 'POST',
-              headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-                'X-CSRFToken': $store.csrf_token,
-              }, mode: 'same-origin'
-            })).json();
-          },
-
-          async getCities() {
-            console.log(this.province);
-            if (this.province !== null) {
-              this.cities = await (await fetch('{% url 'cities-query' %}' + '?province=' + this.province, {
+            async getProvinces() {
+              this.provinces = await (await fetch({% url 'provinces-query' %}, {
                 method: 'POST',
                 headers: {
                   'Content-type': 'application/json; charset=UTF-8',
                   'X-CSRFToken': $store.csrf_token,
                 }, mode: 'same-origin'
-              })).json();
-              console.log(this.cities);
-            }
-          },
-        }">
+              })).json()
+            },
+           }">
         <div class="form-control w-full">
           <label class="label">
             <span class="label-text">Province</span>
           </label>
-          <input type="text"
-                 id="province"
-                 name="province"
-                 list="province-datalist"
-                 required
-                 placeholder="Leyte"
-                 @input.throttle="getCities"
-                 x-model="province"
-                 class="input input-bordered w-full" />
-          <datalist
-            x-init="getProvinces"
-            id="province-datalist">
-            <template x-for="province in provinces">
-              <option
-                :value="province.name"
-                x-text="province.code"
-                :data-code="province.code" ></option>
-            </template>
-          </datalist>
+          <div x-data="{
+                search: '',
+
+                get filteredProvinces() {
+                  return provinces.filter(
+                    province => province.name.toLowerCase().startsWith(this.search.toLowerCase())
+                  )
+                }
+               }"
+               x-init="getProvinces"
+               class="dropdown dropdown-end w-full">
+            <input x-model="search"
+                   type="text"
+                   id="province"
+                   name="province"
+                   required
+                   placeholder="Leyte"
+                   class="input input-bordered w-full" />
+            <ul tabindex="0"
+                class="dropdown-content shadow menu bg-base-100 max-h-30 z-[1] rounded-md w-full">
+                <template x-for="province in filteredProvinces" :key="province.name">
+                  <li><a x-text="province.name" :data-code="province.code"></a></li>
+                </template>
+            </ul>
+          </div>
         </div>
         <div class="form-control w-full">
           <label class="label">
