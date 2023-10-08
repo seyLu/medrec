@@ -54,7 +54,10 @@ module.exports = {
             strategy: 'base', // only generate global styles
             strategy: 'class', // only generate classes
         }),
-        require('@tailwindcss/typography'),
+        require('@tailwindcss/typography')({
+            strategy: 'base',
+            strategy: 'class',
+        }),
         require('@tailwindcss/line-clamp'),
         require('@tailwindcss/aspect-ratio'),
         require("daisyui"),
