@@ -1,0 +1,30 @@
+{% for province in provinces %}
+  <option value="{{ province.name }}" data-code="{{ province.code }}">{{ province.code }}</option>
+{% endfor %}
+
+<script>
+  const provinceName = document.getElementById("province_name");
+  const cityName = document.getElementById("city_name");
+
+  const province = document.getElementById("province");
+  const provinceDatalist = document.getElementById("province_datalist");
+  let provinceNameEsrc = null;
+
+  provinceName.addEventListener("keydown", (e) => {
+    provinceNameEsrc = e.key ? "input" : "list";
+  });
+
+  provinceName.addEventListener("input", (e) => {
+    if (provinceNameEsrc === "list") {
+      const val = e.target.value;
+      const province_code = provinceDatalist.querySelector(`option[value="${val}"]`).dataset.code;
+
+      province.value = province_code;
+      province.setAttribute("hx-post", `{% url 'cities-query' %}?province=${province_code}`)
+      htmx.process(province);
+
+      province.dispatchEvent(new Event("change"));
+      cityName.value = "";
+    }
+  });
+</script>

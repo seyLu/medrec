@@ -9,6 +9,13 @@
         const csrf_token = document.querySelector('[name="csrfmiddlewaretoken"]').value;
         Alpine.store('csrf_token', csrf_token);
       });
+
+      document.addEventListener("htmx:load", (e) => {
+        htmx.on("htmx:afterSwap", (e) =>  {
+          htmx.process(e.target);
+        });
+      });
+
     </script>
 
     {% comment %} djlint:off {% endcomment %}
@@ -149,175 +156,42 @@
 
       <div class="divider text-xs text-gray-400 mt-10 mb-2">Address</div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4"
-           x-data="{
-            provinces: [],
-            cities: [],
-            districts: [],
-
-            provinceName: null,
-            provinceCode: null,
-            cityName: null,
-            cityCode: null,
-            districtName: null,
-            districtCode: null,
-
-            async getProvinces() {
-              this.provinces = await (await fetch({% url 'provinces-query' %}, {
-                method: 'POST',
-                headers: {
-                  'Content-type': 'application/json; charset=UTF-8',
-                  'X-CSRFToken': $store.csrf_token,
-                }, mode: 'same-origin'
-              })).json()
-            },
-
-            async getCities() {
-              this.cities = await (await fetch(`{% url 'cities-query' %}?province=${this.provinceCode}`, {
-                method: 'POST',
-                headers: {
-                  'Content-type': 'application/json; charset=UTF-8',
-                  'X-CSRFToken': $store.csrf_token,
-                }, mode: 'same-origin'
-              })).json()
-            },
-
-            async getDistricts() {
-              this.districts = await (await fetch(`{% url 'districts-query' %}?city=${this.cityCode}`, {
-                method: 'POST',
-                headers: {
-                  'Content-type': 'application/json; charset=UTF-8',
-                  'X-CSRFToken': $store.csrf_token,
-                }, mode: 'same-origin'
-              })).json()
-            },
-           }">
+      <div class="grid grid-cols-2 md:grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4">
         <div class="form-control w-full">
           <label class="label">
-            <span class="label-text">Province</span>
+            <span class="label-text">Provinces</span>
           </label>
-          <div x-data="{
-                isDropDownOpen: false,
-                search: '',
-
-                get filteredProvinces() {
-                  return provinces.filter(
-                    province => province.name.toLowerCase().startsWith(this.search.toLowerCase())
-                  )
-                }
-               }"
-               x-init="getProvinces"
-               class="dropdown dropdown-end w-full">
-            <input x-model="search"
-                   type="text"
-                   id="province_name"
-                   name="province_name"
-                   required
-                   placeholder="Leyte"
-                   :value="provinceName"
-                   @focus="isDropDownOpen = false;"
-                   class="input input-bordered w-full" />
-            <input type="hidden" id="province" name="province" :value="provinceCode">
-            <ul tabindex="0"
-                :class="isDropDownOpen ? 'hidden' : ''"
-                class="dropdown-content shadow menu bg-base-100 max-h-30 z-[1] rounded-md w-full">
-                <template x-for="item in filteredProvinces" :key="item.name">
-                  <li @click="
-                        provinceName = item.name;
-                        provinceCode = item.code;
-                        isDropDownOpen = true;
-                        document.querySelector('#city_name').value = '';
-                        document.querySelector('#district_name').value = '';"
-                      @click.debounce="getCities">
-                    <a x-text="item.name"></a>
-                  </li>
-                </template>
-            </ul>
-          </div>
+          <input type="text"
+                 id="province_name"
+                 name="province_name"
+                 list="province_datalist"
+                 required
+                 placeholder="Leyte"
+                 class="input input-bordered w-full" />
+          <input type="hidden"
+                 id="province"
+                 name="province"
+                 hx-trigger="change"
+                 hx-target="#city_datalist"
+                 hx-swap="innerHTML" />
+          <datalist hx-post="{% url 'provinces-query' %}"
+                    hx-trigger="load"
+                    hx-target="this"
+                    hx-swap="innerHTML"
+                    id="province_datalist"></datalist>
         </div>
         <div class="form-control w-full">
           <label class="label">
-            <span class="label-text">City/Municipality</span>
+            <span class="label-text">Cities</span>
           </label>
-          <div x-data="{
-                isDropDownOpen: false,
-                search: '',
-
-                get filteredCities() {
-                  return cities.filter(
-                    city => city.name.toLowerCase().startsWith(this.search.toLowerCase())
-                  )
-                }
-               }"
-               class="dropdown dropdown-end w-full">
-            <input x-model="search"
-                   type="text"
-                   id="city_name"
-                   name="city_name"
-                   required
-                   placeholder="Tacloban City"
-                   :disabled="provinceName === null"
-                   :value="cityName"
-                   @focus="isDropDownOpen = false;"
-                   class="input input-bordered w-full" />
-            <input type="hidden" id="city" name="city" :value="cityCode">
-            <ul tabindex="0"
-                role="menu"
-                :class="isDropDownOpen ? 'hidden' : ''"
-                class="dropdown-content shadow menu bg-base-100 max-h-30 z-[1] rounded-md w-full">
-                <template x-for="item in filteredCities" :key="item.name">
-                  <li @click="
-                        cityName = item.name;
-                        cityCode = item.code;
-                        isDropDownOpen = true;
-                        document.querySelector('#district_name').value = '';"
-                        @click.debounce="getDistricts">
-                    <a x-text="item.name"></a>
-                  </li>
-                </template>
-            </ul>
-          </div>
-        </div>
-        <div class="form-control w-full">
-          <label class="label">
-            <span class="label-text">Barangay</span>
-          </label>
-          <div x-data="{
-                isDropDownOpen: false,
-                search: '',
-
-                get filteredDistricts() {
-                  return districts.filter(
-                    district => district.name.toLowerCase().startsWith(this.search.toLowerCase())
-                  )
-                }
-               }"
-               class="dropdown dropdown-end w-full">
-            <input x-model="search"
-                   type="text"
-                   id="district_name"
-                   name="district_name"
-                   required
-                   placeholder="Brgy 63 - Sagkahan"
-                   :disabled="cityName === null"
-                   :value="districtName"
-                   @focus="isDropDownOpen = false;"
-                   class="input input-bordered w-full" />
-            <input type="hidden" id="district" name="district" :value="districtCode">
-            <ul tabindex="0"
-                role="menu"
-                :class="isDropDownOpen ? 'hidden' : ''"
-                class="dropdown-content shadow menu bg-base-100 max-h-30 z-[1] rounded-md w-full">
-                <template x-for="item in filteredDistricts" :key="item.name">
-                  <li @click="
-                        districtName = item.name;
-                        districtCode = item.code;
-                        isDropDownOpen = true;">
-                    <a x-text="item.name"></a>
-                  </li>
-                </template>
-            </ul>
-          </div>
+          <input type="text"
+                 id="city_name"
+                 name="city_name"
+                 list="city_datalist"
+                 required
+                 placeholder="Tacloban City"
+                 class="input input-bordered w-full"/>
+          <datalist id="city_datalist"></datalist>
         </div>
       </div>
     </form>
