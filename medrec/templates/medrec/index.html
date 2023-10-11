@@ -70,16 +70,32 @@
                 class="label-text mr-auto font-semibold">Employee</span>
         </label>
 
-        <div x-show="!isEmployee" class="join">
-          <input class="input input-bordered join-item"
-                 placeholder="Learner Reference Number" />
-          <button class="btn join-item rounded-r-full">Search</button>
+        <div class="join">
+          <input id="reference_number"
+                 name="reference_number"
+                 class="input input-bordered join-item"
+                 @input.throttle="new Event('change')"
+                 :placeholder="isEmployee ?  'Employee ID Number' : 'Learner Reference Number'" />
+          <button hx-swap="innerHTML"
+                  hx-target="#client"
+                  hx-trigger="click"
+                  id="reference_number_btn"
+                  class="btn join-item rounded-r-full">Search</button>
         </div>
-        <div x-show="isEmployee" class="join">
-          <input class="input input-bordered join-item"
-                 placeholder="Employee ID Number" />
-          <button class="btn join-item rounded-r-full">Search</button>
-        </div>
+
+        <script>
+          const reference_number = document.getElementById("reference_number");
+          const reference_number_btn = document.getElementById("reference_number_btn");
+
+          reference_number.addEventListener("change", (e) => {
+            const val = e.target.value;
+            const url = `{% url 'client-detail' reference_number=0 %}`.replace('0', val)
+            reference_number_btn.setAttribute("hx-get", url);
+
+
+            htmx.process(reference_number_btn);
+          });
+</script>
 
         <button class="btn btn-primary w-fit m-auto mt-5"
                 onclick="client_create_modal.showModal()">
@@ -88,6 +104,8 @@
         {% include 'medrec/partials/client-create-modal.html' %}
       </div>
     </div>
+
+    <div class="px-5 mt-32" id="client" @htmx:after-swap="$refs.modal_close_btn.click()"></div>
   </div>
 {% endblock main %}
 {% comment %} djlint:on {% endcomment %}

@@ -1,11 +1,15 @@
 <dialog id="client_create_modal" class="modal">
   <div class="modal-box">
     <form method="dialog">
-      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+      <button x-ref="modal_close_btn"
+              class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
     </form>
 
     {% comment %} djlint:off {% endcomment %}
     <form hx-post="{% url 'client-create' %}"
+          hx-trigger="submit"
+          hx-target="#client"
+          hx-swap="innerHTML"
           x-data="{
             client_type: 'student',
 
