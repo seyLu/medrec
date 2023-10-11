@@ -17,7 +17,7 @@
 
       <div class="text-center text-xs text-gray-400 mb-2">Basic Information</div>
 
-      <div class="grid grid-cols-2 gap-y-4 gap-x-6 mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 mx-auto">
         <div class="form-control w-full max-w-xs">
           <label class="label">
             <span class="label-text">
@@ -40,22 +40,24 @@
           <template x-if="isEmployee">
             <div>
               <label class="label cursor-pointer">
-                <span class="label-text">Teacher</span>
+                <span class="label-text font-semibold">Teacher</span>
                 <input x-model="client_type"
                        type="radio"
                        id="teacher"
                        name="client_type"
                        value="teacher"
                        class="radio"
+                       required
                        checked />
               </label>
               <label class="label cursor-pointer">
-                <span class="label-text">Non-teaching Personnel</span>
+                <span class="label-text font-semibold">Non-teaching Personnel</span>
                 <input x-model="client_type"
                        type="radio"
                        id="nonteaching-personnel"
                        name="client_type"
                        value="nonteaching-personnel"
+                       required
                        class="radio" />
               </label>
             </div>
@@ -63,12 +65,13 @@
           <template x-if="!isEmployee">
             <div>
               <label class="label cursor-pointer">
-                <span class="label-text">Student</span>
+                <span class="label-text font-semibold">Student</span>
                 <input x-model="client_type"
                        type="radio"
                        id="student"
                        name="client_type"
                        value="student"
+                       required
                        class="radio"
                        checked />
               </label>
@@ -77,7 +80,7 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4">
         <div class="form-control w-full max-w-xs">
           <label class="label">
             <span class="label-text">First Name</span>
@@ -104,7 +107,7 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4">
         <div class="form-control w-full max-w-xs">
           <label class="label">
             <span class="label-text">Age</span>
@@ -148,7 +151,7 @@
 
       <div class="divider text-xs text-gray-400 mt-10 mb-2">Address</div>
 
-      <div class="grid grid-cols-2 md:grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4">
         <div class="form-control w-full">
           <label class="label">
             <span class="label-text">Province</span>
@@ -213,6 +216,25 @@
           <datalist id="district_datalist"></datalist>
         </div>
       </div>
+
+      <div class="grid grid-cols-1 gap-y-4 gap-x-6 mx-auto mt-4">
+        <div class="form-control w-full">
+          <label class="label">
+            <span class="label-text">Street Address</span>
+          </label>
+          <input x-model="street_address"
+                 type="text"
+                 id="street_address"
+                 name="street_address"
+                 required
+                 placeholder="Real Street"
+                 class="input input-bordered w-full" />
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-fit mt-10 flex ml-auto">
+          Add new <span x-text="isEmployee ? 'Employee' : 'Student'"></span> client
+      </button>
     </form>
   </div>
 </dialog>
