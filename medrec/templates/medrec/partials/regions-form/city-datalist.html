@@ -1,3 +1,31 @@
 {% for city in cities %}
   <option value="{{ city.name }}" data-code="{{ city.code }}">{{ city.code }}</option>
 {% endfor %}
+
+<script>
+  const city = document.getElementById("city");
+  const cityDatalist = document.getElementById("city_datalist");
+  let cityNameEsrc = null;
+
+  cityName.addEventListener("keydown", (e) => {
+    cityNameEsrc = e.key ? "input" : "list";
+  });
+
+  cityName.addEventListener("input", (e) => {
+    if (cityNameEsrc === "list") {
+      const val = e.target.value;
+      const city_code = cityDatalist.querySelector(`option[value="${val}"]`).dataset.code;
+
+      city.value = city_code;
+      city.setAttribute("hx-post", `{% url 'districts-query' %}?city=${city_code}`);
+      htmx.process(city);
+
+      city.dispatchEvent(new Event("change"));
+      districtName.disabled = false;
+      districtName.value = "";
+    } else {
+      districtName.disabled = true;
+      districtName.value = "";
+    }
+  });
+</script>

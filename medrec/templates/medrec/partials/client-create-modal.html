@@ -15,7 +15,6 @@
           htmx.process(e.target);
         });
       });
-
     </script>
 
     {% comment %} djlint:off {% endcomment %}
@@ -159,7 +158,7 @@
       <div class="grid grid-cols-2 md:grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4">
         <div class="form-control w-full">
           <label class="label">
-            <span class="label-text">Provinces</span>
+            <span class="label-text">Province</span>
           </label>
           <input type="text"
                  id="province_name"
@@ -182,16 +181,40 @@
         </div>
         <div class="form-control w-full">
           <label class="label">
-            <span class="label-text">Cities</span>
+            <span class="label-text">City / Municipality</span>
           </label>
           <input type="text"
                  id="city_name"
                  name="city_name"
                  list="city_datalist"
                  required
+                 disabled
                  placeholder="Tacloban City"
                  class="input input-bordered w-full"/>
+          <input type="hidden"
+                 id="city"
+                 name="city"
+                 hx-trigger="change"
+                 hx-target="#district_datalist"
+                 hx-swap="innerHTML" />
           <datalist id="city_datalist"></datalist>
+        </div>
+        <div class="form-control w-full">
+          <label class="label">
+            <span class="label-text">Barangay</span>
+          </label>
+          <input type="text"
+                 id="district_name"
+                 name="district_name"
+                 list="district_datalist"
+                 required
+                 disabled
+                 placeholder="Brgy. 63 - Sagkahan"
+                 class="input input-bordered w-full"/>
+          <input type="hidden"
+                 id="district"
+                 name="district" />
+          <datalist id="district_datalist"></datalist>
         </div>
       </div>
     </form>

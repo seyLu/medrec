@@ -23,10 +23,20 @@ class DistrictsQueryView(View):
             city = city[0]  # type: ignore
             response = District.objects.filter(city=city)  # type: ignore[misc]
 
-        if not response:
-            return JsonResponse(list(response), safe=False)
+        if not request.htmx:
+            if not response:
+                return JsonResponse(list(response), safe=False)
 
-        return JsonResponse(list(response.values()), safe=False)
+            return JsonResponse(list(response.values()), safe=False)
+
+        if not response:
+            return HttpResponse()
+
+        return render(
+            request,
+            "medrec/partials/regions-form/district-datalist.html",
+            {"districts": list(response)},
+        )
 
 
 class CitiesQueryView(View):

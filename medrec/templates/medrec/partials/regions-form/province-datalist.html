@@ -5,6 +5,7 @@
 <script>
   const provinceName = document.getElementById("province_name");
   const cityName = document.getElementById("city_name");
+  const districtName = document.getElementById("district_name");
 
   const province = document.getElementById("province");
   const provinceDatalist = document.getElementById("province_datalist");
@@ -20,11 +21,17 @@
       const province_code = provinceDatalist.querySelector(`option[value="${val}"]`).dataset.code;
 
       province.value = province_code;
-      province.setAttribute("hx-post", `{% url 'cities-query' %}?province=${province_code}`)
+      province.setAttribute("hx-post", `{% url 'cities-query' %}?province=${province_code}`);
       htmx.process(province);
 
       province.dispatchEvent(new Event("change"));
+      cityName.disabled = false;
       cityName.value = "";
+    } else {
+      cityName.disabled = true;
+      cityName.value = "";
+      districtName.disabled = true;
+      districtName.value = "";
     }
   });
 </script>
