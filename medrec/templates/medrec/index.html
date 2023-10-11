@@ -29,11 +29,41 @@
 {% block main %}
   <div class="flex flex-col w-screen">
     <div class="mx-auto mt-32">
-      <div x-data="{ isEmployee: false, showForm: false }" class="form-control">
+      {% comment %} djlint:off {% endcomment %}
+      <div x-data="{
+            isEmployee: false,
+            showForm: false,
+
+            reference_number: '',
+            client_type: '',
+            first_name: '',
+            last_name: '',
+            age: '',
+            level: '',
+            school: '',
+            province_name: '',
+            city_name: '',
+            district_name: '',
+
+            resetModalFields() {
+              this.reference_number = '';
+              this.client_type = '';
+              this.first_name = '';
+              this.last_name = '';
+              this.age = '';
+              this.level = '';
+              this.school = '';
+              this.province_name = '';
+              this.city_name = '';
+              this.district_name = '';
+            }
+          }"
+           x-init="resetModalFields"
+           class="form-control">
         <label class="label cursor-pointer mb-2">
           <span :class="{'text-gray-500': isEmployee}"
                 class="label-text ml-auto font-semibold">Student</span>
-          <input type="checkbox" x-model="isEmployee" class="toggle mx-4" />
+          <input type="checkbox" x-model="isEmployee" @change="resetModalFields" class="toggle mx-4" />
           <span :class="{'text-gray-500': !isEmployee}"
                 class="label-text mr-auto font-semibold">Employee</span>
         </label>
@@ -58,3 +88,4 @@
     </div>
   </div>
 {% endblock main %}
+{% comment %} djlint:on {% endcomment %}
