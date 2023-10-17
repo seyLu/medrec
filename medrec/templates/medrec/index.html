@@ -91,8 +91,6 @@
             const val = e.target.value;
             const url = `{% url 'client-detail' reference_number=0 %}`.replace('0', val)
             reference_number_btn.setAttribute("hx-get", url);
-
-
             htmx.process(reference_number_btn);
           });
 </script>
@@ -105,7 +103,7 @@
       </div>
     </div>
 
-    <div class="px-5 mt-32" id="client" @htmx:after-swap="$refs.modal_close_btn.click()"></div>
+    <div class="px-5 mt-32" id="client"></div>
   </div>
 {% endblock main %}
 {% comment %} djlint:on {% endcomment %}

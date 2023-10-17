@@ -1,3 +1,10 @@
+{% if close_modal %}
+  <script>
+  const closeModalBtn = document.getElementById("close_modal");
+  closeModalBtn.click();
+  </script>
+{% endif %}
+
 <h1>Client: {{ client.first_name }} {{ client.last_name }}</h1>
 
 <div class="overflow-x-auto">
