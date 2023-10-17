@@ -8,10 +8,10 @@
 {% block nav %}
   <nav class="navbar bg-base-100">
     <div class="flex-1">
-      <a class="btn btn-ghost normal-case text-xl">medrec</a>
+      <a class="text-xl normal-case btn btn-ghost">medrec</a>
     </div>
     <div class="flex-none">
-      <ul class="menu menu-horizontal px-1">
+      <ul class="px-1 menu menu-horizontal">
         <li>
           <a>hello <span class="text-red-700">{{ request.user }}</span></a>
         </li>
@@ -62,12 +62,12 @@
           }"
            x-init="resetModalFields"
            class="form-control">
-        <label class="label cursor-pointer mb-2">
+        <label class="mb-2 cursor-pointer label">
           <span :class="{'text-gray-500': isEmployee}"
-                class="label-text ml-auto font-semibold">Student</span>
-          <input type="checkbox" x-model="isEmployee" @change="resetModalFields" class="toggle mx-4" />
+                class="ml-auto font-semibold label-text">Student</span>
+          <input type="checkbox" x-model="isEmployee" @change="resetModalFields" class="mx-4 toggle" />
           <span :class="{'text-gray-500': !isEmployee}"
-                class="label-text mr-auto font-semibold">Employee</span>
+                class="mr-auto font-semibold label-text">Employee</span>
         </label>
 
         <div class="join">
@@ -80,7 +80,7 @@
                   hx-target="#client"
                   hx-trigger="click"
                   id="reference_number_btn"
-                  class="btn join-item rounded-r-full">Search</button>
+                  class="rounded-r-full btn join-item">Search</button>
         </div>
 
         <script>
@@ -95,7 +95,7 @@
           });
 </script>
 
-        <button class="btn btn-primary w-fit m-auto mt-5"
+        <button class="m-auto mt-5 btn btn-primary w-fit"
                 onclick="client_create_modal.showModal()">
           Add new <span x-text="isEmployee ? 'Employee' : 'Student'"></span> client
         </button>
