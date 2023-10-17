@@ -19,9 +19,10 @@ class ClientCreateView(View):
 class ClientDetailView(View):
     def get(self, request: HttpRequest, reference_number: int = 0) -> HttpResponse:
         client: Client = Client.objects.get(reference_number=reference_number)
-        records: Record = Record.objects.filter(client=client)
+        records: list[Record] = list(Record.objects.filter(client=client))
+
         return render(
             request,
             "medrec/partials/client.html",
-            {"client": client, "records": list(records)},
+            {"client": client, "records": records},
         )

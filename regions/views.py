@@ -23,7 +23,7 @@ class DistrictsQueryView(View):
             city = city[0]  # type: ignore
             response = District.objects.filter(city=city)  # type: ignore[misc]
 
-        if not request.htmx:
+        if not request.htmx:  # type: ignore[attr-defined]
             if not response:
                 return JsonResponse(list(response), safe=False)
 
@@ -40,7 +40,7 @@ class DistrictsQueryView(View):
 
 
 class CitiesQueryView(View):
-    def post(self, request: HttpRequest) -> JsonResponse:
+    def post(self, request: HttpRequest) -> JsonResponse | HttpResponse:
         parsed_url = urlparse(request.get_full_path())
         regions: dict[str, list[str]] = parse_qs(parsed_url.query)
 
@@ -54,7 +54,7 @@ class CitiesQueryView(View):
             province = province[0]  # type: ignore
             response = City.objects.filter(province=province)  # type: ignore[misc]
 
-        if not request.htmx:
+        if not request.htmx:  # type: ignore[attr-defined]
             if not response:
                 return JsonResponse(list(response), safe=False)
 
@@ -84,7 +84,7 @@ class ProvincesQueryView(View):
         else:
             response = Province.objects.all()
 
-        if not request.htmx:
+        if not request.htmx:  # type: ignore[attr-defined]
             if not response:
                 return JsonResponse(list(response), safe=False)
 
