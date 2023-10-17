@@ -1,0 +1,37 @@
+{% if close_modal %}
+  <script>
+  const closeModalBtn = document.getElementById("close_modal");
+  closeModalBtn.click();
+  </script>
+{% endif %}
+
+<h1>Client: {{ client.first_name }} {{ client.last_name }}</h1>
+
+<div class="overflow-x-auto">
+  <table class="table">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th>History</th>
+        <th>Diagnosis and Plan</th>
+        <th>Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- row 1 -->
+      {% for record in records %}
+        <tr class="hover">
+          <td>
+            <div class="h-10 overflow-hidden">{{ record.history }}</div>
+          </td>
+          <td>
+            <div class="h-10 overflow-hidden">{{ record.diagnosis_and_plan }}</div>
+          </td>
+          <td>
+            <div class="h-10 overflow-hidden">{{ record.remarks }}</div>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

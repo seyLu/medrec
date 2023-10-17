@@ -1,0 +1,22 @@
+{% for district in districts %}
+  <option value="{{ district.name }}" data-code="{{ district.code }}">{{ district.code }}</option>
+{% endfor %}
+
+<script>
+  const district = document.getElementById("district");
+  const districtDatalist = document.getElementById("district_datalist");
+  let districtNameEsrc = null;
+
+  districtName.addEventListener("keydown", (e) => {
+    districtNameEsrc = e.key ? "input" : "list";
+  });
+
+  districtName.addEventListener("input", (e) => {
+    if (districtNameEsrc === "list") {
+      const val = e.target.value;
+      const district_code = districtDatalist.querySelector(`option[value="${val}"]`).dataset.code;
+
+      district.value = district_code;
+    }
+  });
+</script>

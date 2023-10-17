@@ -8,10 +8,10 @@
 {% block nav %}
   <nav class="navbar bg-base-100">
     <div class="flex-1">
-      <a class="btn btn-ghost normal-case text-xl">medrec</a>
+      <a class="text-xl normal-case btn btn-ghost">medrec</a>
     </div>
     <div class="flex-none">
-      <ul class="menu menu-horizontal px-1">
+      <ul class="px-1 menu menu-horizontal">
         <li>
           <a>hello <span class="text-red-700">{{ request.user }}</span></a>
         </li>
@@ -29,32 +29,81 @@
 {% block main %}
   <div class="flex flex-col w-screen">
     <div class="mx-auto mt-32">
-      <div x-data="{ isEmployee: false, showForm: false }" class="form-control">
-        <label class="label cursor-pointer mb-2">
+      {% comment %} djlint:off {% endcomment %}
+      <div x-data="{
+            isEmployee: false,
+            showForm: false,
+
+            reference_number: '',
+            client_type: '',
+            first_name: '',
+            last_name: '',
+            age: '',
+            level: '',
+            school: '',
+            province_name: '',
+            city_name: '',
+            district_name: '',
+            street_address: '',
+
+            resetModalFields() {
+              this.reference_number = '';
+              this.client_type = '';
+              this.first_name = '';
+              this.last_name = '';
+              this.age = '';
+              this.level = '';
+              this.school = '';
+              this.province_name = '';
+              this.city_name = '';
+              this.district_name = '';
+              this.street_address = '';
+            }
+          }"
+           x-init="resetModalFields"
+           class="form-control">
+        <label class="mb-2 cursor-pointer label">
           <span :class="{'text-gray-500': isEmployee}"
-                class="label-text ml-auto font-semibold">Student</span>
-          <input type="checkbox" x-model="isEmployee" class="toggle mx-4" />
+                class="ml-auto font-semibold label-text">Student</span>
+          <input type="checkbox" x-model="isEmployee" @change="resetModalFields" class="mx-4 toggle" />
           <span :class="{'text-gray-500': !isEmployee}"
-                class="label-text mr-auto font-semibold">Employee</span>
+                class="mr-auto font-semibold label-text">Employee</span>
         </label>
 
-        <div x-show="!isEmployee" class="join">
-          <input class="input input-bordered join-item"
-                 placeholder="Learner Reference Number" />
-          <button class="btn join-item rounded-r-full">Search</button>
-        </div>
-        <div x-show="isEmployee" class="join">
-          <input class="input input-bordered join-item"
-                 placeholder="Employee ID Number" />
-          <button class="btn join-item rounded-r-full">Search</button>
+        <div class="join">
+          <input id="reference_number"
+                 name="reference_number"
+                 class="input input-bordered join-item"
+                 @input.throttle="new Event('change')"
+                 :placeholder="isEmployee ?  'Employee ID Number' : 'Learner Reference Number'" />
+          <button hx-swap="innerHTML"
+                  hx-target="#client"
+                  hx-trigger="click"
+                  id="reference_number_btn"
+                  class="rounded-r-full btn join-item">Search</button>
         </div>
 
-        <button class="btn btn-primary w-fit m-auto mt-5"
+        <script>
+          const reference_number = document.getElementById("reference_number");
+          const reference_number_btn = document.getElementById("reference_number_btn");
+
+          reference_number.addEventListener("change", (e) => {
+            const val = e.target.value;
+            const url = `{% url 'client-detail' reference_number=0 %}`.replace('0', val)
+            reference_number_btn.setAttribute("hx-get", url);
+            htmx.process(reference_number_btn);
+          });
+</script>
+
+        <button class="m-auto mt-5 btn btn-primary w-fit"
                 onclick="client_create_modal.showModal()">
           Add new <span x-text="isEmployee ? 'Employee' : 'Student'"></span> client
         </button>
         {% include 'medrec/partials/client-create-modal.html' %}
       </div>
     </div>
+
+    <div class="px-5 mt-32" id="client"></div>
   </div>
 {% endblock main %}
+{% comment %} djlint:on {% endcomment %}

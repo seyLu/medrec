@@ -1,18 +1,15 @@
 <dialog id="client_create_modal" class="modal">
   <div class="modal-box">
     <form method="dialog">
-      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+      <button id="close_modal"
+              class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
     </form>
-
-    <script>
-      document.addEventListener("alpine:init", () => {
-        const csrf_token = document.querySelector('[name="csrfmiddlewaretoken"]').value;
-        Alpine.store('csrf_token', csrf_token);
-      });
-    </script>
 
     {% comment %} djlint:off {% endcomment %}
     <form hx-post="{% url 'client-create' %}"
+          hx-trigger="submit"
+          hx-target="#client"
+          hx-swap="innerHTML"
           x-data="{
             client_type: 'student',
 
@@ -22,59 +19,63 @@
           }">
       {% csrf_token %}
 
-      <div class="text-center text-xs text-gray-400 mb-2">Basic Information</div>
+      <div class="mb-2 text-xs text-center text-gray-400">Basic Information</div>
 
-      <div class="grid grid-cols-2 gap-y-4 gap-x-6 mx-auto">
-        <div class="form-control w-full max-w-xs">
+      <div class="grid grid-cols-1 mx-auto md:grid-cols-2 gap-y-4 gap-x-6">
+        <div class="w-full max-w-xs form-control">
           <label class="label">
             <span class="label-text">
               <span x-text="isEmployee ? 'Employee ID Number' : 'Learner Reference Number'"></span>
             </span>
           </label>
-          <input type="text"
+          <input x-model="reference_number"
+                 type="text"
                  id="reference_number"
                  name="reference_number"
                  required
                  :placeholder="getClientType == 'student' ? 777708829185 : getClientType == 'teacher' ? 929872 : 572438"
-                 class="input input-bordered w-full max-w-xs" />
+                 class="w-full max-w-xs input input-bordered" />
         </div>
 
-        <div class="form-control w-full max-w-xs">
+        <div class="w-full max-w-xs form-control">
           <label class="label">
             <span class="label-text">Client Type</span>
           </label>
           <template x-if="isEmployee">
             <div>
-              <label class="label cursor-pointer">
-                <span class="label-text">Teacher</span>
+              <label class="cursor-pointer label">
+                <span class="font-semibold label-text">Teacher</span>
                 <input x-model="client_type"
                        type="radio"
                        id="teacher"
-                       name="client-type"
+                       name="client_type"
                        value="teacher"
                        class="radio"
+                       required
                        checked />
               </label>
-              <label class="label cursor-pointer">
-                <span class="label-text">Non-teaching Personnel</span>
+              <label class="cursor-pointer label">
+                <span class="font-semibold label-text">Non-teaching Personnel</span>
                 <input x-model="client_type"
                        type="radio"
                        id="nonteaching-personnel"
-                       name="client-type"
+                       name="client_type"
                        value="nonteaching-personnel"
+                       required
                        class="radio" />
               </label>
             </div>
           </template>
           <template x-if="!isEmployee">
             <div>
-              <label class="label cursor-pointer">
-                <span class="label-text">Student</span>
+              <label class="cursor-pointer label">
+                <span class="font-semibold label-text">Student</span>
                 <input x-model="client_type"
                        type="radio"
                        id="student"
-                       name="client-type"
+                       name="client_type"
                        value="student"
+                       required
                        class="radio"
                        checked />
               </label>
@@ -83,243 +84,161 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4">
-        <div class="form-control w-full max-w-xs">
+      <div class="grid grid-cols-1 mx-auto mt-4 md:grid-cols-2 gap-y-4 gap-x-6">
+        <div class="w-full max-w-xs form-control">
           <label class="label">
             <span class="label-text">First Name</span>
           </label>
-          <input type="text"
+          <input x-model="first_name"
+                 type="text"
                  id="first_name"
                  name="first_name"
                  required
                  placeholder="John"
-                 class="input input-bordered w-full max-w-xs" />
+                 class="w-full max-w-xs input input-bordered" />
         </div>
-        <div class="form-control w-full max-w-xs">
+        <div class="w-full max-w-xs form-control">
           <label class="label">
             <span class="label-text">Last Name</span>
           </label>
-          <input type="text"
+          <input x-model="last_name"
+                 type="text"
                  id="last_name"
                  name="last_name"
                  required
                  placeholder="Doe"
-                 class="input input-bordered w-full max-w-xs" />
+                 class="w-full max-w-xs input input-bordered" />
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4">
-        <div class="form-control w-full max-w-xs">
+      <div class="grid grid-cols-1 mx-auto mt-4 md:grid-cols-2 gap-y-4 gap-x-6">
+        <div class="w-full max-w-xs form-control">
           <label class="label">
             <span class="label-text">Age</span>
           </label>
-          <input type="text"
+          <input x-model="age"
+                 type="text"
                  id="age"
                  name="age"
                  required
                  :placeholder="getClientType === 'student' ? 15 : getClientType === 'teacher'? 23 : 40"
-                 class="input input-bordered w-full max-w-xs" />
+                 class="w-full max-w-xs input input-bordered" />
         </div>
-        <div class="form-control w-full max-w-xs">
+        <div class="w-full max-w-xs form-control">
           <label class="label">
             <span class="label-text" x-text="isEmployee ? 'Position' : 'Grade Level'"></span>
           </label>
-          <input type="text"
+          <input x-model="level"
+                 type="text"
                  id="level"
                  name="level"
                  required
                  :placeholder="getClientType === 'student' ? 'Grade 10' : getClientType === 'teacher' ? 'Teacher 1' : 'Principal'"
-                 class="input input-bordered w-full max-w-xs" />
+                 class="w-full max-w-xs input input-bordered" />
         </div>
       </div>
 
-      <div class="grid grid-cols-1 gap-y-4 gap-x-6 mx-auto mt-4">
-        <div class="form-control w-full">
+      <div class="grid grid-cols-1 mx-auto mt-4 gap-y-4 gap-x-6">
+        <div class="w-full form-control">
           <label class="label">
             <span class="label-text">School</span>
           </label>
-          <input type="text"
+          <input x-model="school"
+                 type="text"
                  id="school"
                  name="school"
                  required
                  placeholder="Gonzalez 6 High School"
-                 class="input input-bordered w-full" />
+                 class="w-full input input-bordered" />
         </div>
       </div>
 
-      <div class="divider text-xs text-gray-400 mt-10 mb-2">Address</div>
+      <div class="mt-10 mb-2 text-xs text-gray-400 divider">Address</div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 mx-auto mt-4"
-           x-data="{
-            provinces: [],
-            cities: [],
-            districts: [],
-
-            provinceName: null,
-            provinceCode: null,
-            cityName: null,
-            cityCode: null,
-            districtName: null,
-            districtCode: null,
-
-            async getProvinces() {
-              this.provinces = await (await fetch({% url 'provinces-query' %}, {
-                method: 'POST',
-                headers: {
-                  'Content-type': 'application/json; charset=UTF-8',
-                  'X-CSRFToken': $store.csrf_token,
-                }, mode: 'same-origin'
-              })).json()
-            },
-
-            async getCities() {
-              this.cities = await (await fetch(`{% url 'cities-query' %}?province=${this.provinceCode}`, {
-                method: 'POST',
-                headers: {
-                  'Content-type': 'application/json; charset=UTF-8',
-                  'X-CSRFToken': $store.csrf_token,
-                }, mode: 'same-origin'
-              })).json()
-            },
-
-            async getDistricts() {
-              this.districts = await (await fetch(`{% url 'districts-query' %}?city=${this.cityCode}`, {
-                method: 'POST',
-                headers: {
-                  'Content-type': 'application/json; charset=UTF-8',
-                  'X-CSRFToken': $store.csrf_token,
-                }, mode: 'same-origin'
-              })).json()
-            },
-           }">
-        <div class="form-control w-full">
+      <div class="grid grid-cols-1 mx-auto mt-4 md:grid-cols-2 gap-y-4 gap-x-6">
+        <div class="w-full form-control">
           <label class="label">
             <span class="label-text">Province</span>
           </label>
-          <div x-data="{
-                isDropDownOpen: false,
-                search: '',
-
-                get filteredProvinces() {
-                  return provinces.filter(
-                    province => province.name.toLowerCase().startsWith(this.search.toLowerCase())
-                  )
-                }
-               }"
-               x-init="getProvinces"
-               class="dropdown dropdown-end w-full">
-            <input x-model="search"
-                   type="text"
-                   id="province_name"
-                   name="province_name"
-                   required
-                   placeholder="Leyte"
-                   :value="provinceName"
-                   @focus="isDropDownOpen = false;"
-                   class="input input-bordered w-full" />
-            <input type="hidden" id="province" name="province" :value="provinceCode">
-            <ul tabindex="0"
-                :class="isDropDownOpen ? 'hidden' : ''"
-                class="dropdown-content shadow menu bg-base-100 max-h-30 z-[1] rounded-md w-full">
-                <template x-for="item in filteredProvinces" :key="item.name">
-                  <li @click="
-                        provinceName = item.name;
-                        provinceCode = item.code;
-                        isDropDownOpen = true;
-                        document.querySelector('#city_name').value = '';
-                        document.querySelector('#district_name').value = '';"
-                      @click.debounce="getCities">
-                    <a x-text="item.name"></a>
-                  </li>
-                </template>
-            </ul>
-          </div>
+          <input x-model="province_name"
+                 type="text"
+                 id="province_name"
+                 name="province_name"
+                 list="province_datalist"
+                 required
+                 placeholder="Leyte"
+                 class="w-full input input-bordered" />
+          <input type="hidden"
+                 id="province"
+                 name="province"
+                 hx-trigger="change"
+                 hx-target="#city_datalist"
+                 hx-swap="innerHTML" />
+          <datalist hx-post="{% url 'provinces-query' %}"
+                    hx-trigger="load"
+                    hx-target="this"
+                    hx-swap="innerHTML"
+                    id="province_datalist"></datalist>
         </div>
-        <div class="form-control w-full">
+        <div class="w-full form-control">
           <label class="label">
-            <span class="label-text">City/Municipality</span>
+            <span class="label-text">City / Municipality</span>
           </label>
-          <div x-data="{
-                isDropDownOpen: false,
-                search: '',
-
-                get filteredCities() {
-                  return cities.filter(
-                    city => city.name.toLowerCase().startsWith(this.search.toLowerCase())
-                  )
-                }
-               }"
-               class="dropdown dropdown-end w-full">
-            <input x-model="search"
-                   type="text"
-                   id="city_name"
-                   name="city_name"
-                   required
-                   placeholder="Tacloban City"
-                   :disabled="provinceName === null"
-                   :value="cityName"
-                   @focus="isDropDownOpen = false;"
-                   class="input input-bordered w-full" />
-            <input type="hidden" id="city" name="city" :value="cityCode">
-            <ul tabindex="0"
-                role="menu"
-                :class="isDropDownOpen ? 'hidden' : ''"
-                class="dropdown-content shadow menu bg-base-100 max-h-30 z-[1] rounded-md w-full">
-                <template x-for="item in filteredCities" :key="item.name">
-                  <li @click="
-                        cityName = item.name;
-                        cityCode = item.code;
-                        isDropDownOpen = true;
-                        document.querySelector('#district_name').value = '';"
-                        @click.debounce="getDistricts">
-                    <a x-text="item.name"></a>
-                  </li>
-                </template>
-            </ul>
-          </div>
+          <input x-model="city_name"
+                 type="text"
+                 id="city_name"
+                 name="city_name"
+                 list="city_datalist"
+                 required
+                 disabled
+                 placeholder="Tacloban City"
+                 class="w-full input input-bordered"/>
+          <input type="hidden"
+                 id="city"
+                 name="city"
+                 hx-trigger="change"
+                 hx-target="#district_datalist"
+                 hx-swap="innerHTML" />
+          <datalist id="city_datalist"></datalist>
         </div>
-        <div class="form-control w-full">
+        <div class="w-full form-control">
           <label class="label">
             <span class="label-text">Barangay</span>
           </label>
-          <div x-data="{
-                isDropDownOpen: false,
-                search: '',
-
-                get filteredDistricts() {
-                  return districts.filter(
-                    district => district.name.toLowerCase().startsWith(this.search.toLowerCase())
-                  )
-                }
-               }"
-               class="dropdown dropdown-end w-full">
-            <input x-model="search"
-                   type="text"
-                   id="district_name"
-                   name="district_name"
-                   required
-                   placeholder="Brgy 63 - Sagkahan"
-                   :disabled="cityName === null"
-                   :value="districtName"
-                   @focus="isDropDownOpen = false;"
-                   class="input input-bordered w-full" />
-            <input type="hidden" id="district" name="district" :value="districtCode">
-            <ul tabindex="0"
-                role="menu"
-                :class="isDropDownOpen ? 'hidden' : ''"
-                class="dropdown-content shadow menu bg-base-100 max-h-30 z-[1] rounded-md w-full">
-                <template x-for="item in filteredDistricts" :key="item.name">
-                  <li @click="
-                        districtName = item.name;
-                        districtCode = item.code;
-                        isDropDownOpen = true;">
-                    <a x-text="item.name"></a>
-                  </li>
-                </template>
-            </ul>
-          </div>
+          <input x-model="district_name"
+                 type="text"
+                 id="district_name"
+                 name="district_name"
+                 list="district_datalist"
+                 required
+                 disabled
+                 placeholder="Brgy. 63 - Sagkahan"
+                 class="w-full input input-bordered"/>
+          <input type="hidden"
+                 id="district"
+                 name="district" />
+          <datalist id="district_datalist"></datalist>
         </div>
       </div>
+
+      <div class="grid grid-cols-1 mx-auto mt-4 gap-y-4 gap-x-6">
+        <div class="w-full form-control">
+          <label class="label">
+            <span class="label-text">Street Address</span>
+          </label>
+          <input x-model="street_address"
+                 type="text"
+                 id="street_address"
+                 name="street_address"
+                 required
+                 placeholder="Real Street"
+                 class="w-full input input-bordered" />
+        </div>
+      </div>
+
+      <button type="submit" class="flex mt-10 ml-auto btn btn-primary w-fit">
+          Add new <span x-text="isEmployee ? 'Employee' : 'Student'"></span> client
+      </button>
     </form>
   </div>
 </dialog>
