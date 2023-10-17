@@ -8,7 +8,7 @@ django-tailwind==3.6.0
 aiohttp==3.8.6
 PyYAML==6.0.1
 Faker==19.10.0
-phonenumbers==8.13.22
+phonenumbers==8.13.23
 gpt4all==1.0.12
 
 # dev tools
