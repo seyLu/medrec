@@ -1,18 +1,18 @@
 # core
 Django==4.2.6
 django-extensions==3.2.3
-django-htmx==1.16.0
+django-htmx==1.17.0
 django-tailwind==3.6.0
 
 # scripts
 aiohttp==3.8.6
 PyYAML==6.0.1
-Faker==19.6.2
-phonenumbers==8.13.22
+Faker==19.10.0
+phonenumbers==8.13.23
 gpt4all==1.0.12
 
 # dev tools
-pre-commit==3.4.0
+pre-commit==3.5.0
 djlint==1.34.0
 
 # stubs
