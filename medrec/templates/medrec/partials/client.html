@@ -1,37 +1,104 @@
+{% load static %}
+
 {% if close_modal %}
   <script>
-  const closeModalBtn = document.getElementById("close_modal");
-  closeModalBtn.click();
+    const closeModalBtn = document.getElementById("close_modal");
+    closeModalBtn.click();
   </script>
 {% endif %}
 
-<h1>Client: {{ client.first_name }} {{ client.last_name }}</h1>
+<div class="grid grid-cols-1 gap-4">
+  <div class="w-full shadow-xl card bg-base-100">
+    <div class="card-body">
+      <h2 class="mb-4 card-title text-accent-focus">
+        {{ client.reference_number }}
+        <span class="text-gray-500">
+          ·
+        </span>
+        <span class="text-lg text-accent-content">
+           {{ client.first_name }} {{ client.last_name }}
+        </span>
+      </h2>
 
-<div class="overflow-x-auto">
-  <table class="table">
-    <!-- head -->
-    <thead>
-      <tr>
-        <th>History</th>
-        <th>Diagnosis and Plan</th>
-        <th>Remarks</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- row 1 -->
-      {% for record in records %}
-        <tr class="hover">
-          <td>
-            <div class="h-10 overflow-hidden">{{ record.history }}</div>
-          </td>
-          <td>
-            <div class="h-10 overflow-hidden">{{ record.diagnosis_and_plan }}</div>
-          </td>
-          <td>
-            <div class="h-10 overflow-hidden">{{ record.remarks }}</div>
-          </td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+        {% with client.type as client_type %}
+          <div>
+            <p class="text-gray-500">Client Type</p>
+            <p class="text-gray-800 text-md">{{ client.get_type_display }}</p>
+          </div>
+          <div>
+            <p class="text-gray-500">
+              {% if client_type == "STU" %}
+                Grade Level
+              {% else %}
+                Position
+              {% endif %}
+            </p>
+            <p class="text-gray-800 text-md">{{ client.level }}</p>
+          </div>
+          <div>
+            <p class="text-gray-500">Age</p>
+            <p class="text-gray-800 text-md">{{ client.age }}</p>
+          </div>
+          <div>
+            <p class="text-gray-500">School</p>
+            <p class="text-gray-800 text-md">{{ client.school }}</p>
+          </div>
+          <div class="col-span-2">
+            <p class="text-gray-500">Home Address</p>
+            <p class="text-gray-800 text-md">
+              {{ client.street_address }},
+              {{ client.district.name }},
+              {{ client.city.name }},
+              {{ client.province.name }}
+            </p>
+          </div>
+        {% endwith %}
+      </div>
+    </div>
+  </div>
+  {% if records %}
+    <div class="w-full shadow-xl card bg-base-100">
+      <div class="overflow-x-auto card-body">
+        <table class="table table-fixed">
+          <!-- head -->
+          <thead>
+          <tr>
+            <th>History</th>
+            <th>Diagnosis and Plan</th>
+            <th>Remarks</th>
+          </tr>
+          </thead>
+          <tbody>
+          <!-- row 1 -->
+          {% for record in records %}
+            <tr class="cursor-pointer hover">
+              <td>
+                <div class="h-10 truncate">{{ record.history }}</div>
+              </td>
+              <td>
+                <div class="h-10 truncate">{{ record.diagnosis_and_plan }}</div>
+              </td>
+              <td>
+                <div class="h-10 truncate">{{ record.remarks }}</div>
+              </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  {% else %}
+    <div class="mt-10 flex justify-center align-center">
+      <div class="container text-center">
+        <img class="mx-auto mb-4 w-32" src="{% static 'medrec/images/no-records-grayscale.png' %}"
+             alt="No medical records found.">
+        <p class="text-sm text-gray-500">No medical records found.</p>
+        <p @click=""
+           class="text-sm font-semibold link link-hover text-primary">
+          Create a new one?
+        </p>
+      </div>
+    </div>
+  {% endif %}
 </div>
