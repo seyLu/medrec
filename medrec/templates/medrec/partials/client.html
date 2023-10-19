@@ -1,37 +1,61 @@
+{% load static %}
+
 {% if close_modal %}
   <script>
-  const closeModalBtn = document.getElementById("close_modal");
-  closeModalBtn.click();
+    const closeModalBtn = document.getElementById("close_modal");
+    closeModalBtn.click();
   </script>
 {% endif %}
 
-<h1>Client: {{ client.first_name }} {{ client.last_name }}</h1>
-
-<div class="overflow-x-auto">
-  <table class="table table-fixed">
-    <!-- head -->
-    <thead>
-      <tr>
-        <th>History</th>
-        <th>Diagnosis and Plan</th>
-        <th>Remarks</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- row 1 -->
-      {% for record in records %}
-        <tr class="cursor-pointer hover">
-          <td>
-            <div class="h-10 truncate">{{ record.history }}</div>
-          </td>
-          <td>
-            <div class="h-10 truncate">{{ record.diagnosis_and_plan }}</div>
-          </td>
-          <td>
-            <div class="h-10 truncate">{{ record.remarks }}</div>
-          </td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+<div class="grid grid-cols-1 gap-4">
+  <div class="w-full shadow-xl card bg-base-100">
+    <div class="card-body">
+      <h2 class="card-title text-success">{{ client.reference_number }}</h2>
+      <p>{{ client.first_name }} {{ client.last_name }}</p>
+    </div>
+  </div>
+  {% if records %}
+    <div class="w-full shadow-xl card bg-base-100">
+      <div class="overflow-x-auto card-body">
+        <table class="table table-fixed">
+          <!-- head -->
+          <thead>
+          <tr>
+            <th>History</th>
+            <th>Diagnosis and Plan</th>
+            <th>Remarks</th>
+          </tr>
+          </thead>
+          <tbody>
+          <!-- row 1 -->
+          {% for record in records %}
+            <tr class="cursor-pointer hover">
+              <td>
+                <div class="h-10 truncate">{{ record.history }}</div>
+              </td>
+              <td>
+                <div class="h-10 truncate">{{ record.diagnosis_and_plan }}</div>
+              </td>
+              <td>
+                <div class="h-10 truncate">{{ record.remarks }}</div>
+              </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  {% else %}
+    <div class="mt-10 flex justify-center align-center">
+      <div class="container text-center">
+        <img class="mx-auto mb-4 w-32" src="{% static 'medrec/images/no-records-grayscale.png' %}"
+             alt="No medical records found.">
+        <p class="text-sm text-gray-500">No medical records found.</p>
+        <p @click="record_create_modal.showModal()"
+           class="text-sm font-semibold link link-hover text-primary">
+          Create a new one?
+        </p>
+      </div>
+    </div>
+  {% endif %}
 </div>
