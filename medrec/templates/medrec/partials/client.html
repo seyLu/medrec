@@ -10,8 +10,51 @@
 <div class="grid grid-cols-1 gap-4">
   <div class="w-full shadow-xl card bg-base-100">
     <div class="card-body">
-      <h2 class="card-title text-success">{{ client.reference_number }}</h2>
-      <p>{{ client.first_name }} {{ client.last_name }}</p>
+      <h2 class="mb-4 card-title text-accent-focus">
+        {{ client.reference_number }}
+        <span class="text-gray-500">
+          ·
+        </span>
+        <span class="text-lg text-accent-content">
+           {{ client.first_name }} {{ client.last_name }}
+        </span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {% with client.type as client_type %}
+          <div>
+            <p class="text-sm text-gray-500">Client Type</p>
+            <p class="text-gray-800 text-md">{{ client.get_type_display }}</p>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">
+              {% if client_type == "STU" %}
+                Grade Level
+              {% else %}
+                Position
+              {% endif %}
+            </p>
+            <p class="text-gray-800 text-md">{{ client.level }}</p>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">Age</p>
+            <p class="text-gray-800 text-md">{{ client.age }}</p>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">School</p>
+            <p class="text-gray-800 text-md">{{ client.school }}</p>
+          </div>
+          <div class="col-span-2">
+            <p class="text-sm text-gray-500">Home Address</p>
+            <p class="text-gray-800 text-md">
+              {{ client.street_address }},
+              {{ client.district.name }},
+              {{ client.city.name }},
+              {{ client.province.name }}
+            </p>
+          </div>
+        {% endwith %}
+      </div>
     </div>
   </div>
   {% if records %}
@@ -51,7 +94,7 @@
         <img class="mx-auto mb-4 w-32" src="{% static 'medrec/images/no-records-grayscale.png' %}"
              alt="No medical records found.">
         <p class="text-sm text-gray-500">No medical records found.</p>
-        <p @click="record_create_modal.showModal()"
+        <p @click=""
            class="text-sm font-semibold link link-hover text-primary">
           Create a new one?
         </p>
