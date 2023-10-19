@@ -14,12 +14,6 @@ repos:
         additional_dependencies:
           - prettier@3.0.3
 
-  - repo: https://github.com/Riverside-Healthcare/djLint
-    rev: v1.34.0
-    hooks:
-      - id: djlint-reformat-django
-      - id: djlint-django
-
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.1.0
     hooks:
