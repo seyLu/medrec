@@ -20,14 +20,14 @@
         </span>
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
         {% with client.type as client_type %}
           <div>
-            <p class="text-sm text-gray-500">Client Type</p>
+            <p class="text-gray-500">Client Type</p>
             <p class="text-gray-800 text-md">{{ client.get_type_display }}</p>
           </div>
           <div>
-            <p class="text-sm text-gray-500">
+            <p class="text-gray-500">
               {% if client_type == "STU" %}
                 Grade Level
               {% else %}
@@ -37,15 +37,15 @@
             <p class="text-gray-800 text-md">{{ client.level }}</p>
           </div>
           <div>
-            <p class="text-sm text-gray-500">Age</p>
+            <p class="text-gray-500">Age</p>
             <p class="text-gray-800 text-md">{{ client.age }}</p>
           </div>
           <div>
-            <p class="text-sm text-gray-500">School</p>
+            <p class="text-gray-500">School</p>
             <p class="text-gray-800 text-md">{{ client.school }}</p>
           </div>
           <div class="col-span-2">
-            <p class="text-sm text-gray-500">Home Address</p>
+            <p class="text-gray-500">Home Address</p>
             <p class="text-gray-800 text-md">
               {{ client.street_address }},
               {{ client.district.name }},
