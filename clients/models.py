@@ -6,10 +6,12 @@ from regions.models import City, District, Province, Region
 
 
 class Client(models.Model):
-    class ClientType(models.TextChoices):
-        TEACHER = "TCH", _("Teacher")
-        NONTEACHING_PERSONNEL = "NTP", _("Non-teaching Personnel")
-        STUDENT = "STU", _("Student")
+    class Meta:
+        indexes = [
+            models.Index(
+                fields=["reference_number"], name="client_reference_number_idx"
+            ),
+        ]
 
     reference_number = models.IntegerField(
         validators=[
@@ -18,6 +20,12 @@ class Client(models.Model):
         ],
         unique=True,
     )
+
+    class ClientType(models.TextChoices):
+        TEACHER = "TCH", _("Teacher")
+        NONTEACHING_PERSONNEL = "NTP", _("Non-teaching Personnel")
+        STUDENT = "STU", _("Student")
+
     type = models.CharField(
         max_length=3,
         choices=ClientType.choices,
@@ -43,13 +51,6 @@ class Client(models.Model):
     city = models.ForeignKey(City, to_field="code", on_delete=models.CASCADE)
     district = models.ForeignKey(District, to_field="code", on_delete=models.CASCADE)
     street_address = models.CharField(max_length=255)
-
-    class Meta:
-        indexes = [
-            models.Index(
-                fields=["reference_number"], name="client_reference_number_idx"
-            ),
-        ]
 
     def __str__(self) -> str:
         return f"{self.first_name} [{self.type}], {self.reference_number}"
