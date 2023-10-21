@@ -37,3 +37,7 @@ class Profile(models.Model):
 
     uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     user = models.ForeignKey(User, to_field="uuid", on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=32, blank=True)
+    last_name = models.CharField(max_length=32, blank=True)
+    title = models.CharField(max_length=8, blank=True)
+    license_number = models.CharField(max_length=32, blank=True)
