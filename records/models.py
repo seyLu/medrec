@@ -7,6 +7,11 @@ from users.models import User
 
 
 class Record(models.Model):
+    class Meta:
+        indexes = [
+            models.Index(fields=["uuid"], name="record_uuid_idx"),
+        ]
+
     uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 
     created_datetime = models.DateTimeField(auto_now_add=True)
