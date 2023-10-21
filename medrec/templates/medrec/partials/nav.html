@@ -1,0 +1,29 @@
+<nav x-data="{
+      isDrawerOpen: true,
+      }"
+     class="drawer">
+  <input x-model="isDrawerOpen" id="sidebar" type="checkbox" class="drawer-toggle" checked/>
+  <div :class="{'ml-60 transition-all duration-300' : isDrawerOpen}"
+       class="drawer-content flex flex-col">
+    <!-- Navbar -->
+    <div class="w-full navbar bg-base-300">
+      <label for="sidebar" aria-label="open sidebar"
+             :class="{'hidden': isDrawerOpen}"
+             class="btn btn-square btn-ghost">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+             class="inline-block w-6 h-6 stroke-current">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </label>
+      <div class="flex-1 px-2 mx-2">Navbar Title</div>
+      <div class="flex-none hidden lg:block">
+        <ul class="menu menu-horizontal">
+          <!-- Navbar menu content here -->
+          <li><a>Navbar Item 1</a></li>
+          <li><a>Navbar Item 2</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% include 'medrec/partials/sidebar.html' %}
+</nav>

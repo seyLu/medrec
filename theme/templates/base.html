@@ -10,7 +10,7 @@
 
   <title>
     {% block title %}
-    {% endblock title %}
+    {% endblock %}
   </title>
 
   {% tailwind_css %}
@@ -22,18 +22,18 @@
   <script src="{% static 'theme/alpine.min.js' %}" defer></script>
 
   {% block styles %}
-  {% endblock styles %}
+  {% endblock %}
   {% block scripts %}
-  {% endblock scripts %}
+  {% endblock %}
 </head>
 <body>
 {% block nav %}
-{% endblock nav %}
+{% endblock %}
 <main>
   {% block main %}
-  {% endblock main %}
+  {% endblock %}
 </main>
 {% block footer %}
-{% endblock footer %}
+{% endblock %}
 </body>
 </html>
