@@ -20,4 +20,4 @@ pre-commit==3.5.0
 
 # stubs
 django-stubs[compatible-mypy]==4.2.4
-django-stubs-ext==4.2.2
+django-stubs-ext==4.2.5
