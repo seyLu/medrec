@@ -11,7 +11,7 @@ whitenoise[brotli]==6.6.0
 # scripts
 aiohttp==3.8.6
 PyYAML==6.0.1
-Faker==19.12.0
+Faker==19.13.0
 phonenumbers==8.13.24
 gpt4all==2.0.2
 
