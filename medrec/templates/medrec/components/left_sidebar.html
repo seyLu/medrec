@@ -1,0 +1,124 @@
+<nav
+  :class="isMenuCollapsed ? 'md:w-auto' : 'pr-3'"
+  class="hidden flex-none flex-col bg-gray-50 md:w-[16rem] md:flex"
+>
+  <ul class="w-full pl-0 menu">
+    <button
+      x-init="$el.click()"
+      onclick="compose_modal.showModal()"
+      class="btn my-5 ml-2 h-auto w-fit rounded-2xl border-0 bg-sky-200 p-5 hover:bg-sky-200 hover:shadow-xl"
+    >
+      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+           stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"/>
+      </svg>
+      <span :class="isMenuCollapsed && 'hidden'" class="ml-1 font-medium normal-case">
+        Compose
+      </span>
+    </button>
+    <li
+      id="menu_inbox"
+      x-data="{
+        mailbox:'inbox'
+      }"
+      :class="isMenuCollapsed && 'md:w-fit'"
+    >
+      <a
+        hx-trigger="click"
+        hx-swap="innerHTML"
+        hx-target="#mailbox"
+        @click.throttle="currentMailbox = mailbox"
+        :class="{
+          'rounded-full p-2 ml-4 tooltip tooltip-right font-normal': isMenuCollapsed,
+          'pl-6 rounded-r-full': !isMenuCollapsed,
+          'active': currentMailbox === mailbox,
+          'font-semibold': currentMailbox === mailbox && !isMenuCollapsed
+        }"
+        :data-tip="mailboxText"
+      >
+        <svg x-show="currentMailbox === 'inbox'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             fill="currentColor" class="h-5 w-5">
+          <path fill-rule="evenodd"
+                d="M6.912 3a3 3 0 00-2.868 2.118l-2.411 7.838a3 3 0 00-.133.882V18a3 3 0 003 3h15a3 3 0 003-3v-4.162c0-.299-.045-.596-.133-.882l-2.412-7.838A3 3 0 0017.088 3H6.912zm13.823 9.75l-2.213-7.191A1.5 1.5 0 0017.088 4.5H6.912a1.5 1.5 0 00-1.434 1.059L3.265 12.75H6.11a3 3 0 012.684 1.658l.256.513a1.5 1.5 0 001.342.829h3.218a1.5 1.5 0 001.342-.83l.256-.512a3 3 0 012.684-1.658h2.844z"
+                clip-rule="evenodd"/>
+        </svg>
+        <svg x-show="currentMailbox !== 'inbox'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+             class="h-5 w-5" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H6.911a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661z"/>
+        </svg>
+        <span :class="isMenuCollapsed && 'hidden'" class="ml-3" x-text="mailboxText"></span>
+      </a>
+    </li>
+    <li
+      id="menu_sent"
+      x-data="{
+        mailbox:'sent'
+      }"
+      :class="isMenuCollapsed && 'md:w-fit'"
+    >
+      <a
+        hx-trigger="click"
+        hx-swap="innerHTML"
+        hx-target="#mailbox"
+        @click.throttle="currentMailbox = mailbox"
+        :class="{
+          'rounded-full p-2 ml-4 tooltip tooltip-right font-normal': isMenuCollapsed,
+          'pl-6 rounded-r-full': !isMenuCollapsed,
+          'active': currentMailbox === mailbox,
+          'font-semibold': currentMailbox === mailbox && !isMenuCollapsed
+        }"
+        :data-tip="mailboxText"
+      >
+        <svg x-show="currentMailbox === 'sent'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             fill="currentColor" class="h-5 w-5">
+          <path
+            d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z"/>
+        </svg>
+        <svg x-show="currentMailbox !== 'sent'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+             class="h-5 w-5" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/>
+        </svg>
+        <span :class="isMenuCollapsed && 'hidden'" class="ml-3" x-text="mailboxText"></span>
+      </a>
+    </li>
+    <li
+      id="menu_archived"
+      x-data="{
+        mailbox:'archived'
+      }"
+      :class="isMenuCollapsed && 'md:w-fit'"
+    >
+      <a
+        hx-trigger="click"
+        hx-swap="innerHTML"
+        hx-target="#mailbox"
+        @click.throttle="currentMailbox = mailbox"
+        :class="{
+          'rounded-full p-2 ml-4 tooltip tooltip-right font-normal': isMenuCollapsed,
+          'pl-6 rounded-r-full': !isMenuCollapsed,
+          'active': currentMailbox === mailbox,
+          'font-semibold': currentMailbox === mailbox && !isMenuCollapsed
+        }"
+        :data-tip="mailboxText"
+      >
+        <svg x-show="currentMailbox === 'archived'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             fill="currentColor" class="h-5 w-5">
+          <path
+            d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375z"/>
+          <path fill-rule="evenodd"
+                d="M3.087 9l.54 9.176A3 3 0 006.62 21h10.757a3 3 0 002.995-2.824L20.913 9H3.087zm6.163 3.75A.75.75 0 0110 12h4a.75.75 0 010 1.5h-4a.75.75 0 01-.75-.75z"
+                clip-rule="evenodd"/>
+        </svg>
+        <svg x-show="currentMailbox !== 'archived'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+             class="h-5 w-5" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/>
+        </svg>
+        <span :class="isMenuCollapsed && 'hidden'" class="ml-3" x-text="mailboxText"></span>
+      </a>
+    </li>
+  </ul>
+</nav>

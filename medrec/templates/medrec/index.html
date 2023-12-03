@@ -8,7 +8,7 @@
 {% block nav %}
   <nav class="navbar bg-base-100">
     <div class="flex-1">
-      <a class="text-xl normal-case btn btn-ghost">medrec</a>
+      <a class="btn text-xl normal-case btn-ghost">medrec</a>
     </div>
     <div class="flex-none gap-4">
       <div class="join">
@@ -19,7 +19,7 @@
                 hx-get="{% url 'client-detail' reference_number=929872 %}"
           {#                hx-get="{% url 'client-detail' reference_number=330259 %}"#}
                 id="reference_number_btn"
-                class="rounded-l-full btn join-item">
+                class="btn join-item rounded-l-full">
           <svg xmlns="http://www.w3.org/2000/svg"
                class="h-5 w-5"
                fill="none"
@@ -32,7 +32,7 @@
         </button>
         <input id="reference_number"
                name="reference_number"
-               class="w-24 border-l-0 join-item input input-bordered md:w-auto"
+               class="join-item w-24 border-l-0 input input-bordered md:w-auto"
                @input.throttle="new Event('change')"
                placeholder="Client Reference Number"/>
         <script>
@@ -62,7 +62,7 @@
             <a>Settings</a>
           </li>
           <li>
-            <form hx-post="{% url 'logout' %}">
+            <form action="{% url 'logout' %}" method="POST">
               {% csrf_token %}
               <button type="submit" class="font-semibold text-primary">Logout</button>
             </form>
@@ -122,7 +122,7 @@
                 class="mr-auto font-semibold label-text">Employee</span>
         </label>
 
-        <button class="m-auto mt-5 w-fit btn btn-primary"
+        <button class="btn m-auto mt-5 w-fit btn-primary"
                 onclick="client_create_modal.showModal()">
           Add new <span x-text="isEmployee ? 'Employee' : 'Student'"></span> client
         </button>
