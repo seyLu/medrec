@@ -1,7 +1,7 @@
 # core
-Django==4.2.6
+Django==4.2.7
 django-extensions==3.2.3
-django-htmx==1.17.0
+django-htmx==1.17.2
 django-tailwind==3.6.0
 
 # prod
@@ -9,15 +9,15 @@ gunicorn==21.2.0
 whitenoise[brotli]==6.6.0
 
 # scripts
-aiohttp==3.8.6
+aiohttp==3.9.1
 PyYAML==6.0.1
-Faker==19.10.0
-phonenumbers==8.13.23
-gpt4all==1.0.12
+Faker==20.1.0
+phonenumbers==8.13.26
+gpt4all==2.0.2
 
 # dev tools
 pre-commit==3.5.0
 
 # stubs
-django-stubs[compatible-mypy]==4.2.4
-django-stubs-ext==4.2.2
+django-stubs[compatible-mypy]==4.2.6
+django-stubs-ext==4.2.5
