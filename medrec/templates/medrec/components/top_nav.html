@@ -1,32 +1,16 @@
 {% load static %}
 
-<div class="flex bg-white navbar">
-  <div class="flex flex-none w-[16rem] gap-3">
-    <div class="flex flex-none">
-      <a class="btn gap-2 px-2 text-xl font-normal normal-case text-slate-600 btn-ghost">
-        <img class="w-8" src="{% static 'theme/icons/medrec.png' %}" alt="medrec logo">
-        <span>
-          MedRec
-        </span>
-      </a>
-    </div>
-    <div class="flex flex-none">
-      <button class="btn btn-square btn-ghost" @click.throttle="isMenuCollapsed = !isMenuCollapsed">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-             class="inline-block h-5 w-5 stroke-current">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-  </div>
-  <div class="w-full flex">
+<div class="flex navbar p-0 w-full">
+  <div class="flex w-full">
     Lorem Ipsum
   </div>
   <div draggable="false" class="w-[55rem] min-w-0 flex-auto flex gap-3">
     <div class="relative flex flex-auto min-w-0">
       <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"
-              class="flex pointer-events-none w-5 fill-slate-600 transition">
+        <svg
+          class="flex pointer-events-none w-5 fill-slate-600 transition"
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"
+        >
           <path
             d="M16.72 17.78a.75.75 0 1 0 1.06-1.06l-1.06 1.06ZM9 14.5A5.5 5.5 0 0 1 3.5 9H2a7 7 0 0 0 7 7v-1.5ZM3.5 9A5.5 5.5 0 0 1 9 3.5V2a7 7 0 0 0-7 7h1.5ZM9 3.5A5.5 5.5 0 0 1 14.5 9H16a7 7 0 0 0-7-7v1.5Zm3.89 10.45 3.83 3.83 1.06-1.06-3.83-3.83-1.06 1.06ZM14.5 9a5.48 5.48 0 0 1-1.61 3.89l1.06 1.06A6.98 6.98 0 0 0 16 9h-1.5Zm-1.61 3.89A5.48 5.48 0 0 1 9 14.5V16a6.98 6.98 0 0 0 4.95-2.05l-1.06-1.06Z"/>
         </svg>
@@ -50,7 +34,7 @@
     </div>
     <div class="select-none rounded-full bg-transparent p-2 cursor-pointer transition-transform duration-200 active:scale-95 border">
       <svg
-        class="w-6 text-slate-500"
+        class="w-5 text-slate-400"
         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
         <path d="M14.235 19c.865 0 1.322 1.024 .745 1.668a3.992 3.992 0 0 1 -2.98 1.332a3.992 3.992 0 0 1 -2.98 -1.332c-.552 -.616 -.158 -1.579 .634 -1.661l.11 -.006h4.471z" stroke-width="0" fill="currentColor" />

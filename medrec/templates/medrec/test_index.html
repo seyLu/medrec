@@ -1,13 +1,18 @@
-{% extends 'base.html' %}
+{% extends 'test_base.html' %}
 {% load static %}
 
 {% block title %}
   medrec
 {% endblock %}
 
-{% block nav %}
-  {% include 'medrec/components/top_nav.html' %}
+{% block scripts %}
+  <script src="{% static 'medrec/js/index.js' %}"></script>
 {% endblock %}
 
-{% block main %}
+{% block root %}
+  {% include 'medrec/components/left_sidebar.html' %}
+  <main class="py-3 px-5 absolute top-0 left-[16rem] right-0 bg-slate-100">
+    {% include 'medrec/components/top_nav.html' %}
+    {% include 'medrec/components/content.html' %}
+  </main>
 {% endblock %}
