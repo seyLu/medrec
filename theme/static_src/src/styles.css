@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    --font-url: '';
+    font-family: 'Geist';
+    src:
+        local(''),
+        url('/static/theme/fonts/geist/GeistVariableVF.woff2') format('woff2'),
+        url('/static/theme/fonts/geist/GeistVariableVF.woff2') format('truetype');
+    font-dispay: swap;
+}
+
+.menu li > *:not(ul):not(.menu-title):not(details).active,
+.menu li > *:not(ul):not(.menu-title):not(details):active {
+    @apply bg-primary;
+}
