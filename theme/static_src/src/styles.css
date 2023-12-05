@@ -15,4 +15,6 @@
 .menu li > *:not(ul):not(.menu-title):not(details).active,
 .menu li > *:not(ul):not(.menu-title):not(details):active {
     @apply bg-primary;
+    color: #fff;
+    box-shadow: inset 0px -16px 0px -10px rgba(0, 0, 0, 0.2);
 }
