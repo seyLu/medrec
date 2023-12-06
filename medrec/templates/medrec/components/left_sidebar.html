@@ -38,18 +38,18 @@
         <a
           x-data="{
             currentContent: 'overview',
-            isActive: false,
+            isClicked: false,
           }"
+          :id="`menu-${currentContent}`"
           @click.throttle="content = currentContent"
-          @click="isActive = true"
-          @mousedown="isActive = true"
-          @mouseup="isActive = false"
+          @mousedown="isClicked = true"
+          @mouseup="isClicked = false"
           :class="(content === currentContent) && 'active pointer-events-none'"
           class="py-4 px-6 gap-5 rounded-none"
         >
           <svg
             class="w-4 h-4 active:text-white transition-all"
-            :stroke="(content === currentContent)? 'white' : defaultColor"
+            :stroke="(content === currentContent || isClicked === true)? 'white' : defaultColor"
             stroke-width="2.5"
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <g clip-path="url(#clip0_1607_7323)">
@@ -68,18 +68,18 @@
         <a
           x-data="{
             currentContent: 'records',
-            isActive: false,
+            isClicked: false,
           }"
+          :id="`menu-${currentContent}`"
           @click.throttle="content = currentContent"
-          @click="isActive = true"
-          @mousedown="isActive = true"
-          @mouseup="isActive = false"
+          @mousedown="isClicked = true"
+          @mouseup="isClicked = false"
           :class="(content === currentContent) && 'active pointer-events-none'"
           class="py-4 px-6 gap-5 rounded-none"
         >
           <svg
             class="w-4 h-4 active:text-white transition-all"
-            :stroke="(content === currentContent)? 'white' : defaultColor"
+            :stroke="(content === currentContent || isClicked === true)? 'white' : defaultColor"
             stroke-width="2.5"
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
             fill="none"
@@ -93,18 +93,18 @@
         <a
           x-data="{
             currentContent: 'patient_list',
-            isActive: false
+            isClicked: false,
           }"
+          :id="`menu-${currentContent}`"
           @click.throttle="content = currentContent"
-          @click="isActive = true"
-          @mousedown="isActive = true"
-          @mouseup="isActive = false"
+          @mousedown="isClicked = true"
+          @mouseup="isClicked = false"
           :class="(content === currentContent) && 'active pointer-events-none'"
           class="py-4 px-6 gap-5 rounded-none"
         >
           <svg
             class="w-4 h-4 active:text-white transition-all"
-            :stroke="(content === currentContent)? 'white' : defaultColor"
+            :stroke="(content === currentContent || isClicked === true)? 'white' : defaultColor"
             stroke-width="2.5"
             viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16.5 5.5C16.5 7.98528 14.4853 10 12 10C9.51472 10 7.5 7.98528 7.5 5.5C7.5 3.01472 9.51472 1 12 1C14.4853 1 16.5 3.01472 16.5 5.5Z"/>
@@ -117,18 +117,18 @@
         <a
           x-data="{
             currentContent: 'messages',
-            isActive: false
+            isClicked: false,
           }"
+          :id="`menu-${currentContent}`"
           @click.throttle="content = currentContent"
-          @click="isActive = true"
-          @mousedown="isActive = true"
-          @mouseup="isActive = false"
+          @mousedown="isClicked = true"
+          @mouseup="isClicked = false"
           :class="(content === currentContent) && 'active pointer-events-none'"
           class="py-4 px-6 gap-5 rounded-none"
         >
           <svg
             class="w-4 h-4 active:text-white transition-all"
-            :stroke="(content === currentContent)? 'white' : defaultColor"
+            :stroke="(content === currentContent || isClicked === true)? 'white' : defaultColor"
             stroke-width="2.5"
             viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
           >
@@ -148,18 +148,18 @@
         <a
           x-data="{
             currentContent: 'settings',
-            isActive: false
+            isClicked: false,
           }"
+          :id="`menu-${currentContent}`"
           @click.throttle="content = currentContent"
-          @click="isActive = true"
-          @mousedown="isActive = true"
-          @mouseup="isActive = false"
+          @mousedown="isClicked = true"
+          @mouseup="isClicked = false"
           :class="(content === currentContent) && 'active pointer-events-none'"
           class="py-4 px-6 gap-5 rounded-none"
         >
           <svg
             class="w-4 h-4 active:text-white transition-all"
-            :stroke="(content === currentContent)? 'white' : defaultColor"
+            :stroke="(content === currentContent || isClicked === true)? 'white' : defaultColor"
             stroke-width="2.5"
             viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
           >
