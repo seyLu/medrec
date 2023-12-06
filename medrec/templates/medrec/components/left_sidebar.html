@@ -26,153 +26,188 @@
       </button>
     </div>
   </div>
-  <ul
+  <div class="flex flex-col justify-between h-[calc(100vh-5.5rem)]">
+    <ul
     x-data="{
       content: 'overview',
       defaultColor: '#64748b'
     }"
     class="menu w-full p-0 font-medium"
-  >
-    <li>
-      <a
-        x-data="{
-          currentContent: 'overview',
-          isActive: false,
-        }"
-        @click.throttle="content = currentContent"
-        @click="isActive = true"
-        @mousedown="isActive = true"
-        @mouseup="isActive = false"
-        :class="(content === currentContent) && 'active pointer-events-none'"
-        class="py-4 px-6 gap-5 rounded-none"
-      >
-        <svg
-          class="w-4 h-4 active:text-white transition-all"
-          :stroke="(content === currentContent)? 'white' : defaultColor"
-          stroke-width="2.5"
-          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <g clip-path="url(#clip0_1607_7323)">
-              <path d="M23 12C23 5.92487 18.0751 1 12 1M23 12H20M23 12C23 14.8985 21.879 17.5351 20.0468 19.5M1 12C1 5.92487 5.92487 1 12 1M1 12H4M1 12C1 14.8985 2.12105 17.5351 3.9532 19.5M12 1V4.00024M12 12C10.3431 12 9 13.3431 9 15V16.4141M12 12C13.6569 12 15 13.3431 15 15V16.4141M12 12L14.5 6.5M17.6567 6.34326L19.7781 4.22194M6.34326 6.34326L4.22194 4.22194M20.0468 19.5C18.0388 21.6534 15.1767 23 12 23C8.82335 23 5.9612 21.6534 3.9532 19.5M20.0468 19.5C18.6962 18.0516 16.9592 16.9682 15 16.4141M3.9532 19.5C5.30379 18.0516 7.04079 16.9682 9 16.4141M9 16.4141C9.95366 16.1443 10.96 16 12 16C13.04 16 14.0463 16.1443 15 16.4141"/>
+    >
+      <li>
+        <a
+          x-data="{
+            currentContent: 'overview',
+            isActive: false,
+          }"
+          @click.throttle="content = currentContent"
+          @click="isActive = true"
+          @mousedown="isActive = true"
+          @mouseup="isActive = false"
+          :class="(content === currentContent) && 'active pointer-events-none'"
+          class="py-4 px-6 gap-5 rounded-none"
+        >
+          <svg
+            class="w-4 h-4 active:text-white transition-all"
+            :stroke="(content === currentContent)? 'white' : defaultColor"
+            stroke-width="2.5"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <g clip-path="url(#clip0_1607_7323)">
+                <path d="M23 12C23 5.92487 18.0751 1 12 1M23 12H20M23 12C23 14.8985 21.879 17.5351 20.0468 19.5M1 12C1 5.92487 5.92487 1 12 1M1 12H4M1 12C1 14.8985 2.12105 17.5351 3.9532 19.5M12 1V4.00024M12 12C10.3431 12 9 13.3431 9 15V16.4141M12 12C13.6569 12 15 13.3431 15 15V16.4141M12 12L14.5 6.5M17.6567 6.34326L19.7781 4.22194M6.34326 6.34326L4.22194 4.22194M20.0468 19.5C18.0388 21.6534 15.1767 23 12 23C8.82335 23 5.9612 21.6534 3.9532 19.5M20.0468 19.5C18.6962 18.0516 16.9592 16.9682 15 16.4141M3.9532 19.5C5.30379 18.0516 7.04079 16.9682 9 16.4141M9 16.4141C9.95366 16.1443 10.96 16 12 16C13.04 16 14.0463 16.1443 15 16.4141"/>
+              </g>
+            <defs>
+              <clipPath id="clip0_1607_7323">
+                <rect width="24" height="24" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          Overview
+        </a>
+      </li>
+      <li>
+        <a
+          x-data="{
+            currentContent: 'records',
+            isActive: false,
+          }"
+          @click.throttle="content = currentContent"
+          @click="isActive = true"
+          @mousedown="isActive = true"
+          @mouseup="isActive = false"
+          :class="(content === currentContent) && 'active pointer-events-none'"
+          class="py-4 px-6 gap-5 rounded-none"
+        >
+          <svg
+            class="w-4 h-4 active:text-white transition-all"
+            :stroke="(content === currentContent)? 'white' : defaultColor"
+            stroke-width="2.5"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path d="M4 18V10M4 10V2C4 1.44772 4.44772 1 5 1H10C12.2091 1 14 2.79086 14 5V6C14 8.20914 12.2091 10 10 10H7M4 10H7M20 14L15.5 18.5M15.5 18.5L11 23M15.5 18.5L7 10M15.5 18.5L20 23" />
+          </svg>
+          Medical Records
+        </a>
+      </li>
+      <li>
+        <a
+          x-data="{
+            currentContent: 'patient_list',
+            isActive: false
+          }"
+          @click.throttle="content = currentContent"
+          @click="isActive = true"
+          @mousedown="isActive = true"
+          @mouseup="isActive = false"
+          :class="(content === currentContent) && 'active pointer-events-none'"
+          class="py-4 px-6 gap-5 rounded-none"
+        >
+          <svg
+            class="w-4 h-4 active:text-white transition-all"
+            :stroke="(content === currentContent)? 'white' : defaultColor"
+            stroke-width="2.5"
+            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.5 5.5C16.5 7.98528 14.4853 10 12 10C9.51472 10 7.5 7.98528 7.5 5.5C7.5 3.01472 9.51472 1 12 1C14.4853 1 16.5 3.01472 16.5 5.5Z"/>
+              <path d="M12 13C6.51068 13 2.0544 17.423 2.00049 22.8995C1.99995 22.9548 2.04477 23 2.1 23H21.9C21.9552 23 22 22.9548 21.9995 22.8995C21.9456 17.423 17.4893 13 12 13Z"/>
+          </svg>
+          Patient List
+        </a>
+      </li>
+      <li>
+        <a
+          x-data="{
+            currentContent: 'messages',
+            isActive: false
+          }"
+          @click.throttle="content = currentContent"
+          @click="isActive = true"
+          @mousedown="isActive = true"
+          @mouseup="isActive = false"
+          :class="(content === currentContent) && 'active pointer-events-none'"
+          class="py-4 px-6 gap-5 rounded-none"
+        >
+          <svg
+            class="w-4 h-4 active:text-white transition-all"
+            :stroke="(content === currentContent)? 'white' : defaultColor"
+            stroke-width="2.5"
+            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_1607_8352)">
+              <path d="M1 2.00001C1 1.44772 1.44772 1.00001 2 1.00001L22 1C22.5523 1 23 1.44772 23 2V16.06C23 16.6123 22.5523 17.06 22 17.06H18.5472C18.492 17.06 18.4472 17.1048 18.4472 17.16L18.4406 22C18.4394 22.8828 17.3783 23.3345 16.7445 22.72L10.9418 17.09C10.9232 17.0719 10.8982 17.06 10.8722 17.06H2C1.44772 17.06 1 16.6123 1 16.06V2.00001Z" />
             </g>
-          <defs>
-            <clipPath id="clip0_1607_7323">
-              <rect width="24" height="24" fill="white"/>
-            </clipPath>
-          </defs>
-        </svg>
-        Overview
-      </a>
-    </li>
-    <li>
-      <a
-        x-data="{
-          currentContent: 'records',
-          isActive: false,
-        }"
-        @click.throttle="content = currentContent"
-        @click="isActive = true"
-        @mousedown="isActive = true"
-        @mouseup="isActive = false"
-        :class="(content === currentContent) && 'active pointer-events-none'"
-        class="py-4 px-6 gap-5 rounded-none"
-      >
-        <svg
-          class="w-4 h-4 active:text-white transition-all"
-          :stroke="(content === currentContent)? 'white' : defaultColor"
-          stroke-width="2.5"
-          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-          fill="none"
+            <defs>
+              <clipPath id="clip0_1607_8352">
+                <rect width="24" height="24" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          Messages
+        </a>
+      </li>
+      <li>
+        <a
+          x-data="{
+            currentContent: 'settings',
+            isActive: false
+          }"
+          @click.throttle="content = currentContent"
+          @click="isActive = true"
+          @mousedown="isActive = true"
+          @mouseup="isActive = false"
+          :class="(content === currentContent) && 'active pointer-events-none'"
+          class="py-4 px-6 gap-5 rounded-none"
         >
-          <path d="M4 18V10M4 10V2C4 1.44772 4.44772 1 5 1H10C12.2091 1 14 2.79086 14 5V6C14 8.20914 12.2091 10 10 10H7M4 10H7M20 14L15.5 18.5M15.5 18.5L11 23M15.5 18.5L7 10M15.5 18.5L20 23" />
-        </svg>
-        Medical Records
-      </a>
-    </li>
-    <li>
-      <a
-        x-data="{
-          currentContent: 'patient_list',
-          isActive: false
-        }"
-        @click.throttle="content = currentContent"
-        @click="isActive = true"
-        @mousedown="isActive = true"
-        @mouseup="isActive = false"
-        :class="(content === currentContent) && 'active pointer-events-none'"
-        class="py-4 px-6 gap-5 rounded-none"
-      >
+          <svg
+            class="w-4 h-4 active:text-white transition-all"
+            :stroke="(content === currentContent)? 'white' : defaultColor"
+            stroke-width="2.5"
+            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_1607_7710)">
+              <path d="M12 1V3M12 3C10.3431 3 9 4.34315 9 6C9 7.65685 10.3431 9 12 9M12 3C13.6569 3 15 4.34315 15 6C15 7.65685 13.6569 9 12 9M12 9V23M4 23V21M4 21C2.34315 21 1 19.6569 1 18C1 16.3431 2.34315 15 4 15M4 21C5.65685 21 7 19.6569 7 18C7 16.3431 5.65685 15 4 15M4 15V1M20 23V21M20 21C18.3431 21 17 19.6569 17 18C17 16.3431 18.3431 15 20 15M20 21C21.6569 21 23 19.6569 23 18C23 16.3431 21.6569 15 20 15M20 15V1" />
+            </g>
+            <defs>
+              <clipPath id="clip0_1607_7710">
+                <rect width="24" height="24" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          Settings
+        </a>
+      </li>
+    </ul>
+    <div>
+      <div class="flex px-6 py-3 gap-5 rounded-none active pointer-events-none items-center">
         <svg
-          class="w-4 h-4 active:text-white transition-all"
-          :stroke="(content === currentContent)? 'white' : defaultColor"
+          class="w-4 h-4"
+          stroke="#64748b"
           stroke-width="2.5"
-          viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16.5 5.5C16.5 7.98528 14.4853 10 12 10C9.51472 10 7.5 7.98528 7.5 5.5C7.5 3.01472 9.51472 1 12 1C14.4853 1 16.5 3.01472 16.5 5.5Z"/>
-            <path d="M12 13C6.51068 13 2.0544 17.423 2.00049 22.8995C1.99995 22.9548 2.04477 23 2.1 23H21.9C21.9552 23 22 22.9548 21.9995 22.8995C21.9456 17.423 17.4893 13 12 13Z"/>
-        </svg>
-        Patient List
-      </a>
-    </li>
-    <li>
-      <a
-        x-data="{
-          currentContent: 'messages',
-          isActive: false
-        }"
-        @click.throttle="content = currentContent"
-        @click="isActive = true"
-        @mousedown="isActive = true"
-        @mouseup="isActive = false"
-        :class="(content === currentContent) && 'active pointer-events-none'"
-        class="py-4 px-6 gap-5 rounded-none"
-      >
-        <svg
-          class="w-4 h-4 active:text-white transition-all"
-          :stroke="(content === currentContent)? 'white' : defaultColor"
-          stroke-width="2.5"
+          stroke-linecap="round"
           viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_1607_8352)">
-            <path d="M1 2.00001C1 1.44772 1.44772 1.00001 2 1.00001L22 1C22.5523 1 23 1.44772 23 2V16.06C23 16.6123 22.5523 17.06 22 17.06H18.5472C18.492 17.06 18.4472 17.1048 18.4472 17.16L18.4406 22C18.4394 22.8828 17.3783 23.3345 16.7445 22.72L10.9418 17.09C10.9232 17.0719 10.8982 17.06 10.8722 17.06H2C1.44772 17.06 1 16.6123 1 16.06V2.00001Z" />
+          <g clip-path="url(#clip0_1607_7662)">
+            <path d="M9.28727 8.54947C9.28727 7.18684 10.5591 6 12.0125 6C13.8294 6 14.9864 7.18684 14.9864 8.54947C14.9864 10.8205 12.0125 10.8205 12.0125 12.1832V14M12 17.4683V17.5M23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12Z" />
           </g>
           <defs>
-            <clipPath id="clip0_1607_8352">
+            <clipPath id="clip0_1607_7662">
               <rect width="24" height="24" fill="white"/>
             </clipPath>
           </defs>
         </svg>
-        Messages
-      </a>
-    </li>
-    <li>
-      <a
-        x-data="{
-          currentContent: 'settings',
-          isActive: false
-        }"
-        @click.throttle="content = currentContent"
-        @click="isActive = true"
-        @mousedown="isActive = true"
-        @mouseup="isActive = false"
-        :class="(content === currentContent) && 'active pointer-events-none'"
-        class="py-4 px-6 gap-5 rounded-none"
-      >
-        <svg
-          class="w-4 h-4 active:text-white transition-all"
-          :stroke="(content === currentContent)? 'white' : defaultColor"
-          stroke-width="2.5"
-          viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-        >
-          <g clip-path="url(#clip0_1607_7710)">
-            <path d="M12 1V3M12 3C10.3431 3 9 4.34315 9 6C9 7.65685 10.3431 9 12 9M12 3C13.6569 3 15 4.34315 15 6C15 7.65685 13.6569 9 12 9M12 9V23M4 23V21M4 21C2.34315 21 1 19.6569 1 18C1 16.3431 2.34315 15 4 15M4 21C5.65685 21 7 19.6569 7 18C7 16.3431 5.65685 15 4 15M4 15V1M20 23V21M20 21C18.3431 21 17 19.6569 17 18C17 16.3431 18.3431 15 20 15M20 21C21.6569 21 23 19.6569 23 18C23 16.3431 21.6569 15 20 15M20 15V1" />
-          </g>
-          <defs>
-            <clipPath id="clip0_1607_7710">
-              <rect width="24" height="24" fill="white"/>
-            </clipPath>
-          </defs>
-        </svg>
-        Settings
-      </a>
-    </li>
-  </ul>
+        <span class="text-sm font-medium text-[#64748b]">Help ?</span>
+      </div>
+      <div class="divider my-0"></div>
+      <div class="flex gap-5 w-full px-6 pt-3 pb-6 items-center">
+        <div class="avatar placeholder">
+          <div class="bg-secondary text-white rounded-full w-12">
+            <span>{{ avatar }}</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <p class="font-medium text-sm">Dr. {{ display_name }} User</p>
+          <p class="text-gray-500 text-xs">Doctor</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </nav>

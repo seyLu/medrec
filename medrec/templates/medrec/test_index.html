@@ -11,8 +11,9 @@
 
 {% block root %}
   {% include 'medrec/components/left_sidebar.html' %}
-  <main class="py-3 px-5 absolute top-0 left-[16rem] right-0 bg-slate-100">
+  <main class="py-3 absolute top-0 left-[16rem] right-0 bg-slate-100">
     {% include 'medrec/components/top_nav.html' %}
+    <div class="divider mt-[.315rem]"></div>
     {% include 'medrec/components/content.html' %}
   </main>
 {% endblock %}

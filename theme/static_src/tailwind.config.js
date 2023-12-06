@@ -74,6 +74,8 @@ module.exports = {
                     "active": "#0d53fc",
                     "primary": "#0d53fc",
                     "primary-focus": "#3e3ef4",
+                    "secondary": "#4198f7",
+                    "success": "#49c496",
                     "base-content": "#263446",
                 }
             }

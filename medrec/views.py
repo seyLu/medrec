@@ -18,11 +18,8 @@ class TestView(View):
 
         user: User = User.objects.get(email=request.user)  # type: ignore[assignment]
         email: str = user.email
-        avatar: str = ""
-        display_name: str = ""
-
-        avatar = email[0].upper()
-        display_name = email.split("@")[0].title()
+        avatar: str = f"{email[0].upper()}{email[1].upper()}"
+        display_name: str = email.split("@")[0].title()
 
         context = {
             "email": email,
