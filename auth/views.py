@@ -72,4 +72,4 @@ class DemoView(View):
             request, email="demo@email.com", password="demo"  # noqa: S106
         )
         login(request, user)
-        return redirect(reverse("test"))
+        return redirect(reverse("index"))
