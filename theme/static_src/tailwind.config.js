@@ -42,7 +42,11 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                'sans': ['Geist', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', "Segoe UI", 'Roboto', "Helvetica Neue", 'Arial', "Noto Sans", 'sans-serif', "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"]
+            },
+        },
     },
     plugins: [
         /**
@@ -63,6 +67,18 @@ module.exports = {
         require("daisyui"),
     ],
     daisyui: {
-        themes: ["light"],
+        themes: [
+            {
+                light: {
+                    ...require("daisyui/src/theming/themes")["light"],
+                    "active": "#0d53fc",
+                    "primary": "#0d53fc",
+                    "primary-focus": "#3e3ef4",
+                    "secondary": "#4198f7",
+                    "success": "#49c496",
+                    "base-content": "#263446",
+                }
+            }
+        ],
     },
 }

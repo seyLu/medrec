@@ -3,134 +3,17 @@
 
 {% block title %}
   medrec
-{% endblock title %}
+{% endblock %}
 
-{% block nav %}
-  <nav class="navbar bg-base-100">
-    <div class="flex-1">
-      <a class="text-xl normal-case btn btn-ghost">medrec</a>
-    </div>
-    <div class="flex-none gap-4">
-      <div class="join">
-        <button hx-swap="innerHTML"
-                hx-target="#client"
-                hx-trigger="load, click throttle:1s"
-          {#                hx-trigger="click throttle:1s, keydown[enterKey] from:window"#}
-                hx-get="{% url 'client-detail' reference_number=929872 %}"
-          {#                hx-get="{% url 'client-detail' reference_number=330259 %}"#}
-                id="reference_number_btn"
-                class="rounded-l-full btn join-item">
-          <svg xmlns="http://www.w3.org/2000/svg"
-               class="h-5 w-5"
-               fill="none"
-               viewBox="0 0 24 24"
-               stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z">
-            </path>
-          </svg>
-        </button>
-        <input id="reference_number"
-               name="reference_number"
-               class="w-24 border-l-0 join-item input input-bordered md:w-auto"
-               @input.throttle="new Event('change')"
-               placeholder="Client Reference Number"/>
-        <script>
-          const reference_number = document.getElementById("reference_number");
-          const reference_number_btn = document.getElementById("reference_number_btn");
+{% block scripts %}
+  <script src="{% static 'medrec/js/index.js' %}"></script>
+{% endblock %}
 
-          reference_number.addEventListener("change", (e) => {
-            const val = e.target.value;
-            const url = `{% url 'client-detail' reference_number=0 %}`.replace('0', val)
-            reference_number_btn.setAttribute("hx-get", url);
-            htmx.process(reference_number_btn);
-          });
-        </script>
-      </div>
-      <div class="dropdown dropdown-end">
-        <label tabindex="0" class="btn btn-ghost btn-circle avatar placeholder">
-          <div class="w-10 rounded-full bg-neutral-focus text-neutral-content">
-            <span class="text-l">{{ request.user|cut:"@"|slice:"0:2" }}</span>
-          </div>
-        </label>
-        <ul tabindex="0"
-            class="mt-3 w-32 p-2 shadow z-[1] menu menu-sm dropdown-content bg-base-100 rounded-box">
-          <li>
-            <a class="justify-between">Profile</a>
-          </li>
-          <li>
-            <a>Settings</a>
-          </li>
-          <li>
-            <form hx-post="{% url 'logout' %}">
-              {% csrf_token %}
-              <button type="submit" class="font-semibold text-primary">Logout</button>
-            </form>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-{% endblock nav %}
-
-{% block main %}
-  <div class="flex w-screen flex-col">
-    <div class="mx-auto mt-24">
-      <div x-data="{
-            isEmployee: false,
-            showForm: false,
-
-            reference_number: '',
-            client_type: '',
-            first_name: '',
-            last_name: '',
-            age: '',
-            level: '',
-            school: '',
-            province_name: '',
-            city_name: '',
-            district_name: '',
-            street_address: '',
-
-            resetModalFields() {
-              this.reference_number = '';
-              this.client_type = '';
-              this.first_name = '';
-              this.last_name = '';
-              this.age = '';
-              this.level = '';
-              this.school = '';
-              this.province_name = '';
-              this.city_name = '';
-              this.district_name = '';
-              this.street_address = '';
-            }
-          }"
-           x-init="resetModalFields"
-           class="form-control">
-        <label class="mb-2 cursor-pointer label">
-          <span :class="{
-                  'text-gray-500': isEmployee,
-                  'underline underline-offset-8 decoration-2': !isEmployee
-                }"
-                class="ml-auto font-semibold label-text">Student</span>
-          <input type="checkbox" x-model="isEmployee" @change="resetModalFields" class="mx-4 toggle"/>
-          <span :class="{
-                  'text-gray-500': !isEmployee,
-                  'underline underline-offset-8 decoration-2': isEmployee
-                }"
-                class="mr-auto font-semibold label-text">Employee</span>
-        </label>
-
-        <button class="m-auto mt-5 w-fit btn btn-primary"
-                onclick="client_create_modal.showModal()">
-          Add new <span x-text="isEmployee ? 'Employee' : 'Student'"></span> client
-        </button>
-        {% include 'medrec/partials/client-create-modal.html' %}
-      </div>
-    </div>
-
-    <div class="mt-8 px-5" id="client"></div>
-    {% include 'medrec/partials/record-create-modal.html' %}
-  </div>
-{% endblock main %}
+{% block root %}
+  {% include 'medrec/components/left_sidebar.html' %}
+  <main class="py-3 absolute top-0 left-[16rem] right-0 bg-slate-100">
+    {% include 'medrec/components/top_nav.html' %}
+    <div class="divider mt-[.315rem]"></div>
+    {% include 'medrec/components/content.html' %}
+  </main>
+{% endblock %}

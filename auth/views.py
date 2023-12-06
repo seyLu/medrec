@@ -1,6 +1,6 @@
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.views.generic import View
 from django_htmx.http import HttpResponseClientRedirect
@@ -64,3 +64,12 @@ class RegisterView(View):
         user = User.objects.create_user(email, password)
         login(request, user)
         return HttpResponseClientRedirect(reverse("index"))
+
+
+class DemoView(View):
+    def get(self, request: HttpRequest) -> HttpResponse:
+        user = authenticate(
+            request, email="demo@email.com", password="demo"  # noqa: S106
+        )
+        login(request, user)
+        return redirect(reverse("test"))

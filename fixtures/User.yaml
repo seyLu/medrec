@@ -1,9 +1,9 @@
 - model: users.user
   pk: 1
   fields:
-    first_name: Katherine
-    last_name: Fisher
-    email: tammy76@example.com
+    first_name: demo
+    last_name: user
+    email: demo@email.com
     mobile_number: "+639499382421"
     is_email_verified: true
     is_mobile_verified: false
