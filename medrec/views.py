@@ -8,11 +8,6 @@ from users.models import User
 
 class IndexView(View):
     def get(self, request: HttpRequest) -> HttpResponse:
-        return render(request, "medrec/index.html")
-
-
-class TestView(View):
-    def get(self, request: HttpRequest) -> HttpResponse:
         if not request.user.is_authenticated:
             return redirect(reverse("login"))
 
@@ -27,4 +22,4 @@ class TestView(View):
             "display_name": display_name,
         }
 
-        return render(request, "medrec/test_index.html", context)
+        return render(request, "medrec/index.html", context)

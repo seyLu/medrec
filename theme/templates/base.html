@@ -26,14 +26,10 @@
   {% block scripts %}
   {% endblock %}
 </head>
-<body class="max-w-[1920px] mx-auto">
-{% block nav %}
-{% endblock %}
-<main>
-  {% block main %}
+<body class="overflow-x-auto min-w-[1080px] max-w-[1920px] mx-auto bg-white">
+<div id="root" class="relative">
+  {% block root %}
   {% endblock %}
-</main>
-{% block footer %}
-{% endblock %}
+</div>
 </body>
 </html>
