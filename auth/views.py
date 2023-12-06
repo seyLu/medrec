@@ -8,22 +8,11 @@ from django_htmx.http import HttpResponseClientRedirect
 from users.models import User
 
 
-def authError(message: str) -> str:
-    return f"""
-                <div class="alert alert-warning">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        class="stroke-current shrink-0 h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
-                    <span>{message}</span>
-                </div>
-            """
-
-
 class LoginView(View):
     def get(self, request: HttpRequest) -> HttpResponse:
+        if request.user.is_authenticated:
+            return redirect(reverse("index"))
+
         return render(request, "auth/login.html")
 
     def post(self, request: HttpRequest) -> HttpResponse:
@@ -32,7 +21,11 @@ class LoginView(View):
 
         user = authenticate(request, email=email, password=password)
         if user is None:
-            return HttpResponse(authError("Invalid Email/Password."))
+            return render(
+                request,
+                "medrec/partials/alerts/auth-error.html",
+                {"message": "Invalid Email/Password."},
+            )
 
         login(request, user)
         return HttpResponseClientRedirect(reverse("index"))
@@ -54,11 +47,17 @@ class RegisterView(View):
         re_password: str = request.POST["re-password"]
 
         if User.objects.filter(email=email).exists():
-            return HttpResponse(authError("User already exists."))
+            return render(
+                request,
+                "medrec/partials/alerts/auth-error.html",
+                {"message": "User already exists."},
+            )
 
         if password != re_password:
-            return HttpResponse(
-                authError("Password and Confirm Password do not match.")
+            return render(
+                request,
+                "medrec/partials/alerts/auth-error.html",
+                {"message": "Password and Confirm Password do not match."},
             )
 
         user = User.objects.create_user(email, password)
