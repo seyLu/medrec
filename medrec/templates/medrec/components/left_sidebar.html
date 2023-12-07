@@ -33,7 +33,6 @@
       hx-swap="outerHTML"
       x-data="{
         content: '{{ page }}',
-        defaultColor: '#64748b'
       }"
     class="menu w-full p-0 font-medium"
     >
@@ -43,12 +42,9 @@
           hx-push-url="{% url 'index' %}"
           x-data="{
             currentContent: 'overview',
-            isClicked: false,
           }"
           :id="`menu-${currentContent}`"
           @click.throttle="content = currentContent"
-          @mousedown="isClicked = true"
-          @mouseup="isClicked = false"
           :class="(content === currentContent) && 'active pointer-events-none'"
           class="py-4 px-6 gap-5 rounded-none"
         >
@@ -72,12 +68,9 @@
         <a
           x-data="{
             currentContent: 'records',
-            isClicked: false,
           }"
           :id="`menu-${currentContent}`"
           @click.throttle="content = currentContent"
-          @mousedown="isClicked = true"
-          @mouseup="isClicked = false"
           :class="(content === currentContent) && 'active pointer-events-none'"
           class="py-4 px-6 gap-5 rounded-none"
         >
@@ -98,12 +91,9 @@
           hx-push-url="{% url 'patient-list' %}"
           x-data="{
             currentContent: 'patient_list',
-            isClicked: false,
           }"
           :id="`menu-${currentContent}`"
           @click.throttle="content = currentContent"
-          @mousedown="isClicked = true"
-          @mouseup="isClicked = false"
           :class="(content === currentContent) && 'active pointer-events-none'"
           class="py-4 px-6 gap-5 rounded-none"
         >
@@ -121,12 +111,9 @@
         <a
           x-data="{
             currentContent: 'messages',
-            isClicked: false,
           }"
           :id="`menu-${currentContent}`"
           @click.throttle="content = currentContent"
-          @mousedown="isClicked = true"
-          @mouseup="isClicked = false"
           :class="(content === currentContent) && 'active pointer-events-none'"
           class="py-4 px-6 gap-5 rounded-none"
         >
@@ -151,12 +138,9 @@
         <a
           x-data="{
             currentContent: 'settings',
-            isClicked: false,
           }"
           :id="`menu-${currentContent}`"
           @click.throttle="content = currentContent"
-          @mousedown="isClicked = true"
-          @mouseup="isClicked = false"
           :class="(content === currentContent) && 'active pointer-events-none'"
           class="py-4 px-6 gap-5 rounded-none"
         >
