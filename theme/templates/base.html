@@ -26,7 +26,10 @@
   {% block scripts %}
   {% endblock %}
 </head>
-<body class="overflow-x-auto min-w-[1080px] max-w-[1920px] mx-auto bg-white">
+<body
+  hx-ext="alpine-morph"
+  class="overflow-x-auto min-w-[1080px] max-w-[1920px] mx-auto bg-white"
+>
 <div id="root" class="relative">
   {% block root %}
   {% endblock %}

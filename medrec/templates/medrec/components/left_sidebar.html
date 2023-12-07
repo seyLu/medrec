@@ -28,14 +28,19 @@
   </div>
   <div class="flex flex-col justify-between h-[calc(100vh-5.5rem)]">
     <ul
-    x-data="{
-      content: 'overview',
-      defaultColor: '#64748b'
-    }"
+      hx-target="#main"
+      hx-select="#main"
+      hx-swap="outerHTML"
+      x-data="{
+        content: '{{ page }}',
+        defaultColor: '#64748b'
+      }"
     class="menu w-full p-0 font-medium"
     >
       <li>
         <a
+          hx-get="{% url 'index' %}"
+          hx-push-url="{% url 'index' %}"
           x-data="{
             currentContent: 'overview',
             isClicked: false,
@@ -89,6 +94,8 @@
       </li>
       <li>
         <a
+          hx-get="{% url 'patient-list' %}"
+          hx-push-url="{% url 'patient-list' %}"
           x-data="{
             currentContent: 'patient_list',
             isClicked: false,
