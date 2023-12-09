@@ -13,7 +13,11 @@
   {% include 'medrec/components/left_sidebar.html' %}
   <main id="main" class="py-3 absolute top-0 left-[16rem] right-0 bg-slate-100">
     {% include 'medrec/components/top_nav.html' %}
-    <div class="divider mt-[.315rem]"></div>
-    {% include 'medrec/components/content.html' %}
+    <div class="divider mt-[.315rem] mb-1"></div>
+    <div
+      hx-get="{% url 'client-list' %}"
+      hx-trigger="load once"
+      class="min-h-[calc(100vh-8rem)]"
+    ></div>
   </main>
 {% endblock %}

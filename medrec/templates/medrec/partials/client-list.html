@@ -1,0 +1,165 @@
+<div class="px-8 flex items-center justify-between">
+  <div class="flex items-center">
+    <div class="flex gap-3 items-end mb-2">
+      <span class="text-2xl font-semibold text-primary">
+        {{ num_clients }}
+      </span>
+      <span class="text-slate-500 font-medium">
+        patients
+      </span>
+    </div>
+    <div class="divider divider-horizontal"></div>
+    <div>
+      <span class="text-slate-500 font-medium">
+        Sort by:
+      </span>
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn m-1 bg-white text-slate-500 rounded-[.3rem]">
+          Last Appointment
+          <svg
+            class="w-3 h-3 stroke-slate-500 ml-5"
+            stroke-width="2.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M1 6.5L12 17.5L23 6.5" />
+          </svg>
+        </div>
+        <ul tabindex="0" class="dropdown-content z-[1] shadow bg-base-100 rounded-[.3rem] w-64 select-none">
+          <li class="px-4 py-3 hover:bg-gray-200 active:bg-gray-300 text-sm">
+            <a>Item 1</a>
+          </li>
+          <li class="px-4 py-3 hover:bg-gray-200 active:bg-gray-300 text-sm">
+            <a>Item 2</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="flex items-center gap-2">
+    <div class="btn btn-square bg-white text-slate-500 rounded-[.3rem]">
+      <svg
+        class="w-5 h-5 fill-gray-500"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M8.25 16C8.25 15.5858 8.58579 15.25 9 15.25H11C11.4142 15.25 11.75 15.5858 11.75 16C11.75 16.4142 11.4142 16.75 11 16.75H9C8.58579 16.75 8.25 16.4142 8.25 16Z" />
+        <path d="M8.25 19C8.25 18.5858 8.58579 18.25 9 18.25H15C15.4142 18.25 15.75 18.5858 15.75 19C15.75 19.4142 15.4142 19.75 15 19.75H9C8.58579 19.75 8.25 19.4142 8.25 19Z" />
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.25 2L5.25 5.5H2C1.44772 5.5 1 5.94772 1 6.5V17.9457C1 18.4979 1.44761 18.9456 1.99982 18.9457L5.25 18.9463V22C5.25 22.9665 6.0335 23.75 7 23.75H17C17.9665 23.75 18.75 22.9665 18.75 22V18.9821L22.0086 18.954C22.5575 18.9493 23 18.503 23 17.9541V6.5C23 5.94772 22.5523 5.5 22 5.5H18.75V2C18.75 1.0335 17.9665 0.25 17 0.25H7C6.0335 0.25 5.25 1.0335 5.25 2ZM7 1.75C6.86193 1.75 6.75 1.86193 6.75 2L6.75 5.5H17.25V2C17.25 1.86193 17.1381 1.75 17 1.75L7 1.75ZM6.70732 13.75C6.73496 13.8282 6.75 13.9123 6.75 14V22C6.75 22.1381 6.86193 22.25 7 22.25H17C17.1381 22.25 17.25 22.1381 17.25 22V14C17.25 13.9123 17.265 13.8282 17.2927 13.75H6.70732ZM5 8.25C4.58579 8.25 4.25 8.58579 4.25 9C4.25 9.41421 4.58579 9.75 5 9.75H7C7.41421 9.75 7.75 9.41421 7.75 9C7.75 8.58579 7.41421 8.25 7 8.25H5Z" />
+      </svg>
+    </div>
+    <div class="btn bg-white flex gap-3 text-slate-500 rounded-[.3rem]">
+      <svg
+        class="w-5 h-5 fill-gray-500"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M21.8184 3.58C22.2795 2.91483 21.8092 2 21.0061 2H2.99388C2.19083 2 1.72049 2.91484 2.18155 3.58L9.63745 14.3365C9.75449 14.5053 9.81727 14.7066 9.81727 14.9128V21.9944C9.81727 22.8359 10.7793 23.3038 11.429 22.7784L13.8101 20.8525C14.0456 20.662 14.1827 20.3736 14.1827 20.0685V14.9128C14.1827 14.7066 14.2455 14.5053 14.3625 14.3365L21.8184 3.58Z" />
+      </svg>
+      Filter
+    </div>
+    <div class="btn bg-white flex gap-3 text-slate-500 rounded-[.3rem]">
+      <svg
+        class="w-5 h-5 stroke-gray-500"
+        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_1607_7890)">
+          <path d="M1 8H23M9 8L9 23M2 23H22C22.5523 23 23 22.5523 23 22V2C23 1.44772 22.5523 1 22 1H2C1.44772 1 1 1.44772 1 2V22C1 22.5523 1.44772 23 2 23Z" />
+        </g>
+        <defs>
+          <clipPath id="clip0_1607_7890">
+            <rect width="24" height="24" fill="white"/>
+          </clipPath>
+        </defs>
+      </svg>
+      Edit Column
+    </div>
+  </div>
+</div>
+
+<div class="divider mt-1"></div>
+
+<div class="px-8">
+  <div class="overflow-auto h-[calc(100vh-12.8rem)]" id="clients">
+    <table
+      id="table-clients"
+      x-data="{ checkAll: false }"
+      class="table"
+    >
+      <thead>
+        <tr class="sticky top-0 bg-slate-100 z-[0]">
+          <th class="flex items-center">
+              <input
+                @change="checkAll = !checkAll"
+                type="checkbox" class="checkbox checkbox-sm rounded-[.2rem] [--chkbg:theme(colors.primary)]" />
+            </label>
+          </th>
+          <th>Basic Info</th>
+          <th>School</th>
+          <th>City</th>
+          <th>Last Check Up</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for client in clients %}
+          <tr class="bg-white rounded-[.3rem]">
+            <th>
+              <label class="flex items-center">
+                <input
+                  :checked="checkAll && true"
+                  type="checkbox" class="checkbox checkbox-sm rounded-[.2rem] [--chkbg:theme(colors.primary)]" />
+              </label>
+            <td>
+              <div class="flex items-center gap-3">
+                <div>
+                  <div class="font-bold">{{ client.full_name }} </div>
+                  <div class="text-sm opacity-50">{{ client.level }}</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              {{ client.school }}
+            </td>
+            <td>
+              {{ client.city.name }}
+              <br>
+              <span class="text-sm opacity-50">
+                {{ client.province.name }}
+              </span>
+            </td>
+            <td>
+              {{ client.updated_datetime | date:'M d, Y' }}
+            </td>
+            <td></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% if num_clients > 9 %}
+      <div class="flex mt-5 justify-center">
+        <div class="join"
+          hx-trigger="click"
+          hx-target="#clients"
+          hx-select="#clients"
+        >
+          {% for page in page_range %}
+            <input
+              hx-get="{% url 'client-list' %}?page={{ page }}"
+              name="options"
+              type="radio"
+              {% if page == page_obj.number %} checked {% endif %}
+              aria-label="{{ page }}"
+              class="join-item btn btn-square bg-white hover:bg-gray-200 active:bg-gray-300 border-none {% if page == page_obj.paginator.ELLIPSIS %} pointer-events-none bg-gray-200 {% endif %}"
+            />
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
