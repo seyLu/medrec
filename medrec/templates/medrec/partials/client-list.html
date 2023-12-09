@@ -93,7 +93,8 @@
     >
       <thead>
         <tr class="sticky top-0 bg-slate-100 z-[0]">
-          <th class="flex items-center">
+          <th class="flex items-center" >
+            <label class="flex items-center pl-4">
               <input
                 @change="checkAll = !checkAll"
                 type="checkbox" class="checkbox checkbox-sm rounded-[.2rem] [--chkbg:theme(colors.primary)]" />
@@ -110,7 +111,7 @@
         {% for client in clients %}
           <tr class="bg-white rounded-[.3rem]">
             <th>
-              <label class="flex items-center">
+              <label class="flex items-center pl-4">
                 <input
                   :checked="checkAll && true"
                   type="checkbox" class="checkbox checkbox-sm rounded-[.2rem] [--chkbg:theme(colors.primary)]" />
