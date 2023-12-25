@@ -12,7 +12,7 @@ whitenoise[brotli]==6.6.0
 aiohttp==3.9.1
 PyYAML==6.0.1
 Faker==20.1.0
-phonenumbers==8.13.26
+phonenumbers==8.13.27
 gpt4all==2.0.2
 
 # dev tools
