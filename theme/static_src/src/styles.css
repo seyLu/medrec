@@ -22,3 +22,12 @@
         stroke: white;
     }
 }
+
+#table-clients {
+    tbody tr {
+        td,
+        th {
+            padding: 1rem;
+        }
+    }
+}

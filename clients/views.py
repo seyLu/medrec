@@ -15,7 +15,7 @@ from .models import Client
 class ClientListView(View):
     def get(self, request: HttpRequest) -> HttpResponse:
         client_list: Client = Client.objects.all().order_by("-updated_datetime")  # type: ignore[assignment]
-        paginator: Paginator = Paginator(client_list, 9)  # type: ignore
+        paginator: Paginator = Paginator(client_list, 7)  # type: ignore
 
         page_number: str = request.GET.get("page", "1")
         page_obj: Page[Client] = paginator.get_page(page_number)
