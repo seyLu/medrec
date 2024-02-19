@@ -1,5 +1,5 @@
 # core
-Django==5.0
+Django==5.0.1
 django-extensions==3.2.3
 django-htmx==1.17.2
 django-tailwind==3.8.0
