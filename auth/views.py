@@ -68,7 +68,9 @@ class RegisterView(View):
 class DemoView(View):
     def get(self, request: HttpRequest) -> HttpResponse:
         user = authenticate(
-            request, email="demo@email.com", password="demo"  # noqa: S106
+            request,
+            email="demo@email.com",
+            password="demo",  # noqa: S106
         )
         login(request, user)
         return redirect(reverse("index"))
