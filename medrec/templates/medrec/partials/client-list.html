@@ -26,7 +26,7 @@
             <path d="M1 6.5L12 17.5L23 6.5" />
           </svg>
         </div>
-        <ul tabindex="0" class="dropdown-content z-[1] shadow bg-base-100 rounded-[.3rem] w-64 select-none">
+        <ul tabindex="0" class="dropdown-content z-[2] shadow bg-base-100 rounded-[.3rem] w-64 select-none">
           <li class="px-4 py-3 hover:bg-gray-200 active:bg-gray-300 text-sm">
             <a>Item 1</a>
           </li>
@@ -82,25 +82,26 @@
   </div>
 </div>
 
-<div class="divider mt-1"></div>
+<div class="divider mt-1 mb-0"></div>
 
-<div class="px-8">
-  <div class="overflow-auto h-[calc(100vh-12.8rem)]" id="clients">
+<div class="px-8" id="clients">
+  <div class="overflow-auto h-[calc(100vh-12rem)] relative">
     <table
       id="table-clients"
       x-data="{ checkAll: false }"
-      class="table"
+      class="table border-separate border-spacing-0"
     >
       <thead>
-        <tr class="sticky top-0 bg-slate-100 z-[0]">
-          <th class="flex items-center" >
-            <label class="flex items-center pl-4">
+        <tr class="sticky top-0 bg-slate-100 z-[1]">
+          <th class="flex items-center justify-end py-4 w-[4.3rem]">
+            <label class="flex items-center">
               <input
                 @change="checkAll = !checkAll"
                 type="checkbox" class="checkbox checkbox-sm rounded-[.2rem] [--chkbg:theme(colors.primary)]" />
             </label>
           </th>
           <th>Basic Info</th>
+          <th>Level</th>
           <th>School</th>
           <th>City</th>
           <th>Last Check Up</th>
@@ -109,45 +110,52 @@
       </thead>
       <tbody>
         {% for client in clients %}
-          <tr class="bg-white rounded-[.3rem]">
-            <th>
-              <label class="flex items-center pl-4">
+          <tr class="bg-slate-100 rounded-[.3rem] overflow-hidden">
+            <td class="bg-white rounded-l-lg w-[4.3rem]">
+              <label class="flex items-center justify-end">
                 <input
                   :checked="checkAll && true"
                   type="checkbox" class="checkbox checkbox-sm rounded-[.2rem] [--chkbg:theme(colors.primary)]" />
               </label>
-            <td>
-              <div class="flex items-center gap-3">
-                <div>
-                  <div class="font-bold">{{ client.full_name }} </div>
-                  <div class="text-sm opacity-50">{{ client.level }}</div>
-                </div>
+            </td>
+            <td class="bg-white">
+              <div class="font-bold">
+                {{ client.full_name }}
+              </div>
+              <div class="test-sm text-gray-400 font-normal">
+                {{ client.reference_number }}
               </div>
             </td>
-            <td>
+            <td class="bg-white">
+              <div>{{ client.level }}</div>
+              <div class="text-sm text-gray-400">{{ client.get_type_display }}</div>
+            </td>
+            <td class="bg-white">
               {{ client.school }}
             </td>
-            <td>
-              {{ client.city.name }}
-              <br>
-              <span class="text-sm opacity-50">
+            <td class="bg-white">
+              <div>{{ client.city.name }}</div>
+              <div class="text-sm text-gray-400">
                 {{ client.province.name }}
-              </span>
+              </div>
             </td>
-            <td>
+            <td class="bg-white">
               {{ client.updated_datetime | date:'M d, Y' }}
             </td>
-            <td></td>
+            <td class="bg-white rounded-r-lg"></td>
           </tr>
+          <tr class="bg-slate-100 h-[1rem] pointer-events-none"></tr>
         {% endfor %}
       </tbody>
     </table>
-    {% if num_clients > 9 %}
-      <div class="flex mt-5 justify-center">
-        <div class="join"
-          hx-trigger="click"
+    {% if num_clients > 7 %}
+      <div class="w-full h-[3rem] bg-slate-100 sticky z-[1] py-3">
+        <div
+          hx-trigger="click throttle:2s"
           hx-target="#clients"
           hx-select="#clients"
+          hx-swap="outerHTML"
+          class="join flex justify-center sticky bottom-0"
         >
           {% for page in page_range %}
             <input
@@ -156,7 +164,7 @@
               type="radio"
               {% if page == page_obj.number %} checked {% endif %}
               aria-label="{{ page }}"
-              class="join-item btn btn-square bg-white hover:bg-gray-200 active:bg-gray-300 border-none {% if page == page_obj.paginator.ELLIPSIS %} pointer-events-none bg-gray-200 {% endif %}"
+              class="select-none join-item btn btn-square bg-white hover:bg-gray-200 active:bg-gray-300 border-none {% if page == page_obj.paginator.ELLIPSIS %} pointer-events-none bg-gray-200 {% endif %}"
             />
           {% endfor %}
         </div>

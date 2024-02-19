@@ -76,36 +76,47 @@ def get_age(client_type: str) -> int:
 
 
 def get_level(client_type: str, age: int) -> str:
-    if client_type == "STU":
+    def get_student_level(age: int) -> str:
         if age < 6:
             return "Preschooler"
-        elif age == 18:
+        if age == 18:
             return "Grade 12"
-        else:
-            return f"Grade {age - 5}"
-    elif client_type == "TCH":
+        if age > 18:
+            raise ValueError("College level not supported")
+
+        return f"Grade {age - 5}"
+
+    def get_teacher_level(age: int) -> str:
         if age > 40:
             return "Senior Teacher"
-        elif age < 22:
+        if age < 22:
             return "Student Teacher"
-        elif age < 30:
+        if age < 30:
             return random.choice(
                 [f"Teacher {random.randrange(1,2)}", "Assistant Teacher"]
             )
-        else:
-            return f"Teacher {random.randrange(3,4)}"
-    else:
+
+        return f"Teacher {random.randrange(3,4)}"
+
+    def get_non_teaching_personnel_level(age: int) -> str:
         if age > 40:
             return random.choice(["Principal", "Vice Principal"])
-        else:
-            return random.choice(
-                [
-                    "Secretary",
-                    "Guard",
-                    "Accountant",
-                    "Utility Personnel",
-                ]
-            )
+
+        return random.choice(
+            [
+                "Secretary",
+                "Guard",
+                "Accountant",
+                "Utility Personnel",
+            ]
+        )
+
+    client_level_map: dict[str, str] = {
+        "STU": get_student_level(age),
+        "TCH": get_teacher_level(age),
+        "NTP": get_non_teaching_personnel_level(age),
+    }
+    return client_level_map[client_type]
 
 
 def get_building_name(building_name: str) -> str:

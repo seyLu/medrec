@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ["3.11"]
+        python-version: ['3.11', '3.12']
 
     steps:
       - name: Harden Runner
@@ -31,7 +31,7 @@ jobs:
         uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v4.7.0
         with:
           python-version: ${{ matrix.python-version }}
-          cache: "pip"
+          cache: 'pip'
 
       - name: Install and upgrade PIP
         run: python -m pip install --upgrade pip
@@ -40,7 +40,6 @@ jobs:
         run: >
           pip install
           ruff
-          black
           mypy
 
       - name: Install Stubs
@@ -54,8 +53,8 @@ jobs:
       - name: Ruff Linter
         run: ruff check . --diff
 
-      - name: Black Formatter
-        run: black . --diff --check
+      - name: Ruff Formatter
+        run: ruff format .
 
       - name: Create .mypy_cache dir if not exists
         run: |
