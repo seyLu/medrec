@@ -16,7 +16,7 @@ phonenumbers==8.13.30
 gpt4all==2.2.1.post1
 
 # dev tools
-pre-commit==3.6.0
+pre-commit==3.6.2
 
 # stubs
 django-stubs[compatible-mypy]==4.2.7
